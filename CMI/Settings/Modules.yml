@@ -1,0 +1,262 @@
+# 模块列表，你可以在此启用或禁用
+# 这会完全禁用某些功能
+# 要让此生效，你需要重启服务器
+# 禁用某些模块也会禁用相关命令，如cuffed模块禁用时也会禁用/cuff指令，silentChest模块禁用时也会禁用silentChest指令
+# 禁用后的指令不会再tab补全中出现，并且在使用时会返回“不存在该命令”的错误
+
+#  
+# 静音开箱子
+# 适用于1.7.x及以上的服务器
+silentChest: true
+#  
+# 版本检查
+# 适用于1.7.x及以上的服务器
+versionCheck: true
+#  
+# 世界限制：飞行，游戏模式与上帝模式
+# 适用于1.7.x及以上的服务器
+worldLimits: true
+#  
+# 世界限制：鞘翅
+# 适用于1.9.x及以上的服务器
+worldLimitsElytra: true
+#  
+# 登录、登出与死亡信息
+# 适用于1.7.x及以上的服务器
+customMessages: true
+#  
+# 首次加入时的信息
+# 适用于1.7.x及以上的服务器
+firstJoinMessages: true
+#  
+# 禁止玩家行动
+# 适用于1.7.x及以上的服务器
+cuffed: true
+#  
+# 电梯
+# 适用于1.7.x及以上的服务器
+elevator: true
+#  
+# 跳过夜晚
+# 适用于1.7.x及以上的服务器
+nightSpeedup: true
+#  
+# 伤害控制
+# 适用于1.7.x及以上的服务器
+damageControl: true
+#  
+# 传送门创建
+# 适用于1.7.x及以上的服务器
+portalCreation: true
+#  
+# Handling of portal creation
+# 适用于1.7.x及以上的服务器
+teleportWith: true
+#  
+# 低耐久物品的信息
+# 适用于1.7.x及以上的服务器
+durabilityLoss: true
+#  
+# 镜像功能
+# 适用于1.7.x及以上的服务器
+mirror: true
+#  
+# 刷怪笼相关，如丢弃、放置、刷怪蛋交互
+# 适用于1.7.x及以上的服务器
+spawners: true
+#  
+# 刷怪笼间隔
+# 适用于1.7.x及以上的服务器
+spawnerProximity: true
+#  
+# 刷怪笼充能
+# 适用于1.7.x及以上的服务器
+spawnerCharge: true
+#  
+# 指令延迟
+# 适用于1.7.x及以上的服务器
+warmup: true
+#  
+# 指令充能
+# 适用于1.7.x及以上的服务器
+cooldown: true
+#  
+# 交互型指令
+# 适用于1.8.x及以上的服务器
+interactiveCommands: true
+#  
+# 附加指令
+# 适用于1.8.x及以上的服务器
+attachedCommands: true
+#  
+# 护甲效果
+# 适用于1.7.x及以上的服务器
+armorEffects: true
+#  
+# 玩家标签，用于聊天与tab补全@
+# 适用于1.7.x及以上的服务器
+playerChatTag: true
+#  
+# 聊天气泡
+# 适用于1.19.x及以上的服务器
+chatBubble: true
+#  
+# tab列表
+# 适用于1.7.x及以上的服务器
+tablist: true
+#  
+# shift+右键编辑绘画
+# 适用于1.7.x及以上的服务器
+paintingEditor: true
+#  
+# 隐身模式
+# 适用于1.19.x及以上的服务器
+vanish: true
+#  
+# 支票
+# 适用于1.7.x及以上的服务器
+moneyCheque: true
+#  
+# 盔甲架编辑器
+# 适用于1.8.x及以上的服务器
+armorstand: true
+#  
+# 游玩时间追踪器
+# 适用于1.7.x及以上的服务器
+cmiPlaytime: true
+#  
+# Handles hologram updates
+# 适用于1.7.x及以上的服务器
+holograms: true
+#  
+# 传送门
+# 适用于1.7.x及以上的服务器
+portals: true
+#  
+# 将床设为家及其破坏事件，禁用后home功能仍会生效
+# 适用于1.7.x及以上的服务器
+homeInteractions: true
+#  
+# 动态告示牌
+# 适用于1.7.x及以上的服务器
+dynamicSigns: true
+#  
+# 告示牌编辑
+# 适用于1.20.x及以上的服务器
+signEdit: true
+#  
+# 动态皮革盔甲
+# 适用于1.7.x及以上的服务器
+coloredArmor: true
+#  
+# 防止实体攻击(/cmi notarget)
+# 适用于1.7.x及以上的服务器
+noTarget: true
+#  
+# 等级晋升
+# 适用于1.7.x及以上的服务器
+ranks: true
+#  
+# 投票
+# 适用于1.7.x及以上的服务器
+votifier: true
+#  
+# 战斗系统
+# 适用于1.7.x及以上的服务器
+playerCombat: true
+#  
+# 头颅掉落
+# 适用于1.16.x及以上的服务器
+headDrop: true
+#  
+# 工具包监视器，主要用于给与新玩家工具包
+# 适用于1.7.x及以上的服务器
+kits: true
+#  
+# 计划表(定时执行命令)
+# 适用于1.7.x及以上的服务器
+schedule: true
+#  
+# 玩家铭牌
+# 适用于1.7.x及以上的服务器
+namePlates: true
+#  
+# 监狱系统
+# 适用于1.7.x及以上的服务器
+jail: true
+#  
+# 飞行充能系统
+# 适用于1.7.x及以上的服务器
+flightCharge: true
+#  
+# 潜影盒背包(shift+右键打开)
+# 适用于1.11.x及以上的服务器
+shulkerBackpack: true
+#  
+# 玩家皮肤
+# 适用于1.8.x及以上的服务器
+skin: true
+#  
+# 区域选择，禁用后仍可使用指令
+# 适用于1.7.x及以上的服务器
+selection: true
+#  
+# 在bossbar位置显示血量
+# 适用于1.9.x及以上的服务器
+hpBossBar: true
+#  
+# AFK功能，会禁用任意与AFK相关的检查，玩家也永远不会进入AFK状态
+# 适用于1.9.x及以上的服务器
+afk: true
+#  
+# 临时功能，如tfly与tgod
+# 适用于1.7.x及以上的服务器
+timedCommands: true
+#  
+# 事件命令(eventCommands.yml)
+# 适用于1.12.x及以上的服务器
+eventCommands: true
+#  
+# 禁用附魔
+# 适用于1.7.x及以上的服务器
+disabledEnchants: true
+#  
+# 坐下
+# 适用于1.8.x及以上的服务器
+sitAnimation: true
+#  
+# 骑乘窒息检测
+# 适用于1.7.x及以上的服务器
+rideAnimation: true
+#  
+# bossbar指南针
+# 适用于1.9.x及以上的服务器
+bossBarCompass: true
+#  
+# 鞘翅加速
+# 适用于1.9.x及以上的服务器
+elytraBoost: true
+#  
+# 鞘翅启动(弹射)
+# 适用于1.9.x及以上的服务器
+elytraLaunch: true
+#  
+# 预防过度行为，如使用三叉戟无限飞行与用箭自残等
+# 适用于1.15.x及以上的服务器
+elytraExploit: true
+#  
+# 自定义不死图腾行为
+# 适用于1.11.x及以上的服务器
+totemBehavior: true
+#  
+# 物品重命名及使用颜色代码
+# 适用于1.9.x及以上的服务器
+anvilRenameColor: true
+#  
+# Handling of launch command falldamage
+# 适用于1.9.x及以上的服务器
+launchPad: true
+#  
+# 自定义死亡信息
+# 适用于1.7.x及以上的服务器
+deathMessages: true

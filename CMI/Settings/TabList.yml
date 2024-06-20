@@ -1,0 +1,78 @@
+# 请在Modules.yml中启用或停用tab列表
+TabList:
+  # 是否异步更新tab列表
+  # 启用后可以提高性能，但某些插件在处理异步占位符请求时可能产生问题
+  Async: true
+  UpdateTabListNames: true
+  # 是否启用权限组tab列表
+  # 如果你对权限组tab列表不感兴趣，你可以禁用以节省资源
+  # 禁用后，这只会使用默认格式，并将跳过对自定义格式的检查
+  GroupedEnabled: true
+  Updates:
+    # 为每个在线玩家更新tab列表的间隔
+    # 如果你在使用静态头注与尾注，你可以通过将此设为-1来禁用
+    # 如果在玩家事件时更新已满足要求，可以考虑将其禁用
+    AutoInterval: 60
+    OnJoin: true
+    OnLeave: true
+    afkStateChange: true
+    OnWorldChange: true
+    OnDeath: false
+    OnTeleport: false
+    OnNickChange: true
+  # 禁用后我们不会向tab列表添加头注
+  addTabListHeader: true
+  # 禁用后我们不会向tab列表添加尾注
+  addTabListFooter: true
+  # 支持占位符
+  # CMI也可以使用部分独立于PAPI的占位符
+  # 可以在游戏内使用/cmi placeholders查看
+  GeneralFormat:
+    # 这会决定tab列表中其他玩家名字的显示方式
+    PlayerName: '[playerDisplayName]'
+    Header:
+      '1':
+      - '&f------------------------------------'
+      - '&7欢迎'
+      - '&7当前玩家 &f%server_online%&7/&f%server_max_players%'
+      - '&f------------------------------------'
+    Footer:
+      '1':
+      - '&f------------------------------------'
+      - '&7您正处于 %player_world% &f%player_x%:&7%player_y%:&f%player_z%'
+      - '&7金币: &f%vault_eco_balance_formatted% &7时间: &f%server_time_HH:mm:ss%'
+      - '&f------------------------------------'
+  # 启用后，如果你没有在权限组tab中定义玩家名、头注或尾注，那么会使用默认的格式
+  useGeneralName: false
+  useGeneralHeader: false
+  useGeneralFooter: false
+  # 为玩家自定义的tab列表格式
+  # 任何具有cmi.tablist.[number]权限的玩家都会使用对应的tab列表
+  # 每个格式的ID应为数字，如果玩家同时具有多个tab列表的权限，数字更大的会生效
+  # 你可以通过增加数字来随意添加
+  GroupFormat:
+    '1':
+      PlayerName: '&2{&r[playerDisplayName]&2}'
+      Header:
+        '1':
+        - '&f------------------------------------'
+        - '&7当前玩家 &f%server_online%&7/&f%server_max_players%'
+        - '&f------------------------------------'
+      Footer:
+        '1':
+        - '&f------------------------------------'
+        - '&7您正处于 %player_world% &f%player_x%:&7%player_y%:&f%player_z%'
+        - '&7时间: &f%server_time_HH:mm:ss%'
+        - '&f------------------------------------'
+    '2':
+      PlayerName: '&c[&r[playerDisplayName]&c]'
+      Header:
+        '1':
+        - '&f------------------------------------'
+        - '&7当前玩家 &f%server_online%&7/&f%server_max_players%'
+        - '&f------------------------------------'
+      Footer:
+        '1':
+        - '&f------------------------------------'
+        - '&7金币: &f%vault_eco_balance_formatted% &7时间: &f%server_time_HH:mm:ss%'
+        - '&f------------------------------------'

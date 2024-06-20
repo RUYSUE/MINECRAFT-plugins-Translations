@@ -1,0 +1,214 @@
+Chat:
+  # 会尝试根据给定的格式来修改聊天
+  ModifyChatFormat: false
+  # 启用后，常规与私人信息(除了清洁信息clean messages)会在将鼠标放上去时显示额外信息(支持PAPI），同时可以点击来快速回复
+  # 要改变额外信息，请访问对应本地化文件的Chat部分
+  ClickHoverMessages: true
+  DiscordSRV:
+    # 是否启用对DiscordSRV的支持
+    Enabled: true
+    # DiscordSRV中全局聊天的频道名
+    GlobalChannel: global
+    # 在聊天中用于代表{discord}的标签，表示该信息来自Discord而非游戏内
+    Label: '&2[&7D&2]'
+    UnlinkedLabel: '&4[&cD&4]'
+    # 启用后，如果你也启用了聊天范围(Range部分)，我们会将所有信息发送至DiscordSRV
+    # 禁用后，只有大喊与具有cmi.chat.rangebypass权限的玩家发出的信息能够在discord中看到
+    RangedMessages: true
+  # Enables support for DynMap web chat
+  # 是否支持DynMap网页聊天
+  DynMapChat: true
+  # 禁用后，每次你使用/r你都会回复上一个你向其发送信息的人，如果没有则会回复上一个向你发送信息的人
+  # 启用后，使用/r会回复上一个向你发送私聊的人，当有多人私聊你时，可能会引起混乱
+  ReplyToLastMessenger: false
+  # 如果禁用ReplyToLastMessenger，那么会将聊天计时(timeOut)纳入回复时的考量
+  # 如果你与某人在最近120秒(默认)有过对话，那么即使收到了第三者的信息，你也仍会回复该玩家
+  # 如果你与某人最近的聊天已超过120秒，你会回复最近一位向你发送信息的玩家
+  LastMessengerTimeOut: 120
+  # 启用后，玩家需要具有cmi.command.msg.[groupname].send来向主权限组为[groupname]中的玩家发送信息
+  PrivateMessagesGroups: false
+  # 禁用后，不会讲网址缩短为默认的[LINK]格式
+  TranslateLink: true
+  # 将网址替换为短格式的正则表达式
+  # 例如:
+  # (https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9]\.[^\s]{2,})
+  # ((http|https|ftp|ftps)\:\/\/)?[a-zA-Z0-9\-]+\.[a-zA-Z]{2,3}(\/\S*)?
+  # ((http|https|ftp|ftps)\:\/\/)?[a-zA-Z0-9\-]+\.[a-zA-Z]{2,3}(\/\S*)?([^\s]+)
+  LinkRegex: (^| )((http|https|ftp|ftps)\:\/\/)?[a-zA-Z0-9\-]+\.[a-zA-Z]{2,3}(\/\S*)?([^\s|^\)]+)
+  HoverItems:
+    # 启用后，聊天中特定的变量会转换为玩家手持的物品。对应变量见下
+    Enabled: true
+    # 定义聊天中的特定变量，使其变为玩家手持物品的信息。只有在启用ClickHoverMessages时生效
+    ItemRegex:
+    - (\[item\])
+    - (([&§]\S)+)?\[(([&§]\S)+)?i(([&§]\S)+)?t(([&§]\S)+)?e(([&§]\S)+)?m(([&§]\S)+)?\]
+  Bungee:
+    # 注意！则需要你安装CMI Bungee插件，可以在zrips.net找到
+    # 也可以直接在www.zrips.net/cmi下载\
+    # 是否启用跨端私聊(over BC)
+    # 需要启用BC支持(config.yml中)
+    Messages: true
+    # 是否启用跨端聊天(over BC)
+    # 玩家需要具有cmi.bungee.publicmessages.[servername]权限来向目标服务器发送信息
+    PublicMessages: true
+    # 是否启用工作人员跨服信息(over BC)
+    StaffMessages: true
+  # 用于普通的聊天信息，可用变量：{displayName} {world} {prefix} {suffix} {group} {shout} {message} {nicknameprefix}。支持PAPI变量如%player_server%
+  # 注意！不要对{message}使用渐变色，如果你想这么做，请在GeneralMessageFormat中设置
+  GeneralFormat: '{prefix}&f{displayName}&7: &r{message}'
+  # 决定聊天信息本身的格式，允许使用渐变色
+  # 需要包含"{message}"，否则会忽略设置
+  # 在1.16+的服务器中可以使用诸如"{#b3a28f>}{message}{#d7b8e6<}"的渐变色格式
+  # 你可以使用超过两种的渐变色，只需要重复"{message}"，如"{#b3a28f>}{message}{#5c6999<>}{message}{#d7b8e6<}"
+  # 使用%cmi_user_chatcolor%来添加玩家选择的聊天颜色
+  GeneralMessageFormat: '{message}'
+  Ranged:
+    # 决定聊天范围
+    # 设为-1已移除限制
+    General: -1
+    # 大喊的信息范围
+    # 大喊应当以"!"开始，并且玩家具有cmi.chat.shout权限
+    # 需要启用GeneralRange
+    # 设为0以向所有世界大喊，设为-1以禁用(但仍会扣费)
+    Shout: 200
+    # 每次大喊时需要的费用
+    ShoutCost: 0
+    # 信息范围限制列表
+    # 玩家数量在前，聊天范围在后
+    # 这决定从多少玩家开始使用对应聊天范围
+    Dynamic:
+      Use: false
+      Limits:
+      - 1-0
+      - 10-1000
+      - 20-500
+      - 30-400
+      - 40-300
+      - 50-200
+  # 表示信息发送到公屏而非现有玩家聊天室的标志
+  # 设为空以禁用
+  ChatRoomShout: '!'
+  # 当聊天室不活跃到一定时间时，移除之(以秒计)
+  # 这只对最后一名玩家也离开了的空聊天室生效
+  ChatRoomLife: 3600
+  # 当你点击公共/私人或相似的信息时提供的指令。[playerName], [playerDisplayName]和[playerNickName]可用来表示玩家名
+  ClickSuggestions:
+    pubmsg: '/msg [playerNickName] '
+    privmsg: '/msg [playerNickName] '
+    staffmsg: '/msg [playerNickName] '
+    helpop: '/msg [playerNickName] '
+    chatroom: '/msg [playerNickName] '
+    discord: '/msg [playerNickName] '
+  # 当玩家点击发送信息的玩家名时执行的指令(每种信息一条指令)
+  # 启用后，ClickSuggestions会变为需要shift+左键点击来提供相应指令
+  # 指令以玩家的身份执行，如果你想以控制台的身份执行，在最前方使用asConsole!变量
+  ClickCommands:
+    pubmsg: ''
+    privmsg: ''
+    staffmsg: ''
+    helpop: ''
+    chatroom: ''
+    discord: ''
+  # 递增使用数字来分割不同的组，如果玩家同时具有多个则数字更大的生效
+  # 可以按需增加任意多行
+  # 对应的权限节点为cmi.chatgroup.[id]
+  # 权限示例:cmi.chatgroup.2
+
+  # 注意！不要对{message}使用渐变色，如果你想这么做，请在GroupMessageFormat中设置
+  GroupFormat:
+    '1': '{prefix}&f{displayName}&f: &r{message}'
+    '2': '{prefix}&f{displayName}&7: &r{message}'
+    '3': '{prefix}&f{displayName}&8: &r{message}'
+  # 递增使用数字来分割不同的组，如果玩家同时具有多个则数字更大的生效
+  # 可以按需增加任意多行
+  # 对应的权限节点为cmi.chatmessagegroup.[id]
+  # 权限示例：cmi.chatmessagegroup.2
+  GroupMessageFormat:
+    '1': '{message}'
+    '2': '{message}'
+    '3': '{message}'
+  Colors:
+    # 启用后，会除去所有公共信息的颜色代码并允许使用对应权限着色(all public messages will be filtered from color codes and will allow to colorize them with appropriate permission node)
+    # cmi.colors.publicmessage.[colorName]
+    # 所有颜色: 黑(&0), 深蓝(&1), 深绿(&2), 深青(&3), 深红(&4), 深紫(&5), 金(&6), 灰(&7), 深灰(&8), 蓝(&9), 绿(&a), 青(&b), 红(&c), 淡紫(&d), 黄(&e), 白(&f), 魔法(&k), 加粗(&l), 删除线(&m), 下划线(&n), 斜体(&o), 重置(&r)
+    PublicMessage: true
+    PrivateMessage: true
+    # 启用后，会除去/me中的颜色代码并允许使用对应权限着色(/me messages will be filtered from color codes and will allow to colorize them with appropriate permission node)
+    # cmi.colors.me.[colorName]
+    me: true
+    # 启用后，如果玩家不具有对应的权限，颜色代码会从信息中移除而非留在其中
+    CleanUp:
+      publicmessage: true
+      privatemessage: true
+      me: true
+      signs: false
+      books: true
+      itemname: true
+      itemlore: true
+      # 在检查玩家是否具有对应颜色权限时，忽略下列字符
+      # 这会绕过对玩家颜色代码的限制，并允许使用特定的聊天格式
+      # 只对公共与私人信息生效
+      WhiteList:
+      - '&c❤&7'
+    # 启用后，玩家更改昵称时会除去昵称中的颜色代码(nickName will be filtered from color codes when player changes it)
+    # cmi.colors.nickname.[colorName]
+    NickName: true
+    # 决定/cmi chatcolor的内容。通过cmi.colors.publicmessage.[colorCode]决定玩家能够选择的颜色，可用于%cmi_user_chatcolor%占位符
+    Picker:
+    - '&f'
+    - '&2'
+    - '&3'
+    - '&7'
+    - '&8'
+    - '&a'
+    - '&b'
+    - '&c'
+    - '&e'
+    - '&6'
+    - '{#00e625}'
+    - '{#brown}'
+  # 启用后，将不会展示被你屏蔽玩家的公共信息
+  IgnorePublicMessage: true
+  Tag:
+    # 是否启用标记(@)系统，当公共聊天中出现@[playerName]时，提醒对应玩家
+    Enabled: true
+    # 启用后，会对所有提及到玩家的情况进行着色，且会提醒对应玩家
+    # 这比使用@标记权重更大，因此如果你知道自己在做什么，请启用
+    HardCoreMode: false
+    # 玩家被标记时，对应信息的颜色。发送者需要具有cmi.tag.color权限
+    Color: '&c'
+    # 玩家被标记时执行的指令
+    # 变量如[playerName]会被替换为被标记的玩家
+    # 变量[senderName]会被替换为发送标记的玩家
+    CommandsOnTag:
+    - asConsole! cmi sound BLOCK_NOTE_BLOCK_HARP:3:1 [playerName] -s
+    # 只有当玩家处于AFK状态时执行上述指令
+    OnlyWhenAfk: false
+    # 启用后，会移除"@"标志
+    RemoveEta: false
+ChatBubble:
+  # 是否对公共聊天启用聊天气泡
+  # 每个玩家都可以使用/options独立进行开关
+  PublicMessages: true
+  # 聊天气泡高度
+  Offset: 2.5
+  # 聊天气泡基础的持续时间
+  ShowFor: 5
+  # 聊天气泡最长的持续时间
+  MaxShowFor: 10
+  # 每个字母为聊天气泡增加的持续时间
+  # 这使较短的信息气泡持续较短时间；较长的信息气泡持续较长时间
+  ExtraTime: 0.02
+  # 起泡大小，默认为1
+  PlateScale: 1
+  # 气泡的最大宽度
+  LineWidth: 255
+  Background:
+    # 默认颜色代码，信息本身带有的颜色会将其覆盖
+    # 留空以使用默认的透明颜色
+    # 颜色示例: {#black}
+    Color: '{#black}'
+    # 透明度，值为0-1，0为完全透明，1为不透明
+    Opacity: 0.5
+  # 是否为信息增加阴影
+  Shadow: true

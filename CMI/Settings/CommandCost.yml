@@ -1,0 +1,16 @@
+Enabled: false
+# 例： - 'cmi heal:100.5:true'
+# 尽量避免使用别名，请使用全名
+# 费用可以是任意正数
+# 在费用之后你可以使用true/false来决定是否告知玩家扣款
+# 第二个true/false表示是否让玩家通过再次输入指令或点击信息(包含费用)进行二次确认，默认需要二次确认
+# 注意，不要使用预设的指令别名，如/heal无效，请使用/cmi heal否则玩家可以通过指令全名来免费使用
+# 但是你可以在这里使用自定义指令别名
+
+# CMI基础指令被执行时，在扣费前会进行二次检查；而自定义别名的指令会在执行成功后扣费
+# 如/cmi warp在玩家输入错误的地标名时不会扣费，而通过自定义别名执行时会扣费
+Commands:
+- cmi heal:100.5:true:true
+- cmi feed:100.5:true:true
+- cmi home :30:true:true
+- cmi warp :10:true:true

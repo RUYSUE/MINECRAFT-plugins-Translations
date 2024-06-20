@@ -1,0 +1,90 @@
+Homes:
+  # 启用后，设置家时如果已存在相同名字的家，需要玩家点击游戏内信息进行二次确认来覆盖
+  # 也可直接使用/cmi sethome [homeName] -override
+  Confirmation: true
+  # 玩家在使用/setome [homeName] [slotNumber]创建家时能够使用的最大位置值(首位为0)
+  MaxGuiSlots: 99
+  Gui:
+    # 如果你有多于一个家，在使用/cmi home时打开gui
+    Use: true
+    # 启用后会使用更为复杂的UI，带有额外的按钮与选项。禁用后会简单地将所有家按顺序列出
+    Complex: true
+    Options:
+      # 启用后会将gui中每页家的数量从10个扩展到28个
+      Expanded: false
+      # 如果你想使用全局的填充材料，保持为空
+      Border: ''
+      # 当未启用Expanded时，在家周围的填充材料
+      Infill: WHITE_STAINED_GLASS_PANE
+      InfoButton:
+        # 点击时用于提供附加信息的额外按钮
+        Use: false
+        Slot: 1
+        Material: head:eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDZiYTYzMzQ0ZjQ5ZGQxYzRmNTQ4OGU5MjZiZjNkOWUyYjI5OTE2YTZjNTBkNjEwYmI0MGE1MjczZGM4YzgyIn19fQ==
+        Commands:
+        - closeinv!
+      CloseButton:
+        Use: true
+        Slot: 9
+        Material: head:eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNmNjYmY5ODgzZGQzNTlmZGYyMzg1YzkwYTQ1OWQ3Mzc3NjUzODJlYzQxMTdiMDQ4OTVhYzRkYzRiNjBmYyJ9fX0=
+        Commands:
+        - closeinv!
+      bedButton:
+        Use: true
+        Slot: 4
+        Material: LIGHT_BLUE_BED
+      homeButton:
+        Use: true
+        Slot: 5
+        Material: head:eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTJkN2E3NTFlYjA3MWUwOGRiYmM5NWJjNWQ5ZDY2ZTVmNTFkYzY3MTI2NDBhZDJkZmEwM2RlZmJiNjhhN2YzYSJ9fX0=
+      deathButton:
+        Use: true
+        Slot: 6
+        Material: TOTEM_OF_UNDYING
+      prevButton:
+        Slot: 46
+      middleButton:
+        Slot: 50
+      nextButton:
+        Slot: 54
+  # 不同组玩家能够设置家的最大数量。对应权限: cmi.command.sethome.[groupname]
+  # 如果未找到对应的组，会将将最大值设为1
+  # 可通过cmi.command.sethome.unlimited绕过限制
+  # 除此之外，也可以直接使用数字如cmi.command.sethome.[number]来决定玩家能够设置家的最大值
+  Groups:
+    Newbie: 2
+    Advanced: 3
+    Vip: 5
+  # 需要cmi.bedhome权限
+  # 启用后，与床交互时会创建常规家
+  # 禁用后，与床交互时会创建原版家
+  BedInteraction: true
+  # 启用后，只能通过shift+右键点击床来设定家
+  onlyShiftBed: false
+  # 对床右键创建家时会移除床的位置(?但是设置名是床被破坏时移除床的位置)
+  RemoveBedLocationOnBedBreak: true
+  # 启用后，当玩家新建家时会检查其能否在对应区域破坏方块
+  # 这可以阻止玩家在受保护区域设置家
+  # 可通过cmi.command.sethome.bypass绕过
+  CheckBlockBreak: false
+  # 默认家的名字，默认为"Home"
+  DefaultName: Home
+  # 默认床的名字，默认为"Home"
+  # 可以通过不同名字来区分与床交互创建的家与通过指令创建的家
+  DefaultBedName: Home
+  # 能够用于家名字的字符
+  ValidNameRegex: '[^a-zA-Z0-9\-\_]'
+  WorldLimits:
+    # 启用后，不同组玩家在创建家时将受到特定限制
+    # 可通过cmi.command.sethome.bypasslimit绕过
+    Use: false
+    Groups:
+      Example1:
+        Amount: 3
+        Worlds:
+        - testWorld
+      Example2:
+        Amount: 5
+        Worlds:
+        - testWorld2
+        - testWorld3

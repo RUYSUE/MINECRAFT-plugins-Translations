@@ -1,0 +1,74 @@
+# 玩家需要具有对应权限来获得相应的工具包(cmi.kit.[kitName]
+# 如cmi.kit.newbie允许获得newbie工具包
+# 可用的自定义变量: {USERNAME} {DISPLAYNAME} {WORLDNAME} {KITNAME} {RANDOMPLAYER}
+# 在游戏内使用/cmi kiteditor来避免格式问题
+# 支持专用指令格式
+Newbie:
+  CommandName: Newbie
+  Description:
+  - '&e会给你一些金币与经验'
+  - '&e每X分钟可以使用一次'
+  Delay: 36000
+  MoneyCost: 100
+  ExpCost: 30
+  Group: 'groupName'
+  Items:      
+    '1':
+      v: 2730
+      type: STONE
+      amount: 70
+      meta:
+        ==: ItemMeta
+        meta-type: UNSPECIFIC
+        display-name: §3Stone
+        lore:
+        - §2Name §3{USERNAME}
+        - §3Display name §2{DISPLAYNAME}
+        - §2Kit §3{KITNAME}
+        - §3World name §2{WORLDNAME}
+        enchants:
+          ARROW_DAMAGE: 3
+          THORNS: 5
+    '3':
+      v: 2730
+      type: OAK_PLANKS
+      amount: 30
+  Commands:
+  - 'asConsole! msg! [playerName] &e成功获得&6{KITNAME} &e工具包!'
+  Conditions:
+  - cmi.kit.get
+  - cmi.command.fly
+Advanced:
+  Delay: 36000
+  Items:
+    '1':
+      v: 2730
+      type: STONE
+Ad2:
+  CommandName: Ad
+  Weight: 2
+  Delay: 36060
+  Group: resources
+  Items:
+    '1':
+      v: 2730
+      type: OAK_PLANKS
+      amount: 10
+Ad1:
+  CommandName: Ad
+  Weight: 1
+  Delay: 36000
+  Group: resources
+  Items:
+    '1':
+      v: 2730
+      type: STONE
+      amount: 10
+Ad3:
+  Delay: 36001
+  Group: resources
+  Items:
+    '1':
+      v: 2730
+      type: DIRT
+      amount: 10

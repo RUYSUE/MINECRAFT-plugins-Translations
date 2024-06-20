@@ -1,0 +1,119 @@
+# 计划表文件是你设置定时命令或特定间隔执行指令的文件
+# Enabled: (true/false) 只会使用已启用的计划表
+# 有两种类型，固定间隔(以秒计)与定时
+# Delay: (number) 决定两次动作之间等待多长时间，600代表每十分钟执行一次
+# Randomize: (true/false) 启用后，每次会使用所有指令中随机的一个，直到用尽后开始再次随机。当你想设置随机公告时很有用
+# DuplicateRandomize: (true/false) 启用后，每次会使用所有指令中随机的一个，每次均重新随机。当你想设置随机公告时很有用
+# SingleLinear: (true/false) 启用后，每次会按顺序使用一个指令，直到所有指令执行完毕。需要按顺序逐步执行指令时很有用
+# PerformOn: 部分会决定何时执行指令，应当先给定ID再设定时间
+#   时间可以包括: Month, Day, Hour, Minute, Second. 所有都是数字格式，其中小时为24小时制时间
+#   例如
+#   PerformOn:
+#     FirstTimeFrame:
+#       Hour: 4
+#     SecondTimeFrame:
+#       Hour: 22
+#       Minute: 30
+#   你可以使用一周七天的名字来表明具体在每周哪一天来执行该计划，如 - Day: Monday
+#   这会让指令在早上四点以及晚上十点半执行指令，当你想在在线玩家较少对服务器进行备份是很有用
+# Repeat: (true/false) 禁用后，动作只会执行一次；否则会每隔设定间隔或在特定时间重复
+# MinPlayers: (amount) 会限制执行该计划的最小玩家数
+# MinPlayersCommands: 当在线玩家小于限制时执行的指令
+# MaxPlayers: (amount) 会在玩家多于限制时跳过计划
+# Feedback: (true/false) 禁用后，如果在线玩家数不足以执行该计划，那么不会在控制台显示反馈
+# DontTranslatePlaceholders: (true/false) 启用后，在对指令进行下一步处理前不会转换占位符
+#   默认禁用，因此会提前转换占位符
+#   除了专用指令delay!，它总会提前转换
+# Commands: 到时间时执行的指令列表
+#   如果指令以msg!开头，并且提供了玩家名，那么如果该玩家在线则会向其发送一条信息
+#   如果指令以broadcast!开头，该信息会向服务器中所有玩家发送
+#   如果指令以actionbar!开头，所有玩家都会在其动作栏看到该信息
+#   如果指令以title!开头，所有玩家都会在其标题栏看到该信息
+#   如果指令以subtitle!开头，所有玩家都会在其子标题栏看到该信息
+#   如果指令以kickall!开头，那么所有玩家都会以给定理由被提出。在服务器关闭前很好用
+#   如果指令以perm:[permissionNode]!开头，那么会对具有该权限的玩家执行指令。这通常用于不知道具体目标玩家时，如:perm:cmi.announce.vip! broadcast! Hello vip guys
+#   如果指令以moneycost:[amount]!开头，那么玩家有足够的钱时才会执行
+#   如果指令以expcost:[amount]!开头，那么玩家有足够的经验是才会执行
+#   如果指令以allPlayers!开头，那么会以所有在线玩家的名义执行。指令本身需要包含[allPlayers]来表明应该在哪里添加玩家名
+#   在两行指令中插入"delay! 5"来使插入行之后的指令延后五秒执行，这允许在服务器关闭前创建示例计数器(?counter)，可查看已有示例
+#   可使用[randomPlayer]占位符来获得随机不具有cmi.scheduler.exclude权限的在线玩家名，可用于随机玩家奖励，如: - cmi give [randomPlayer] diamond %rand/1-5%会给予随机一名在线玩家1-5颗钻石
+# 支持PAPI变量
+# 有关专用指令的更多信息，请访问https://www.zrips.net/cmi/commands/specialized/
+
+GiveDiamonds:
+  Enabled: false
+  MinPlayers: 3
+  FeedBack: true
+  Repeat: true
+  PerformOn:
+    '1':
+      Hour: 18
+  Commands:
+  - cmi give [randomPlayer] diamond %rand/1-5%
+  - msg! [randomPlayer] &eYou just got diamonds!
+StopServer:
+  Enabled: false
+  PerformOn:
+    '1':
+      Hour: 3
+      Minute: 59
+      Second: 30
+  Commands:
+  - actionbar! &eServer will stop in &630 &esec!
+  - delay! 5
+  - actionbar! &eServer will stop in &625 &esec!
+  - delay! 5
+  - actionbar! &eServer will stop in &620 &esec!
+  - delay! 5
+  - actionbar! &eServer will stop in &615 &esec!
+  - delay! 5
+  - actionbar! &eServer will stop in &610 &esec!
+  - delay! 5
+  - actionbar! &eServer will stop in &65 &esec!
+  - delay! 1
+  - actionbar! &eServer will stop in &64 &esec!
+  - delay! 1
+  - actionbar! &eServer will stop in &63 &esec!
+  - delay! 1
+  - actionbar! &eServer will stop in &62 &esec!
+  - delay! 1
+  - actionbar! &eServer will stop in &61 &esec!
+  - delay! 1
+  - kickall! &eServer will be back online soon!
+  - delay! 1
+  - stop
+AllInOneJustExample:
+  Enabled: false
+  MinPlayers: 3
+  MaxPlayers: 10
+  FeedBack: false
+  Delay: 600
+  Repeat: true
+  PerformOn:
+    '1':
+      Month: 12
+      Day: monday
+      Hour: 18
+      Minute: 36
+      Second: 15
+    '2':
+      Hour: 18
+  Commands:
+  - cmi give [randomPlayer] diamond %rand/1-5%
+  - msg! [randomPlayer] &eYou just got diamonds!
+  - broadcast! &e[randomPlayer] just got some stuff!
+  - delay! 1
+  - actionbar! &eServer will stop in &61 &esec!
+  - kickall! &eServer will be back online soon!
+Announcer:
+  Enabled: false
+  MinPlayers: 1
+  FeedBack: false
+  Delay: 600
+  Repeat: true
+  Randomize: true
+  Commands:
+  - broadcast! &eRules can be found at &e/rules
+  - broadcast! &eKits can be accesed with &e/kits
+  - broadcast! &eIf you need help, ask staff
+  - broadcast! &eAdvertisement of other servers will be punished

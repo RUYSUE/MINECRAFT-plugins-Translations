@@ -1,0 +1,31 @@
+# 是否启用自定义死亡信息
+# 在Translations/DeathMessages目录来查看死亡信息
+
+# 并非一定包含所有死亡情况，可能需要未来更新
+# 若出现任意缺失的死亡情况，请在github提出，需要带有复现步骤
+EnableCustom: false
+# 当玩家数量达到一定值时自动隐藏死亡信息
+# 设为-1以禁用
+AutoHideFrom: -1
+# 广播玩家死亡信息的范围
+# 设为任意值都会将其他世界的玩家排除在外
+Range: -1
+# 从哪里显示死亡信息
+# 选项：plain, actionBar
+Destination: plain
+# 下列世界永远不会广播死亡信息
+DisabledWorlds:
+- ''
+# 下列世界不会向玩家广播死亡信息
+MutedWorlds:
+- ''
+# 忽视下列玩家，不会广播其死亡信息
+IgnoredPlayers:
+- ''
+AntiSpam:
+  # 检查死亡信息是否刷屏的范围(以秒计)
+  # 设为-1以禁用
+  # 即使超过限制，死亡玩家仍会看到他自己的死亡信息
+  TimeRange: 30
+  # 在每个时间范围内，应当广播玩家多少条死亡信息
+  Count: 3

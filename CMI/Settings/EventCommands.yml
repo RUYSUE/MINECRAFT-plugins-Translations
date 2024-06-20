@@ -1,0 +1,151 @@
+# 在特定事件发生时执行的指令
+# 支持颜色代码与一些变量
+# 如果指令以msg!开头，并且提供了玩家名，那么如果该玩家在线则会向其发送一条信息
+# 如果指令以broadcast!开头，该信息会向服务器中所有玩家发送
+# 如果指令以actionbar!开头，所有玩家都会在其动作栏看到该信息
+# 如果指令以title!开头，所有玩家都会在其标题栏看到该信息
+# 如果指令以subtitle!开头，所有玩家都会在其子标题栏看到该信息
+# 如果指令以kickall!开头，那么所有玩家都会以给定理由被提出。在服务器关闭前很好用
+# 如果指令以perm:[permissionNode]!开头，那么会对具有该权限的玩家执行指令。这通常用于不知道具体目标玩家时，如:perm:cmi.announce.vip! broadcast! Hello vip guys
+# [playerName] 玩家本名
+# [playerDisplayName] 玩家展示名
+# [lvl] 玩家等级
+# [exp] 玩家总经验
+# [hp] 玩家血量
+# [maxHp] 玩家最大血量
+# [hunger] 饥饿度
+# [gameMode] 玩家游戏模式
+# joinServer在玩家首次进入服务器(firstJoinServer事件)时不会执行
+
+# 注意！
+# 使用大量指令可能会导致服务器负载的提升，尝试在每个事件中使用尽量少的指令
+# 如果可能的话使用延迟将其分散，如"delay! 0.3"或其他相似的变量
+# 这会允许服务器赶上计算(?)，而非强迫其同时执行所有指令
+firstJoinServer:
+  Enabled: false
+  Commands:
+  - cmi msg [playerName] This is event command example!
+  - cmi actionbarmsg [playerName] This is event command example!
+joinServer:
+  Enabled: false
+  Commands:
+  - cmi msg [playerName] This is event command example!
+  - cmi actionbarmsg [playerName] This is event command example!
+quitServer:
+  Enabled: false
+  Commands:
+  - cmi msg [playerName] This is event command example!
+  - cmi actionbarmsg [playerName] This is event command example!
+playerDeath:
+  Enabled: false
+  Commands:
+  - cmi msg [playerName] This is event command example!
+  - cmi actionbarmsg [playerName] This is event command example!
+  SourceCommands: []
+playerKillPlayer:
+  # [sourceName] 玩家本名
+  # [sourceDisplayName] 玩家展示名
+  # [sourceLvl] 玩家等级
+  # [sourceExp] 玩家总经验
+  # [sourceHp] 玩家血量
+  # [sourceMaxHp] 玩家最大血量
+  # [sourceHunger] 玩家饥饿度
+  # [sourceGameMode] 玩家模式
+  # 如果你使用专用指令，那么Commands部分会对被击杀的玩家执行，SourceCommands会对产生击杀的玩家执行
+  Enabled: false
+  Commands:
+  - cmi msg [playerName] This is event command example!
+  - cmi actionbarmsg [playerName] This is event command example!
+  SourceCommands: []
+playerRespawn:
+  Enabled: false
+  Commands:
+  - cmi msg [playerName] This is event command example!
+  - cmi actionbarmsg [playerName] This is event command example!
+playerTeleport:
+  Enabled: false
+  Commands:
+  - cmi msg [playerName] This is event command example!
+  - cmi actionbarmsg [playerName] This is event command example!
+bedLeave:
+  Enabled: false
+  Commands:
+  - cmi msg [playerName] This is event command example!
+  - cmi actionbarmsg [playerName] This is event command example!
+bedEnter:
+  Enabled: false
+  Commands:
+  - cmi msg [playerName] This is event command example!
+  - cmi actionbarmsg [playerName] This is event command example!
+playerWorldChange:
+  Enabled: false
+  Commands:
+  - cmi msg [playerName] This is event command example!
+  - cmi actionbarmsg [playerName] This is event command example!
+playerPreWorldChange:
+  Enabled: false
+  Commands:
+  - cmi msg [playerName] This is event command example!
+  - cmi actionbarmsg [playerName] This is event command example!
+playerGameModeChange:
+  Enabled: false
+  Commands:
+  - cmi msg [playerName] This is event command example!
+  - cmi actionbarmsg [playerName] This is event command example!
+playerKick:
+  Enabled: false
+  Commands:
+  - cmi msg [playerName] This is event command example!
+  - cmi actionbarmsg [playerName] This is event command example!
+playerBan:
+  Enabled: false
+  Commands:
+  - cmi msg [playerName] This is event command example!
+  - cmi actionbarmsg [playerName] This is event command example!
+playerLevelChange:
+  Enabled: false
+  Commands:
+  - cmi msg [playerName] This is event command example!
+  - cmi actionbarmsg [playerName] This is event command example!
+voidFall:
+  Enabled: false
+  Commands:
+  - cmi msg [playerName] This is event command example!
+  - cmi actionbarmsg [playerName] This is event command example!
+elytraStartGlide:
+  Enabled: false
+  Commands:
+  - cmi msg [playerName] This is event command example!
+  - cmi actionbarmsg [playerName] This is event command example!
+advancementDone:
+  # 使用[vaule]变量来插入成就标识
+  # 这会返回完成成就的路线，如配方、建造方块、绿宝石块。如果你想过滤特定成就，可以在指令中使用之(?)
+  Enabled: false
+  Commands:
+  - cmi msg [playerName] This is event command example!
+  - cmi actionbarmsg [playerName] This is event command example!
+elytraEndGlide:
+  Enabled: false
+  Commands:
+  - cmi msg [playerName] This is event command example!
+  - cmi actionbarmsg [playerName] This is event command example!
+sneakingSwapHandItems:
+  Enabled: false
+  Commands:
+  - cmi msg [playerName] This is event command example!
+  - cmi actionbarmsg [playerName] This is event command example!
+swapHandItems:
+  Enabled: false
+  Commands:
+  - cmi msg [playerName] This is event command example!
+  - cmi actionbarmsg [playerName] This is event command example!
+pvpstart:
+  Enabled: false
+  Commands:
+  - cmi msg [playerName] This is event command example!
+  - cmi actionbarmsg [playerName] This is event command example!
+pvpend:
+  Enabled: false
+  Commands:
+  - cmi msg [playerName] This is event command example!
+  - cmi actionbarmsg [playerName] This is event command example!

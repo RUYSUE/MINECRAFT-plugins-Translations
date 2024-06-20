@@ -1,0 +1,28 @@
+storage:
+  # 储存方法，可以为MySQL或者sqlite
+  # 不要在多个服务器上使用相同的表，否则你会遇到预期外的问题，每个服务器都应该设定自己的表！
+  method: sqlite
+mysql:
+  # Requires Mysql.
+  username: root
+  password: ''
+  hostname: localhost:3306
+  database: minecraft
+  # 可用字符是a-z 0-9和_
+  tablePrefix: CMI_
+  # 如果你不知道下列设置是干什么的，那么请保持默认值
+  autoReconnect: true
+  useSSL: false
+  verifyServerCertificate: false
+# 自动保存间隔(以秒计)
+# 这会决定向数据库写入数据的频率
+# 如果没有变化，则不会进行保存
+# 请尽量保持在较低的数值，在60秒附近
+# 最低为10秒
+AutoSaveInterval: 15
+# 是否在玩家登出是直接保存其数据
+ForceSaveOnLogOut: false
+# 实验性设置。该设置尚未进行充分测试，并且在BC网络中使用是会引起一些小小的问题
+# 玩家数据会在玩家每次加入服务器时加载
+# 禁用后，会使用更为高效的预缓存数据
+ForceLoadOnLogIn: false

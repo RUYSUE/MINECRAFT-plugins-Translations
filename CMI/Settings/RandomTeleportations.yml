@@ -1,0 +1,86 @@
+RandomTeleportation:
+  # 随机传送的冷却时间
+  Cooldown: 5
+  # 尝试寻找正确地点的次数
+  # 保持在较低的次数，以便玩家可以快速重试
+  MaxTries: 20
+  # 被随机传送排除的生物群系
+  ExcludedBiomes:
+  - Ocean
+  - Deep ocean
+  # 启用后会为所有检测到的世界添加默认随机传送设置
+  # 禁用后，不会自动添加，但你可以在有需要时手动添加
+  AutoGenerateWorlds: true
+  Worlds:
+    world:
+      Enabled: true
+      MaxTries: 0
+      Range:
+        Max: 1000
+        Min: 500
+      Center:
+        X: 0
+        Z: 0
+      Circle: false
+      Ignore:
+        Water: true
+        Lava: true
+        Leaves: true
+        PowderSnow: false
+        Materials: []
+        Biomes: []
+      PreferredBiomes: []
+      SurfaceOnly: false
+      FromAnotherWorld: true
+      RequireWorldPermission: false
+      YLimits:
+        Min: -64
+        Max: 320
+    world_nether:
+      Enabled: true
+      MaxTries: 0
+      Range:
+        Max: 1000
+        Min: 500
+      Center:
+        X: 0
+        Z: 0
+      Circle: false
+      Ignore:
+        Water: true
+        Lava: true
+        Leaves: true
+        PowderSnow: false
+        Materials: []
+        Biomes: []
+      PreferredBiomes: []
+      SurfaceOnly: false
+      FromAnotherWorld: true
+      RequireWorldPermission: false
+      YLimits:
+        Min: 0
+        Max: 128
+    world_the_end:
+      Enabled: true
+      MaxTries: 0
+      Range:
+        Max: 1000
+        Min: 500
+      Center:
+        X: 0
+        Z: 0
+      Circle: false
+      Ignore:
+        Water: true
+        Lava: true
+        Leaves: true
+        PowderSnow: false
+        Materials: []
+        Biomes: []
+      PreferredBiomes: []
+      SurfaceOnly: false
+      FromAnotherWorld: true
+      RequireWorldPermission: false
+      YLimits:
+        Min: 0
+        Max: 256
