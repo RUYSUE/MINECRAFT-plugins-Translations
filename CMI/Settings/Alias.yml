@@ -1217,6 +1217,11 @@ Alias:
     Enabled: true
     Tab: true
   #  
+  # /cmi serverlinks $1-
+  /serverlinks:
+    Enabled: true
+    Tab: true
+  #  
   # /cmi serverlist $1-
   /serverlist:
     Enabled: true
