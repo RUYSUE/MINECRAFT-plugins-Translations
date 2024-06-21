@@ -45,11 +45,11 @@ nightSpeedup: true
 # 适用于1.7.x及以上的服务器
 damageControl: true
 #  
-# 传送门创建
+# 传送门创建相关
 # 适用于1.7.x及以上的服务器
 portalCreation: true
 #  
-# Handling of portal creation
+# 传送门创建相关
 # 适用于1.7.x及以上的服务器
 teleportWith: true
 #  
@@ -193,6 +193,10 @@ flightCharge: true
 # 适用于1.11.x及以上的服务器
 shulkerBackpack: true
 #  
+# 展示饰纹陶罐内容物相关
+# 适用于1.20.x及以上服务器
+decoratedpot: true
+#  
 # 玩家皮肤
 # 适用于1.8.x及以上的服务器
 skin: true
@@ -253,10 +257,14 @@ totemBehavior: true
 # 适用于1.9.x及以上的服务器
 anvilRenameColor: true
 #  
-# Handling of launch command falldamage
+# /launch指令的掉落伤害
 # 适用于1.9.x及以上的服务器
 launchPad: true
 #  
 # 自定义死亡信息
 # 适用于1.7.x及以上的服务器
 deathMessages: true
+#  
+# 服务器连接相关
+# 适用于1.7.x及以上的服务器
+serverLinks: true
