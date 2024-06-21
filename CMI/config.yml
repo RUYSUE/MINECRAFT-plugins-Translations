@@ -137,7 +137,7 @@ Optimizations:
     # 启用后插件会检查玩家是否可以通过发送虚假的方块放置事件来影响盔甲架，同时检查是否有其他插件想要阻止该操作
     # 这可帮助最大限度降低玩家在无建造权限区域影响盔甲架的可能性
     CheckBlockPlace: false
-    Templates:
+    模板:
       # 启用后玩家需要具有cmi.command.armorstand.template.[templatename]权限才能使用已保存模板
       SpecificPermission: false
   AutoDownload:
@@ -149,6 +149,8 @@ Optimizations:
   ShowSkullOwner: true
   # 启用后，你可以通过右键蜂巢在动作栏中查看相关信息
   ShowBeeHiveInformation: true
+  # 启用后，通过右键饰纹陶罐可以在动作栏出显示内容物
+  ShowDecoratedPotInformation: true
   # 设置创建电梯时的标志，不区分大小写
   ElevatorIndicator: '[CMIElevator]'
   SignEdit:
@@ -169,9 +171,6 @@ Optimizations:
   # Do you want to record sell hand actions into file
   # 是否记录/sell hand记录
   SellLog: true
-  # 启用后具有相同名字但字母大小写不同的玩家会被拒绝加入服务器。如Zrips首先进入服务器，则诸如zRips的用户会被拒绝。
-  # 推荐保持启用
-  PreventDifferentCapitalizationNames: false
   # 启用后，当使用需要玩家名字的指令时，插件可通过名字的一部分进行匹配，如/cmi heal rips可治愈玩家Zrips
   # 对于名字复杂的玩家极为有效
   PartialPlayerName: false
@@ -833,11 +832,6 @@ Command:
       - login
       - register
   Spy:
-    # 重新登陆后，打开指令监视的延迟
-    # 这会防止某些人使用管理员账户登录，并在完成登陆前看到指令
-    # 维持与登陆插件输入密码的时间相同或更长、
-    # 这包括社交监视(? social spy)
-    DelayForTrigger: 60
     # 当因为安全/私人原因打开指令监视时，不会显示下述指令
     # 可通过cmi.command.commandspy.bypass权限绕过
     BlackListed:
@@ -1044,13 +1038,13 @@ Animations:
   DoubleClickDelay: 200
   # 玩家能够坐到椅子上的最大距离
   ChairRange: 4
-# 所有的伤害来源：kill, world_border, contact, entity_attack, entity_sweep_attack, projectile, suffocation, fall, fire, fire_tick, melting, lava, drowning, block_explosion, entity_explosion, void, lightning, suicide, starvation, poison, magic, wither, falling_block, thorns, dragon_breath, custom, fly_into_wall, hot_floor, cramming, dryout, freeze, sonic_boom
+# 所有的伤害来源：kill, world_border, contact, entity_attack, entity_sweep_attack, projectile, suffocation, fall, fire, fire_tick, melting, lava, drowning, block_explosion, entity_explosion, void, lightning, suicide, starvation, poison, magic, wither, falling_block, thorns, dragon_breath, custom, fly_into_wall, hot_floor, campfire, cramming, dryout, freeze, sonic_boom
 # 权限组成为:[permissionNode]:damageCause:multiplier]
 # 例如: nolavadamage:lava:0会阻止具有cmi.damagecontrol.nolavadamage权限的玩家受到岩浆伤害
 # 决定对应伤害类型对玩家造成的伤害，数值为负时会转而治疗玩家
 # 如果玩家具有多个作用于相同伤害的权限，最后一个权限会覆盖其他相同类型的权限
 DamageControl:
-- nowalldamage:fly_into_wall:1
+- 现在alldamage:fly_into_wall:1
 - lowermagmacubedamage:hot_floor:0.9
 Totem:
   # 启用后，即使玩家没有手持不死图腾，不死图腾也可以正常生效
@@ -1252,7 +1246,7 @@ Spawn:
   # 启用后会决定玩家死亡后重生的位置，否则只会在使用/cmi spawn时传送到此处
   # RespawnLocation代表你是否想将该处作为可能的玩家死亡后的重生点
   Main:
-    World: None
+    World: 无
     X: 0.0
     Y: 0.0
     Z: 0.0
@@ -1263,7 +1257,7 @@ Spawn:
   # 玩家首次登录服务器时，出生的位置
   FirstSpawn:
     Use: true
-    World: None
+    World: 无
     X: 0.0
     Y: 0.0
     Z: 0.0
@@ -1320,14 +1314,14 @@ Warps:
       Use: true
       Slot: 9
       Material: head:eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNmNjYmY5ODgzZGQzNTlmZGYyMzg1YzkwYTQ1OWQ3Mzc3NjUzODJlYzQxMTdiMDQ4OTVhYzRkYzRiNjBmYyJ9fX0=
-      Commands:
+      命令:
       - closeinv!
     InfoButton:
       # 是否使用详情按钮来显示额外信息
       Use: false
       Slot: 1
       Material: head:eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDZiYTYzMzQ0ZjQ5ZGQxYzRmNTQ4OGU5MjZiZjNkOWUyYjI5OTE2YTZjNTBkNjEwYmI0MGE1MjczZGM4YzgyIn19fQ==
-      Commands:
+      命令:
       - closeinv!
 DynamicViewRange:
   # 启用后会开启动态视距。这仍是测试性功能，可能导致CPU负载升高
@@ -1358,14 +1352,14 @@ WorldLimits:
   # 如果玩家具有cmi.worldlimit.god.bypass权限，则其上帝模式不会受到影响
   GodMode:
   - testWorld:False
-  # 防止特定实体由于以下原因在世界中生成. 所有可能的原因: NATURAL, JOCKEY, CHUNK_GEN, SPAWNER, EGG, SPAWNER_EGG, LIGHTNING, BUILD_SNOWMAN, BUILD_IRONGOLEM, BUILD_WITHER, VILLAGE_DEFENSE, VILLAGE_INVASION, BREEDING, SLIME_SPLIT, REINFORCEMENTS, NETHER_PORTAL, DISPENSE_EGG, INFECTION, CURED, OCELOT_BABY, SILVERFISH_BLOCK, MOUNT, TRAP, ENDER_PEARL, SHOULDER_ENTITY, DROWNED, SHEARED, EXPLOSION, RAID, PATROL, BEEHIVE, PIGLIN_ZOMBIFIED, SPELL, FROZEN, METAMORPHOSIS, DUPLICATION, COMMAND, CUSTOM, DEFAULT
+  # 防止特定实体由于以下原因在世界中生成. 所有可能的原因: NATURAL, JOCKEY, CHUNK_GEN, SPAWNER, EGG, SPAWNER_EGG, LIGHTNING, BUILD_SNOWMAN, BUILD_IRONGOLEM, BUILD_WITHER, VILLAGE_DEFENSE, VILLAGE_INVASION, BREEDING, SLIME_SPLIT, REINFORCEMENTS, NETHER_PORTAL, DISPENSE_EGG, INFECTION, CURED, OCELOT_BABY, SILVERFISH_BLOCK, MOUNT, TRAP, ENDER_PEARL, SHOULDER_ENTITY, DROWNED, SHEARED, EXPLOSION, RAID, PATROL, BEEHIVE, PIGLIN_ZOMBIFIED, SPELL, FROZEN, METAMORPHOSIS, DUPLICATION, COMMAND, ENCHANTMENT, CUSTOM, DEFAULT
   SpawnReasons:
     world:
-    - None
+    - 无
     world_nether:
-    - None
+    - 无
     world_the_end:
-    - None
+    - 无
 # 检查玩家名是否与上次登录时不同
 CheckForNameChange:
   # 检测为真时是否执行指令
@@ -1830,126 +1824,48 @@ Enchanting:
     # 这只对/enchant指令生效，而不是正常附魔
     Enabled: true
     MaxLevel:
-      vanish: 2
-      soul_speed: 3
-      veinminer: 4
-      ninja: 5
-      arrow_knockback: 2
-      haunting: 2
-      goliath: 6
-      loyalty: 3
-      feather_step: 1
-      caffeinated: 3
-      end_affinity: 4
-      finishing: 5
-      dig_speed: 5
-      wound: 7
-      sparks: 5
-      frost_walker: 2
-      swift_sneak: 3
-      poison_ivy: 2
-      channeling: 1
-      arcane_defence: 5
-      thorns: 3
-      rumble: 3
-      damage_arthropods: 5
-      ender_slayer: 6
-      silk_touch: 1
-      confusion: 4
-      replenish: 1
+      water_worker: 5
+      density: 3
       protection_projectile: 4
-      impaling: 5
-      arrow_damage: 5
-      lifesteal: 6
-      arrow_fire: 1
-      hunger_curse: 1
-      water_worker: 1
-      depth_strider: 3
-      misfortune_curse: 1
-      nether_prospector: 2
-      jumpshot: 3
-      metabolism: 2
-      ascend: 2
-      telekinesis: 1
-      permanence_curse: 1
-      rebounding: 3
-      lure: 3
-      wisdom: 3
-      boss_hunter: 8
-      piercing: 4
-      protection_explosions: 4
-      lumberjack: 6
-      sweeping_edge: 3
-      block_breather: 3
-      oxygen: 3
-      thor: 6
-      slipstream: 3
-      cubism: 7
-      transmission: 2
-      getaway: 2
-      introversion: 5
-      snipe: 4
-      shulker_harvest: 3
-      vitality: 1
-      first_strike: 5
-      protection_fall: 4
-      shura: 2
-      aura: 2
-      rapid: 6
-      protection_fire: 4
-      rocket_saver: 3
-      damage_all: 5
-      contagion: 2
-      tripleshot: 1
-      wyvern: 2
-      skull_puncture: 3
-      durability: 3
-      luck: 3
-      foraging: 4
-      breaklessness_curse: 1
-      one_for_all: 1
-      binding_curse: 1
-      loot_bonus_blocks: 3
-      warp_drive: 1
-      xray: 3
-      soul_storm: 2
-      stun: 3
-      frost: 3
-      damage_undead: 5
-      multishot: 1
+      frost_walker: 4
+      knockback: 1
+      swift_sneak: 1
+      damage_arthropods: 5
+      arrow_infinite: 4
       fire_aspect: 2
-      carve: 4
-      repairing: 3
-      flashbang: 6
-      quick_charge: 3
-      dynamite: 2
-      arrow_infinite: 1
-      criticals: 3
-      infernal_touch: 1
-      slaughter: 5
-      blackout: 4
-      nether_affinity: 4
-      vanishing_curse: 1
-      streamlining: 4
-      knockback: 2
-      fortitude: 2
-      protection_environmental: 4
+      thorns: 3
+      dig_speed: 3
+      channeling: 1
+      sweeping_edge: 3
       mending: 1
-      brightness: 5
-      soulbound: 1
-      charge: 2
-      bleed: 7
-      excavation: 5
+      soul_speed: 4
+      oxygen: 1
+      protection_fall: 1
+      lure: 3
+      protection_fire: 5
+      damage_undead: 2
+      loot_bonus_blocks: 1
+      arrow_fire: 4
+      protection_environmental: 1
+      quick_charge: 3
+      vanishing_curse: 3
       loot_bonus_mobs: 3
-      harmlessness_curse: 1
-      dexterity: 2
-      abrasion: 2
-      adrenaline: 3
-      escape: 2
-      thrive: 2
-      riptide: 3
-      stamina: 4
-      blast_mining: 3
+      multishot: 5
+      arrow_damage: 4
+      silk_touch: 3
+      impaling: 3
+      arrow_knockback: 5
+      protection_explosions: 4
+      durability: 1
+      binding_curse: 2
+      loyalty: 3
+      breach: 3
+      piercing: 3
+      luck: 2
+      riptide: 5
+      depth_strider: 5
+      damage_all: 3
+      wind_burst: 3
   # 启用后，玩家需要具有cmi.enchantments.[enchantname]权限来进行附魔
   RequireSpecificPermission: false
   # 启用后，只允许对物品添加有效的附魔
