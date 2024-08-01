@@ -1,5 +1,10 @@
 ChatFilter:
   Enabled: false
+  # 聊天过滤器的监视器优先级
+  # 重启服务器后生效
+  # 可用选项: LOWEST, LOW, NORMAL, HIGH, HIGHEST
+  # 默认: LOW
+  Priority: LOW
   Deny:
     ipBlock:
       Enabled: true
@@ -44,6 +49,11 @@ ChatFilter:
   DuplicatedMessagePrevention:
     # 启用后，插件会防止刷屏，可通过cmi.chatfilter.spambypass绕过
     Use: false
+    # 刷屏信息的监视器优先级
+    # 重启服务器后生效
+    # 可用选项: LOWEST, LOW, NORMAL, HIGH, HIGHEST
+    # 默认: LOW
+    Priority: LOW
     # 当信息有多少相似度时视为相同信息
     Percentage: 80
     # 发送相同/相似信息的间隔
@@ -54,6 +64,11 @@ ChatFilter:
     # 启用后，我们会根据一定标准来过滤带有多个大写字母的信息
     # 可通过cmi.chatfilter.capbypass绕过
     Filter: true
+    # 大写信息的监听器优先级
+    # 重启服务器后生效
+    # 可用选项: LOWEST, LOW, NORMAL, HIGH, HIGHEST
+    # 默认: LOW
+    Priority: MONITOR
     # 当字母小于多少个时略去检查
     # 比如":DDD"由2种字符与3个大写字母组成，表示其有75%的大写(?这两句前言不搭后语，真没法理解)
     IgnoreUnder: 6
