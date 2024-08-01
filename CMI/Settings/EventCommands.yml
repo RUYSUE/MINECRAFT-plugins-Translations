@@ -20,27 +20,27 @@
 # 注意！
 # 使用大量指令可能会导致服务器负载的提升，尝试在每个事件中使用尽量少的指令
 # 如果可能的话使用延迟将其分散，如"delay! 0.3"或其他相似的变量
-# 这会允许服务器赶上计算(?)，而非强迫其同时执行所有指令
+# 这会允许服务器完成执行（以防炸服），而非强迫其同时执行所有指令
 firstJoinServer:
   Enabled: false
   Commands:
-  - cmi msg [playerName] This is event command example!
-  - cmi actionbarmsg [playerName] This is event command example!
+  - cmi msg [playerName] !This is event command example!
+  - cmi msg [playerName] !Originates from sneakingSwapHandItems event!
 joinServer:
   Enabled: false
   Commands:
-  - cmi msg [playerName] This is event command example!
-  - cmi actionbarmsg [playerName] This is event command example!
+  - cmi msg [playerName] !This is event command example!
+  - cmi msg [playerName] !Originates from sneakingSwapHandItems event!
 quitServer:
   Enabled: false
   Commands:
-  - cmi msg [playerName] This is event command example!
-  - cmi actionbarmsg [playerName] This is event command example!
+  - cmi msg [playerName] !This is event command example!
+  - cmi msg [playerName] !Originates from sneakingSwapHandItems event!
 playerDeath:
   Enabled: false
   Commands:
-  - cmi msg [playerName] This is event command example!
-  - cmi actionbarmsg [playerName] This is event command example!
+  - cmi msg [playerName] !This is event command example!
+  - cmi msg [playerName] !Originates from sneakingSwapHandItems event!
   SourceCommands: []
 playerKillPlayer:
   # [sourceName] 玩家本名
@@ -54,98 +54,100 @@ playerKillPlayer:
   # 如果你使用专用指令，那么Commands部分会对被击杀的玩家执行，SourceCommands会对产生击杀的玩家执行
   Enabled: false
   Commands:
-  - cmi msg [playerName] This is event command example!
-  - cmi actionbarmsg [playerName] This is event command example!
+  - cmi msg [playerName] !This is event command example!
+  - cmi msg [playerName] !Originates from sneakingSwapHandItems event!
   SourceCommands: []
 playerRespawn:
   Enabled: false
   Commands:
-  - cmi msg [playerName] This is event command example!
-  - cmi actionbarmsg [playerName] This is event command example!
+  - cmi msg [playerName] !This is event command example!
+  - cmi msg [playerName] !Originates from sneakingSwapHandItems event!
 playerTeleport:
   Enabled: false
   Commands:
-  - cmi msg [playerName] This is event command example!
-  - cmi actionbarmsg [playerName] This is event command example!
+  - cmi msg [playerName] !This is event command example!
+  - cmi msg [playerName] !Originates from sneakingSwapHandItems event!
 bedLeave:
   Enabled: false
   Commands:
-  - cmi msg [playerName] This is event command example!
-  - cmi actionbarmsg [playerName] This is event command example!
+  - cmi msg [playerName] !This is event command example!
+  - cmi msg [playerName] !Originates from sneakingSwapHandItems event!
 bedEnter:
   Enabled: false
   Commands:
-  - cmi msg [playerName] This is event command example!
-  - cmi actionbarmsg [playerName] This is event command example!
+  - cmi msg [playerName] !This is event command example!
+  - cmi msg [playerName] !Originates from sneakingSwapHandItems event!
 playerWorldChange:
   Enabled: false
   Commands:
-  - cmi msg [playerName] This is event command example!
-  - cmi actionbarmsg [playerName] This is event command example!
+  - cmi msg [playerName] !This is event command example!
+  - cmi msg [playerName] !Originates from sneakingSwapHandItems event!
 playerPreWorldChange:
   Enabled: false
   Commands:
-  - cmi msg [playerName] This is event command example!
-  - cmi actionbarmsg [playerName] This is event command example!
+  - cmi msg [playerName] !This is event command example!
+  - cmi msg [playerName] !Originates from sneakingSwapHandItems event!
 playerGameModeChange:
   Enabled: false
   Commands:
-  - cmi msg [playerName] This is event command example!
-  - cmi actionbarmsg [playerName] This is event command example!
+  - cmi msg [playerName] !This is event command example!
+  - cmi msg [playerName] !Originates from sneakingSwapHandItems event!
 playerKick:
   Enabled: false
   Commands:
-  - cmi msg [playerName] This is event command example!
-  - cmi actionbarmsg [playerName] This is event command example!
+  - cmi msg [playerName] !This is event command example!
+  - cmi msg [playerName] !Originates from sneakingSwapHandItems event!
 playerBan:
   Enabled: false
   Commands:
-  - cmi msg [playerName] This is event command example!
-  - cmi actionbarmsg [playerName] This is event command example!
+  - cmi msg [playerName] !This is event command example!
+  - cmi msg [playerName] !Originates from sneakingSwapHandItems event!
 playerLevelChange:
   Enabled: false
   Commands:
-  - cmi msg [playerName] This is event command example!
-  - cmi actionbarmsg [playerName] This is event command example!
+  - cmi msg [playerName] !This is event command example!
+  - cmi msg [playerName] !Originates from sneakingSwapHandItems event!
 voidFall:
   Enabled: false
   Commands:
-  - cmi msg [playerName] This is event command example!
-  - cmi actionbarmsg [playerName] This is event command example!
+  - cmi msg [playerName] !This is event command example!
+  - cmi msg [playerName] !Originates from sneakingSwapHandItems event!
 elytraStartGlide:
   Enabled: false
   Commands:
-  - cmi msg [playerName] This is event command example!
-  - cmi actionbarmsg [playerName] This is event command example!
+  - cmi msg [playerName] !This is event command example!
+  - cmi msg [playerName] !Originates from sneakingSwapHandItems event!
 advancementDone:
-  # 使用[vaule]变量来插入成就标识
-  # 这会返回完成成就的路线，如配方、建造方块、绿宝石块。如果你想过滤特定成就，可以在指令中使用之(?)
+  # 使用[value]变量来插入进度标识
+  # 这回返回该进度的路径，如recipes/building_blocks/emerald_block。以防你想在指令中过滤特定的进度
   Enabled: false
   Commands:
-  - cmi msg [playerName] This is event command example!
-  - cmi actionbarmsg [playerName] This is event command example!
+  - cmi msg [playerName] !This is event command example!
+  - cmi msg [playerName] !Originates from sneakingSwapHandItems event!
 elytraEndGlide:
   Enabled: false
   Commands:
-  - cmi msg [playerName] This is event command example!
-  - cmi actionbarmsg [playerName] This is event command example!
+  - cmi msg [playerName] !This is event command example!
+  - cmi msg [playerName] !Originates from sneakingSwapHandItems event!
 sneakingSwapHandItems:
   Enabled: false
+  # 如果需要，可以取消交换物品的事件。只在对应事件监视器启用时生效
+  CancelEvent: false
   Commands:
-  - cmi msg [playerName] This is event command example!
-  - cmi actionbarmsg [playerName] This is event command example!
+  - cmi msg [playerName] !This is event command example!
+  - cmi msg [playerName] !Originates from sneakingSwapHandItems event!
 swapHandItems:
   Enabled: false
   Commands:
-  - cmi msg [playerName] This is event command example!
-  - cmi actionbarmsg [playerName] This is event command example!
+  - cmi msg [playerName] !This is event command example!
+  - cmi msg [playerName] !Originates from sneakingSwapHandItems event!
 pvpstart:
   Enabled: false
   Commands:
-  - cmi msg [playerName] This is event command example!
-  - cmi actionbarmsg [playerName] This is event command example!
+  - cmi msg [playerName] !This is event command example!
+  - cmi msg [playerName] !Originates from sneakingSwapHandItems event!
 pvpend:
   Enabled: false
   Commands:
-  - cmi msg [playerName] This is event command example!
-  - cmi actionbarmsg [playerName] This is event command example!
+  - cmi msg [playerName] !This is event command example!
+  - cmi msg [playerName] !Originates from sneakingSwapHandItems event!
