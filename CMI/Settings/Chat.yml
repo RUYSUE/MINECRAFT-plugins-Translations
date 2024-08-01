@@ -1,5 +1,5 @@
 Chat:
-  ModifyChatFormat: false
+  ModifyChatFormat:
     # 会尝试根据给定的格式来修改聊天
     Enabled: false
     # 聊天格式监视器的优先级
