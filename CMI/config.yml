@@ -831,6 +831,11 @@ Command:
       - tell
       - login
       - register
+    # 垃圾指令监视器的优先级
+    # 只有在重启服务器后才会生效
+    # 可用选项：LOWEST, LOW, NORMAL, HIGH, HIGHEST
+    # 默认：LOW
+    Priority: LOW
   Spy:
     # 当因为安全/私人原因打开指令监视时，不会显示下述指令
     # 可通过cmi.command.commandspy.bypass权限绕过
@@ -1245,15 +1250,12 @@ Spawn:
   IgnoredWorlds: []
   # 启用后会决定玩家死亡后重生的位置，否则只会在使用/cmi spawn时传送到此处
   # RespawnLocation代表你是否想将该处作为可能的玩家死亡后的重生点
+  # TeleportFrom将显示玩家应该从哪个世界传送到此出生点
   Main:
-    World: 无
-    X: 0.0
-    Y: 0.0
-    Z: 0.0
-    Pitch: 0.0
-    Yaw: 0.0
+    Location: ''
     RespawnLocation: false
     Rng: 0
+    TeleportFrom: []
   # 玩家首次登录服务器时，出生的位置
   FirstSpawn:
     Use: true
@@ -1716,6 +1718,7 @@ Jail:
     # 玩家被释放时执行的指令
     OnUnJail:
     - ''
+  # 如果要将基于CMI的命令列入白名单，请使用其全名
   WhiteListedCmds:
   - cmi msg
   - cmi reply
