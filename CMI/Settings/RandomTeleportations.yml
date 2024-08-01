@@ -7,35 +7,60 @@ RandomTeleportation:
   # 被随机传送排除的生物群系
   ExcludedBiomes:
   - Ocean
-  - Deep ocean
+  - Deep ocea
+  - Deep cold ocean
+  - Cold ocean
+  - Deep lukewarm ocean
+  - Lukewarm ocean
+  - Warm ocean
+  - River
   # 启用后会为所有检测到的世界添加默认随机传送设置
   # 禁用后，不会自动添加，但你可以在有需要时手动添加
   AutoGenerateWorlds: true
   Worlds:
+    # 该功能使用的世界名。以合适的名字添加另一个来为其启用随机传送
     world:
       Enabled: true
+      # 找到合适位置前尝试的次数。主要与检查的区块相关
+      # 设为0时，会使用该配置开头设置的默认MaxTries
       MaxTries: 0
       Range:
+        # 传送的最大范围，设为1000时，玩家会在指定中心的±1000格内传送
+        # 例如，中心的坐标(X, Z)为(2000, 3000)，MaxRange设为1500，则玩家会在(500, 1500)到(3500, 4500)间传送
         Max: 1000
+        # 如果最大范围设为1000，最小范围设为500，则玩家会在距传送点中心的-1000到-500格以及1000到500格之间传送
         Min: 500
       Center:
         X: 0
         Z: 0
+      # 玩家能够传送的地区的形状。如果你的地图是方形，请保持为为false
       Circle: false
+      # 启用该选项时，只会尝试将玩家传送至对应坐标的最高方块处，并忽略任何洞穴传送
+      # 当你将Ignore.Leaves设为true（如果有空间，尝试将玩家传送到树叶下方）时，会报错
+      SurfaceOnly: false
+      # 启用后，玩家能够从其他世界随机传送到特定的世界
+      FromAnotherWorld: true
+      # 启用后，玩家需要具有cmi.randomteleport.world权限来在该世界中随机传送
+      RequireWorldPermission: false
+      YLimits:
+        # 传送高度的检测。如果你想减少传送到地下，设置为63
+        # 更高的限制会提升检测的时间
+        Min: -64
+        Max: 320
       Ignore:
         Water: true
         Lava: true
         Leaves: true
         PowderSnow: false
+        # 随机传送时，应当忽略的地板材料
         Materials: []
+        # 随机传送时，应当忽略的生物群系
+        # 保持为空会将所有群系纳入传送范围
+        # 如果该列表为空，且ExcludedBiomes设定了群系，则使用ExcludedBiomes
         Biomes: []
+      # 随机传送时寻找的群系
+      # 如果该列表包含群系名，则忽略Ignore.Biomes的设置
       PreferredBiomes: []
-      SurfaceOnly: false
-      FromAnotherWorld: true
-      RequireWorldPermission: false
-      YLimits:
-        Min: -64
-        Max: 320
     world_nether:
       Enabled: true
       MaxTries: 0
@@ -46,6 +71,12 @@ RandomTeleportation:
         X: 0
         Z: 0
       Circle: false
+      SurfaceOnly: false
+      FromAnotherWorld: true
+      RequireWorldPermission: false
+      YLimits:
+        Min: 0
+        Max: 128
       Ignore:
         Water: true
         Lava: true
@@ -54,12 +85,6 @@ RandomTeleportation:
         Materials: []
         Biomes: []
       PreferredBiomes: []
-      SurfaceOnly: false
-      FromAnotherWorld: true
-      RequireWorldPermission: false
-      YLimits:
-        Min: 0
-        Max: 128
     world_the_end:
       Enabled: true
       MaxTries: 0
@@ -70,6 +95,12 @@ RandomTeleportation:
         X: 0
         Z: 0
       Circle: false
+      SurfaceOnly: false
+      FromAnotherWorld: true
+      RequireWorldPermission: false
+      YLimits:
+        Min: 0
+        Max: 256
       Ignore:
         Water: true
         Lava: true
@@ -78,9 +109,3 @@ RandomTeleportation:
         Materials: []
         Biomes: []
       PreferredBiomes: []
-      SurfaceOnly: false
-      FromAnotherWorld: true
-      RequireWorldPermission: false
-      YLimits:
-        Min: 0
-        Max: 256
