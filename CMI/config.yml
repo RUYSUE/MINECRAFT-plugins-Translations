@@ -818,7 +818,7 @@ Command:
   CommandFilter:
     Duplicate:
       # 启用后，插件会阻止玩家短时间输入过多相似的指令，可通过cmi.commandfilter.bypass权限绕过
-      使用: false
+      Use: false
       # 命令相似度达到多少时认为是相同指令
       Percentage: 80
       # 发送两次相同/相近指令时的间隔
