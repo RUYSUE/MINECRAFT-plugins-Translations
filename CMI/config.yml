@@ -137,7 +137,7 @@ Optimizations:
     # 启用后插件会检查玩家是否可以通过发送虚假的方块放置事件来影响盔甲架，同时检查是否有其他插件想要阻止该操作
     # 这可帮助最大限度降低玩家在无建造权限区域影响盔甲架的可能性
     CheckBlockPlace: false
-    模板:
+    Templates:
       # 启用后玩家需要具有cmi.command.armorstand.template.[templatename]权限才能使用已保存模板
       SpecificPermission: false
   AutoDownload:
@@ -168,7 +168,6 @@ Optimizations:
   LongDateFormat2: dd/MM/yy HH:mm:ss
   # 在背包界面等显示的时间格式 日/月/年
   ShortDateFormat: dd/MM/yy
-  # Do you want to record sell hand actions into file
   # 是否记录/sell hand记录
   SellLog: true
   # 启用后，当使用需要玩家名字的指令时，插件可通过名字的一部分进行匹配，如/cmi heal rips可治愈玩家Zrips
@@ -187,7 +186,7 @@ Optimizations:
   # 启用后，远程指令返回的信息将不会包含颜色代码
   CleanRconCommands: false
   # 当找不到对应指令时，根据相似比匹配可能的指令
-  # 例子：/cmi spawnmb与/cmi spawnmob有87.5%档相似性
+  # 例子：/cmi spawnmb与/cmi spawnmob有87.5%的相似性
   # 设为0以禁用
   SimilarCommandChecker: 75
   # 启用后当玩家输入错误的指令后，该指令不会执行
@@ -421,7 +420,7 @@ Optimizations:
       # 使用/list时是否按照升序排列玩家
       ASCOrder: true
   Multicraft:
-    # 启用后，会阻止multicraft服务器向控制台发送过多信息(?原文为spam)
+    # 启用后，会阻止multicraft服务器向控制台发送过多信息
     DisableList: false
 PlaytimeRewards:
   # 是否启用在线奖励
@@ -622,14 +621,14 @@ Afk:
   # 当玩家进入AFK状态时，自动执行下述指令
   # 支持特殊指令
   AutoAfkCmds:
-  - cmi broadcast !&6[playerDisplayName] &eis now AFK
+  - cmi broadcast !&6[playerDisplayName] &e现在处于AFK状态
   # 玩家通过输入/cmi afk进入AFK状态时自动执行的指令
   # 支持特殊指令
   ManualAfkCmds:
-  - cmi broadcast !&6[playerDisplayName] &eis now AFK
+  - cmi broadcast !&6[playerDisplayName] &e暂时离开了
   # 玩家离开AFK状态时自动执行的指令
   AfkLeaveCmds:
-  - cmi broadcast !&6[playerDisplayName] &eis no longer AFK
+  - cmi broadcast !&6[playerDisplayName] &e回来了
   # 玩家停止移动多久后踢出玩家
   # 这是在AutoAfkIn之外的一个计时，如果玩家手动进入AFK状态，他会在AutoAfkIn+AutoKickIn的时间后被踢出
   # 这除了用于踢出挂机玩家，在需要时还可以每x秒重复一次
@@ -644,7 +643,7 @@ Afk:
   # 玩家可被踢出时执行的指令
   # 如果玩家未被踢出(或指令未执行成功？)，则在RepeatingAutoKickInterval秒后再次尝试执行指令
   AutoKickCmds:
-  - cmi kick [playerName] &eYou have been kicked for idling more than [time]
+  - cmi kick [playerName] &e你因挂机超过[time]而被踢出
   # 在特定世界中玩家不会自动进入AFK状态
   DisabledWorlds:
   - oneTestWorld
@@ -712,7 +711,7 @@ Holograms:
     # 设置全息时从上向下还是从下向上
     placeUp: true`
 Votifier:
-  # 启用后会开启投票功能(需要NuVotifier)
+  # 启用后会开启投票功能
   CountVotes: true
   # 一个IP在过去24小时内最多投票的数目
   # 设为0以移除限制
@@ -831,7 +830,7 @@ Command:
       - tell
       - login
       - register
-    # 垃圾指令监视器的优先级
+    # 重复指令监视器的优先级
     # 只有在重启服务器后才会生效
     # 可用选项：LOWEST, LOW, NORMAL, HIGH, HIGHEST
     # 默认：LOW
@@ -859,8 +858,8 @@ Command:
     ExpiresIn: 30
     # 全体邮件会发送给过去x天登陆过的玩家
     mailAllDays: 7
-    # 为每位玩家保留信件的数量
-    # 数量达到限制时，最老的右键会被删除
+    # 为每位玩家保留邮件的数量
+    # 数量达到限制时，最老的邮件会被删除
     MaxMails: 50
 DisplayName:
   # 如果你使用第三方插件来修改玩家展示的名字，请禁用
@@ -874,7 +873,7 @@ DisplayName:
   # 如果你想要使用来自任意语言的字符，请使用[^\p{L}0-9\-\_]
   ValidNicknameRegex: '[^a-zA-Z0-9\-\_]'
 NickName:
-  # 阻止没有权限的玩家使用为下列昵称
+  # 阻止没有权限的玩家使用下列昵称
   # 使用小写
   # cmi.command.nick.bypassblacklist
   # 使用cmi.command.nick.bypassinuse来绕过对正在使用的名字/昵称的保护
@@ -1259,7 +1258,7 @@ Spawn:
   # 玩家首次登录服务器时，出生的位置
   FirstSpawn:
     Use: true
-    World: 无
+    World: none
     X: 0.0
     Y: 0.0
     Z: 0.0
@@ -1357,18 +1356,18 @@ WorldLimits:
   # 防止特定实体由于以下原因在世界中生成. 所有可能的原因: NATURAL, JOCKEY, CHUNK_GEN, SPAWNER, EGG, SPAWNER_EGG, LIGHTNING, BUILD_SNOWMAN, BUILD_IRONGOLEM, BUILD_WITHER, VILLAGE_DEFENSE, VILLAGE_INVASION, BREEDING, SLIME_SPLIT, REINFORCEMENTS, NETHER_PORTAL, DISPENSE_EGG, INFECTION, CURED, OCELOT_BABY, SILVERFISH_BLOCK, MOUNT, TRAP, ENDER_PEARL, SHOULDER_ENTITY, DROWNED, SHEARED, EXPLOSION, RAID, PATROL, BEEHIVE, PIGLIN_ZOMBIFIED, SPELL, FROZEN, METAMORPHOSIS, DUPLICATION, COMMAND, ENCHANTMENT, CUSTOM, DEFAULT
   SpawnReasons:
     world:
-    - 无
+    - none
     world_nether:
-    - 无
+    - none
     world_the_end:
-    - 无
+    - none
 # 检查玩家名是否与上次登录时不同
 CheckForNameChange:
   # 检测为真时是否执行指令
   PerformCommandsOnNewName: false
   # 玩家使用新名字登录游戏时执行的指令
   NameChangeCommands:
-  - 'asConsole! cmi broadcast !&2[oldname] logged in with new name: [newname]'
+  - 'asConsole! cmi broadcast !&2[oldname]以新名字[newname]登录了游戏'
 inv:
   # 是否在玩家死亡时保存玩家的背包
   SaveOnDeath: false
