@@ -1,9 +1,14 @@
 Chat:
-  # 会尝试根据给定的格式来修改聊天
   ModifyChatFormat: false
-  # 启用后，常规与私人信息(除了清洁信息clean messages)会在将鼠标放上去时显示额外信息(支持PAPI），同时可以点击来快速回复
-  # 要改变额外信息，请访问对应本地化文件的Chat部分
-  ClickHoverMessages: true
+    # 会尝试根据给定的格式来修改聊天
+    Enabled: false
+    # 聊天格式监视器的优先级
+    # 只有在重启服务器后才会生效。 可用选项: LOWEST, LOW, NORMAL, HIGH, HIGHEST
+    # 默认: NORMAL
+    Priority: NORMAL
+    # 启用后，常规与私人信息(除了清洁信息clean messages)会在将鼠标放上去时显示额外信息(支持PAPI），同时可以点击来快速回复
+    # 要改变额外信息，请访问对应本地化文件的Chat部分
+    ClickHoverMessages: true
   DiscordSRV:
     # 是否启用对DiscordSRV的支持
     Enabled: true
@@ -128,10 +133,16 @@ Chat:
     '2': '{message}'
     '3': '{message}'
   Colors:
-    # 启用后，会除去所有公共信息的颜色代码并允许使用对应权限着色(all public messages will be filtered from color codes and will allow to colorize them with appropriate permission node)
-    # cmi.colors.publicmessage.[colorName]
-    # 所有颜色: 黑(&0), 深蓝(&1), 深绿(&2), 深青(&3), 深红(&4), 深紫(&5), 金(&6), 灰(&7), 深灰(&8), 蓝(&9), 绿(&a), 青(&b), 红(&c), 淡紫(&d), 黄(&e), 白(&f), 魔法(&k), 加粗(&l), 删除线(&m), 下划线(&n), 斜体(&o), 重置(&r)
-    PublicMessage: true
+
+    PublicMessage:
+      # 启用后，会除去所有公共信息的颜色代码并允许使用对应权限着色(all public messages will be filtered from color codes and will allow to colorize them with appropriate permission node)
+      # cmi.colors.publicmessage.[colorName]
+      # 所有颜色: 黑(&0), 深蓝(&1), 深绿(&2), 深青(&3), 深红(&4), 深紫(&5), 金(&6), 灰(&7), 深灰(&8), 蓝(&9), 绿(&a), 青(&b), 红(&c), 淡紫(&d), 黄(&e), 白(&f), 魔法(&k), 加粗(&l), 删除线(&m), 下划线(&n), 斜体(&o), 重置(&r)
+      Enabled: true
+      # 消息颜色监听器的优先级
+      # 只有在重启服务器后才会生效。可用选项: LOWEST, LOW, NORMAL, HIGH, HIGHEST
+      # 默认: NORMAL
+      Priority: NORMAL
     PrivateMessage: true
     # 启用后，会除去/me中的颜色代码并允许使用对应权限着色(/me messages will be filtered from color codes and will allow to colorize them with appropriate permission node)
     # cmi.colors.me.[colorName]
@@ -190,6 +201,11 @@ ChatBubble:
   # 是否对公共聊天启用聊天气泡
   # 每个玩家都可以使用/options独立进行开关
   PublicMessages: true
+  # 聊天气泡监听器的优先级
+  # 只有在重启服务器后才会生效
+  # 可用选项: LOWEST, LOW, NORMAL, HIGH, HIGHEST, MONITOR
+  # 默认: MONITOR
+  Priority: MONITOR
   # 聊天气泡高度
   Offset: 2.5
   # 聊天气泡基础的持续时间
