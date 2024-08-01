@@ -1,23 +1,23 @@
 <AutoPage>
-&6Player Rules:
-&61. &eNo Griefing
-&62. &eNo Spamming
-&63. &eNo Advertising
-&64. &eNo Cursing/No Constant Cursing
-&65. &eNo Trolling/Flaming
-&66. &eNo Banned Items(Tekkit Rule)
-&67. &eNo Asking for OP, Ranks, or Items
-&68. &eRespect all Players
-&69. &eObey Staff There the Law
-&610. &eNo Racist or Sexist Remarks.
-&611. &eNo Mods/Hacks
-&612. &eNo Full Caps Messages
-&614. &eNo 1x1 Towers
-&613. &eNo Builds Near Spawn
+&6玩家守则:
+&61. &e不得恶意破坏
+&62. &e不得刷屏
+&63. &e不打广告
+&64. &e不咒骂他人
+&65. &e不挑起争端与人身攻击
+&66. &不使用违禁物品(Tekkit Rule)
+&67. &e不当赛博乞丐
+&68. &e尊重玩家
+&69. &e遵守法律
+&610. &e不种族歧视及性别歧视
+&611. &e不作弊
+&612. &e不使用全大写信息
+&614. &e不 1x1 垫高
+&613. &e不在主城附近建筑
 <NextPage>
 &6Mod/Admin Rules:
-&61. Be Responsible with the privileges you are given as a Builder/Mod
-&62. Do not spawn blocks or items for other players
-&63. When Trading, only buy and sell legit items
-&64. Only help build for other players using legit items and blocks
-&65. No Power Abuse
+&61. 为作为构建者/修改者所获得的特权负责
+&62. 不随便给与其他玩家方块/物品
+&63. 交易时，只买卖合法物品
+&64. 只使用合法物品/方块帮助其他玩家建筑
+&65. 不滥权
