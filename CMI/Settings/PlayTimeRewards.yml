@@ -1,73 +1,73 @@
 hourly1:
-  DisplayName: "&7Hourly reward"
+  DisplayName: "&7每小时奖励"
   AutoClaim: true
   Description:
-  - "&2Get reward for every hour you are online"
-  - "&2Free heal and 20 bucks into your pocket"
+  - "&2每在线1小时即可领取1次"
+  - "&2可获得免费治疗与20金币"
   PayEvery: 3600
   Commands:
   - asConsole! cmi heal [playerName] -s
   - asConsole! cmi money give [playerName] 20
 daily1:
-  DisplayName: "&7Daily reward"
+  DisplayName: "&7每日奖励"
   AutoClaim: true
   Description:
-  - "&2Get reward for every 24 hours of playtime"
-  - "&22000 bucks into your pocket!"
+  - "&2每游玩24小时即可领取1次"
+  - "&2可获得2000金币!"
   PayEvery: 86400
   Commands:
   - asConsole! cmi money give [playerName] 2000
 1hour:
-  DisplayName: "&fOne hour reward"
+  DisplayName: "&f1小时奖励"
   AutoClaim: false
   Description:
-  - "&2Get reward for 1 hour you have been online"
-  - "&2500 bucks into your pocket!"
+  - "&2在线1小时领取"
+  - "&2可获得500金币!"
   PayFor: 3600
   Commands:
   - asConsole! cmi money give [playerName] 500
 6hour:
-  DisplayName: "&f6 hour reward"
+  DisplayName: "&f6小时奖励"
   AutoClaim: false
   Description:
-  - "&2Get reward for 6 hour's you have been online"
-  - "&22 000 bucks into your pocket!"
+  - "&2在线6小时领取"
+  - "&2可获得2000金币!"
   PayFor: 21600
   Commands:
   - asConsole! cmi money give [playerName] 2000
 12hour:
-  DisplayName: "&f12 hour reward"
+  DisplayName: "&f12小时奖励"
   AutoClaim: false
   Description:
-  - "&2Get reward for 12 hour's you have been online"
-  - "&25 000 bucks into your pocket!"
+  - "&2在线12小时领取"
+  - "&2可获得5000金币!"
   PayFor: 43200
   Commands:
   - asConsole! cmi money give [playerName] 5000
 24hour:
-  DisplayName: "&f24 hour reward"
+  DisplayName: "&f24小时奖励"
   AutoClaim: false
   Description:
-  - "&2Get reward for 24 hour's you have been online"
-  - "&215 000 bucks into your pocket!"
+  - "&2在线1小时领取"
+  - "&2可获得15000金币!"
   PayFor: 86400
   Commands:
   - asConsole! cmi money give [playerName] 15000
 7days:
-  DisplayName: "&f7 day reward"
+  DisplayName: "&f7天奖励"
   AutoClaim: false
   Description:
-  - "&2Get reward for 7 days you have been online"
-  - "&250 000 bucks into your pocket!"
+  - "&2在线7天领取"
+  - "&2可获得50000金币!"
   PayFor: 604800
   Commands:
   - asConsole! cmi money give [playerName] 50000
 30days:
-  DisplayName: "&f30 day reward"
+  DisplayName: "&f30天奖励"
   AutoClaim: false
   Description:
-  - "&2Get reward for 30 days you have been online"
-  - "&2500 000 bucks into your pocket!"
+  - "&2在线30天领取"
+  - "&2可获得500000金币!"
   PayFor: 2592000
   Commands:
   - asConsole! cmi money give [playerName] 500000
