@@ -4,25 +4,25 @@
 #> https://wiki.traincarts.net/p/BKCommonLib/Localization
 commands:
   world repair:
-    description: Repairs an unloaded world
+    description: 修复未加载的世界
     usage: /world repair [world]
   world setendportal:
-    description: Sets the ender portal destination for a world
+    description: 设置末地传送门的传送地点
     usage: |
       /world setendportal [portal/world]
-      /world setendportal    - Reset to default
+      /world setendportal    - 恢复默认
   world forcedrespawn:
-    description: Toggles forced world respawn on or off
+    description: 开关强制世界重生
     usage: |
       /world forcedrespawn [on/off]
       /world forcedrespawn [on/off] [world]
   world pvp:
-    description: Toggles PVP on or off
+    description: 开关PVP
     usage: |
       /world pvp [on/off]
       /world pvp [on/off] [world]
   world inventory:
-    description: Changes world inventory settings
+    description: 修改世界背包设置
     usage: |
       /world inventory enable
       /world inventory enable [world]
@@ -31,51 +31,51 @@ commands:
       /world inventory split [world...]
       /world inventory merge [world1] [world...]
   world difficulty:
-    description: Sets the difficulty of a world
+    description: 设置世界难度
     usage: |
       /world difficulty [mode]
       /world difficulty [mode] [world]
       /world difficulty hard
       /world difficulty normal world3
   world delete:
-    description: Deletes an unloaded world
+    description: 删除未加载的世界
     usage: /world delete [world]
   world time:
-    description: Sets the time of a world
+    description: 设置世界时间
     usage: |
       /world time [time]
       /world time [time] [world]
       /world time always 12:45
       /world time night world1
   world copy:
-    description: Copies a world
+    description: 复制世界
     usage: /world copy [world_from] [world_to]
   world saving:
-    description: Turns world saving on or off
+    description: 开关世界保存
     usage: |
       /world saving [enable/disable]
       /world saving [enable/disable] [world]
       /world saving off
       /world saving enable world2
   world rememberlastpos:
-    description: Toggles last-position memory on or off
+    description: 开关记录最后位置
     usage: |
       /world rememberlastpos [on/off]
       /world rememberlastpos [on/off] [world]
   world setspawn:
-    description: Sets the spawn point of the world to your position
+    description: 设置你的位置为世界重生点
     usage: |
-      /world setspawn - set spawn of current world
-      /world setspawn [worldname] - set spawn of a world
+      /world setspawn - 设置当前世界的重生点
+      /world setspawn [worldname] - 设置特定世界的重生点
   world:
-    description: Commands to manage your worlds
+    description: 世界管理指令
     usage: |
-      Use /help world [subcommand] for more information
-      /world info - Show world information
-      /world list - List all worlds
-      /world load - Load an existing world
-      /world unload - Unload a loaded world
-      /world save - Save a loaded world
+      Use /help world [subcommand] 获得更多信息
+      /world info - 展示世界信息
+      /world list - 列出世界列表
+      /world load - 加载已有世界
+      /world unload - 卸载已加载世界
+      /world save - 保存已加载世界
       /world create - Create a new world
       /world listgenerators - List world generators
       /world setspawn - Set the spawn point of a world
