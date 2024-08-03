@@ -1,28 +1,28 @@
-#> Below are the localization nodes set for plugin 'My_Worlds'.
-#> For colors, use the & character followed up by 0 - F
-#> Need help with this file? Please visit:
-#> https://wiki.traincarts.net/p/BKCommonLib/Localization
+#> 下方是插件'My_Worlds'的本地化内容
+#> 要使用颜色，使用"&"与"0" - "F"的组合
+#> 需要该文件的帮助？请访问：
+#> https://wiki.traincarts.net/p/MyWorlds/Localization
 commands:
   world repair:
-    description: Repairs an unloaded world
+    description: 修复未加载的世界
     usage: /world repair [world]
   world setendportal:
-    description: Sets the ender portal destination for a world
+    description: 设置末地传送门目标
     usage: |
       /world setendportal [portal/world]
-      /world setendportal    - Reset to default
+      /world setendportal    - 恢复默认
   world forcedrespawn:
-    description: Toggles forced world respawn on or off
+    description: 开关强制世界重生
     usage: |
       /world forcedrespawn [on/off]
       /world forcedrespawn [on/off] [world]
   world pvp:
-    description: Toggles PVP on or off
+    description: 开关PVP
     usage: |
       /world pvp [on/off]
       /world pvp [on/off] [world]
   world inventory:
-    description: Changes world inventory settings
+    description: 修改世界背包设置
     usage: |
       /world inventory enable
       /world inventory enable [world]
@@ -31,152 +31,152 @@ commands:
       /world inventory split [world...]
       /world inventory merge [world1] [world...]
   world difficulty:
-    description: Sets the difficulty of a world
+    description: 设置世界难度
     usage: |
       /world difficulty [mode]
       /world difficulty [mode] [world]
       /world difficulty hard
       /world difficulty normal world3
   world delete:
-    description: Deletes an unloaded world
+    description: 删除未加载的世界
     usage: /world delete [world]
   world time:
-    description: Sets the time of a world
+    description: 设置世界时间
     usage: |
       /world time [time]
       /world time [time] [world]
       /world time always 12:45
       /world time night world1
   world copy:
-    description: Copies a world
+    description: 复制世界
     usage: /world copy [world_from] [world_to]
   world saving:
-    description: Turns world saving on or off
+    description: 开关世界保存
     usage: |
       /world saving [enable/disable]
       /world saving [enable/disable] [world]
       /world saving off
       /world saving enable world2
   world rememberlastpos:
-    description: Toggles last-position memory on or off
+    description: 开关记录最后位置
     usage: |
       /world rememberlastpos [on/off]
       /world rememberlastpos [on/off] [world]
   world setspawn:
-    description: Sets the spawn point of the world to your position
+    description: 设置你的位置为世界重生点
     usage: |
-      /world setspawn - set spawn of current world
-      /world setspawn [worldname] - set spawn of a world
+      /world setspawn - 设置当前世界的重生点
+      /world setspawn [worldname] - 设置特定世界的重生点
   world:
-    description: Commands to manage your worlds
+    description: 世界管理指令
     usage: |
-      Use /help world [subcommand] for more information
-      /world info - Show world information
-      /world list - List all worlds
-      /world load - Load an existing world
-      /world unload - Unload a loaded world
-      /world save - Save a loaded world
-      /world create - Create a new world
-      /world listgenerators - List world generators
-      /world setspawn - Set the spawn point of a world
-      /world spawn - Teleport to world spawn
-      /world time - Set the time of a world
-      /world weather - Set the weather of a world
-      /world setnetherportal - Set nether portal destination
-      /world setendportal - Set ender portal destination
-      /world gamemode - Set the game mode of a world
-      /world hunger - Toggle hunger on or off
-      /world difficulty - Set the difficulty of a world
-      /world pvp - Toggle PVP mode on/off
-      /world allowspawn - Allow mobs to spawn
-      /world denyspawn - Deny mobs from spawning
-      /world inventory - Manage world inventories
-      /world saving - Toggle world saving on/off
-      /world spawnloaded - Toggle spawn loaded on/off
-      /world forcedrespawn - Toggle forced respawn on/off
-      /world bedrespawn - Toggle bed respawns on/off
-      /world rememberlastpos - Toggles last-position memory on/off
-      /world evacuate - Evacuate all players of a world
-      /world delete - Delete a world permanently
-      /world copy - Copy a world to a new name
-      /world repair - Repair a world
-      /world advancements - Enable/disable awarding advancements on a world
+      Use /help world [subcommand] 获得更多信息
+      /world info - 展示世界信息
+      /world list - 列出世界列表
+      /world load - 加载已有世界
+      /world unload - 卸载已加载世界
+      /world save - 保存已加载世界
+      /world create - 新建世界
+      /world listgenerators - 列出世界创建器
+      /world setspawn - 设置世界重生点
+      /world spawn - 传送至重生点
+      /world time - 设置世界时间
+      /world weather - 设置世界天气
+      /world setnetherportal - 设置下界传送门目标
+      /world setendportal - 设置末地传送门目标
+      /world gamemode - 设置世界游戏模式
+      /world hunger - 开关玩家饥饿
+      /world difficulty - 设置世界难度
+      /world pvp - 开关PVP
+      /world allowspawn - 允许生成生物
+      /world denyspawn - 禁止生成生物
+      /world inventory - 管理世界背包
+      /world saving - 开关世界保存
+      /world spawnloaded - 开关重生点加载
+      /world forcedrespawn - 开关强制重生
+      /world bedrespawn - 开关重生至床
+      /world rememberlastpos - 开关记录最后位置
+      /world evacuate - 将玩家从世界驱逐
+      /world delete - 永远删除世界
+      /world copy - 复制世界
+      /world repair - 修复世界
+      /world advancements - 启用/禁用成就获取
   world denyspawn:
-    description: Denies certain mobs from spawning
+    description: 阻止特定生物生成
     usage: |
       /world denyspawn [mob]
       /world denyspawn [mob] [world]
       /world denyspawn animal
       /world denyspawn creeper world2
   world save:
-    description: Save a world
+    description: 保存世界
     usage: |
-      /world save - Save the world you are in
-      /world save [worldname] - Save worldname
-      /world save [all/*] - Save all worlds
+      /world save - 保存当前世界
+      /world save [worldname] - 保存特定世界
+      /world save [all/*] - 保存所有世界
   world spawn:
-    description: Teleports you to the world spawn
+    description: 传送至世界重生点
     usage: |
-      /world spawn - Teleport to current world spawn
-      /world spawn [world] - Teleport to world spawn
+      /world spawn - 传送至当前世界重生点
+      /world spawn [world] - 传送至特定世界重生点
   world advancements:
-    description: Enables or disables player getting advancements on the world
+    description: 启用/禁用成就获取
     usage: |
-      /world advancements [enable/disable/silent] - Enable/disable/no chat
+      /world advancements [enable/disable/silent] - 启用/禁用/不提醒
   world load:
-    description: Loads a world
+    description: 加载世界
     usage: /world load [worldname]
   world bedrespawn:
-    description: Toggles respawning at bed on or off
+    description: 开关重生至床
     usage: |
       /world bedrespawn [on/off]
       /world bedrespawn [on/off] [world]
   world hunger:
-    description: Toggle world hunger on or off
+    description: 开关玩家是否饥饿
     usage: /world hunger [true/false]
   world weather:
-    description: Sets the weather of a world
+    description: 设置世界天气
     usage: |
       /world weather [state]
       /world weather [state] [world]
       /world weather always raining
       /world weather sunny world2
   world spawnloaded:
-    description: Toggles if the world spawn is kept loaded
+    description: 开关是否保持世界重生点加载
     usage: |
       /world spawnloaded [enable/disable]
       /world spawnloaded [enable/disable] [world]
   world giveportal:
-    description: Gives you a stack of portal blocks for building structures
+    description: 给你一堆用于建造结构的传送门方块
     usage: |
-      /world giveportal - Give nether portal block
-      /world giveportal nether - give nether portal block
-      /world giveportal end - give end portal block
+      /world giveportal - 给予下界传送门方块
+      /world giveportal nether - 给予下界传送门方块
+      /world giveportal end - 给予末地传送门方块
   world setnetherportal:
-    description: Sets the nether portal destination for a world
+    description: 设置下界传送门目标
     usage: |
       /world setnetherportal [portal/world]
-      /world setnetherportal    - Reset to default
+      /world setnetherportal    - 恢复
   world info:
-    description: Shows detailed information of a world
+    description: 展示世界详细信息
     usage: |
       /world info
       /world info [worldname]
   world listgenerators:
-    description: List all world generators
+    description: 列出所有世界生成器
     usage: /world listgenerators
   world allowspawn:
-    description: Allows certain mobs to spawn
+    description: 允许特定生物生成
     usage: |
       /world allowspawn [mob]
       /world allowspawn [mob] [world]
       /world allowspawn animal
       /world allowspawn creeper world2
   tpp:
-    description: Cross-world teleportation commands
-    usage: /tpp [Portalname/Worldname] - Teleport to a Portal or World
+    description: 跨世界传送
+    usage: /tpp [Portalname/Worldname] - 传送至一个传送门或世界
   world gamemode:
-    description: Sets the game mode of a world
+    description: 设置世界游戏模式
     usage: |
       /world gamemode [mode]
       /world gamemode [mode] [world]
@@ -185,14 +185,14 @@ commands:
       /world gamemode spectator
       /world gamemode survival world3
   world showcredits:
-    description: Enables showing the end-game credits a second time
+    description: 允许在穿过末地池后再次阅读《终末之诗》与鸣谢
     usage: |
-      /world showcredits - Enable for self
+      /world showcredits - 为自己启用
   world unload:
-    description: Unloads a world
+    description: 卸载世界
     usage: /world unload [worldname]
   world create:
-    description: Create a new world
+    description: 创建世界
     usage: |
       /world create [world]_[env]:[gen]:[genarg] [seed]
       /world create NormalWorld1 SomeSeed
@@ -200,87 +200,85 @@ commands:
       /world create world3:Plots:64 -45245253
       /world create someworld_the_end
   world list:
-    description: Lists all the worlds of the server
+    description: 列出所有世界
     usage: /world list
   world rejoin:
-    description: Teleports you or players specified to the last world and position of
-      a world group
+    description: 将你或一个玩家传送至其所在最后的世界或世界组的位置
     usage: |
-      /world rejoin [world] - Rejoins the world, or a linked world of world
+      /world rejoin [world] - 重新加入世界或与之链接的世界
   world evacuate:
-    description: Clears a world of players
+    description: 将玩家从世界驱逐
     usage: |
       /world evacuate
       /world evacuate [world]
 command:
-  nopermission: &4You do not have permission to use this command!
-  unknown: '&cUnknown command: %0%'
-  help: &cFor command help, use /help my_worlds
+  nopermission: &4你没有权限执行该指令
+  unknown: '&c未知指令: %0%'
+  help: &c输入 /help my_worlds 来获取帮助
   lastposition:
     tp:
-      success: &eTeleporting to last position of player '%0%' on world '%1%'!
-      nevervisited: &cPlayer %0% never visited world %1%!
-      same: &eYou are already in this world
+      success: &e正在传送至玩家 '%0%' 在世界 '%1%' 中最后的位置
+      nevervisited: &c玩家 %0% 尚未造访过 %1%
+      same: &e你已位于该世界
   rejoin:
-    other: &aMade player '%0%' rejoin world group of '%1%'!
+    other: &a使玩家 '%0%' 重新加入了世界组 '%1%'
 world:
-  enter: &aYou teleported to world '%0%'!
-  noaccess: &4You are not allowed to enter this world!
-  nochataccess: &4You are not allowed to use the chat in this world!
-  notfound: &cWorld not found!
-  notloaded: &eWorld '%0%' is not loaded!
-  nouse: &cYou are not allowed to use this in this world!
-  nobuild: &cYou are not allowed to place blocks in this world!
-  nobreak: &cYou are not allowed to break blocks in this world!
-  full: &cWorld %0% is full!
-  joinremoved: &cThe world you were last on no longer exists!
+  enter: &a你传送到了世界 '%0%'
+  noaccess: &4不允许你访问该世界
+  nochataccess: &4不允许你在该世界发言
+  notfound: &c未找到世界
+  notloaded: &e世界 '%0%' 尚未加载
+  nouse: &c不允许你在该世界使用这个
+  nobuild: &c不允许你在该世界放置方块
+  nobreak: &c不允许你在该世界破坏方块
+  full: &c世界 %0% 已满
+  joinremoved: &c你最后身处的世界已不存在
   inventory:
     after_activation: |-
-      &aUse &f/world inventory split&a and &f/world inventory merge&a to give worlds their own inventory or combine them again
-      &aIf you want to go back to a single vanilla inventory for all, use &f/world inventory migrate deactivate
+      &a使用 &f/world inventory split&a 和 &f/world inventory merge&a 来使世界使用独立背包或相通背包
+      &a如果你想用回单一的原版背包, 使用 &f/world inventory migrate deactivate
 portal:
-  enter: &aYou teleported to '%0%'!
-  notfound: &cPortal '%0%' was not found!
-  nodestination: &eThis portal has no destination!
-  noaccess: &eYou are not allowed to enter this portal!
-  nobuildperm: &4You do not have permission to create new portals!
+  enter: &a你传送到了 '%0%'
+  notfound: &c传送门 '%0%' 未找到
+  nodestination: &e该传送门无目标
+  noaccess: &e不允许你进入该传送门
+  nobuildperm: &4你无权创建新传送门
   create:
-    to: &aYou created a new portal to &f%0%&a!
-    missing: &eThe destination portal still has to be placed
-    end: &aYou created a new destination portal!
-    rejoin: '&aThis is a rejoin portal: players will be sent to the last position they
-      were at, if known'
-  removed: &cYou removed portal &f%0%&c!
-  preparing: &eThe other portal is being prepared (this can take a while...)
+    to: &a你创建了通向 &f%0%&a 的新传送门
+    missing: &e仍需放置目标传送门
+    end: &a你创建了新的目标传送门
+    rejoin: '&a这是一个重返传送门: 玩家会被传送至其所处的最后位置（如果已知）'
+  removed: &c你移除了传送门 &f%0%&c!
+  preparing: &e正在准备另一个传送门 (可能需要等一会...)
   link:
-    unavailable: &eThe other end of this portal is missing, and you cannot create it
+    unavailable: &e该传送门缺少另一端，您无法创建
 papi:
   weather:
-    clear: clear
-    desert_rain: humid
-    desert_storm: windy
-    rain: raining
-    snow: snowing
-    storm: storming
-    snow_storm: snow storm
+    clear: 晴天
+    desert_rain: 潮湿
+    desert_storm: 刮风
+    rain: 降雨
+    snow: 降雪
+    storm: 雷暴
+    snow_storm: 暴风雪
   time:
-    forever: forever
+    forever: 永远
     seconds:
-      default: '%0% seconds'
-      '1': 1 second
+      default: '%0% 秒'
+      '1': 1 秒
     minutes:
-      default: '%0% minutes'
-      '1': 1 minute
+      default: '%0% 分钟'
+      '1': 1 分钟
     hours:
-      default: '%0% hours'
-      '1': 1 hour
+      default: '%0% 小时'
+      '1': 1 小时
     days:
-      default: '%0% days'
-      '1': 1 day
+      default: '%0% 天'
+      '1': 1 天
   worldtype:
-    normal: Overworld
-    the_end: The End
-    the_nether: The Nether
-    flat_normal: Flat Overworld
-    flat_end: Flat End
-    flat_nether: Flat Nether
+    normal: 主世界
+    the_end: 末地
+    the_nether: 下界
+    flat_normal: 主世界(平坦)
+    flat_end: 末地(平坦)
+    flat_nether: 下界(平坦)
