@@ -1,92 +1,92 @@
-# Main server folder spigot.yml and check that stats saving prevention its set to false stats->disable-saving: false
-# Player will get default rank group depending on set permission node cmi.rank.[groupName]
-# Not enabled ranks will be ignored
-# DisplayName section is optional and it will be used to represent rank ingame. This is NOT defining required permission node and you still need to use node name to rankup to this rank
-# DefaultRank section defines if player can be assigned to this rank if he dont have any. There can be more than one default rank, and depending on permision node, first rank will be assigned to that player when needed
-# PermissionRequirement section defines list of permissions player should have to rankup to that rank. Optional - For each permission node you can add its name which will be shown in /cmi rankinfo with : In example cmi.command.fly:Fly
-# McMMORequirement section defines list of McMMO skills and levels player should have to rankup to that rank.
-# AureliumRequirement section defines list of Aurelium skills and levels player should have to rankup to that rank.
-# AuraSkillsRequirement section defines list of Aura skills and levels player should have to rankup to that rank.
-# McMMO and Aurelium sections can use skill name as Power to indicate total sum of all skills
-# JobsRequirement section defines list of Jobs and levels player should have to rankup to that rank.
-# ItemRequirement section defines list of items player should have to rankup to that rank. Items will be taken after succesfull rankup from players inventory.
-# AutoRankup section defines if player will be auto ranked to this rank if possible. Keep in mind that if there is more than one legit rankup, player will have to confirm to which rank he wants to rankup
-# RankupConfirmation section defines if you want to add additional confirmation for this rankup. Usefull to avoid unintentional rankups. Keep in mind that autorankup will request confirmation for rankup to this rank even if there is only one legit rankup option
-# NextRanks is list of possible next ranks from this rank. Can be one or can be dozens. Keep in mind that each rank requirements will be shown in chat and it can clutter quite allot if there is bunch of them at once
-# MoneyCost defines how much player will have to pay to rankup to this rank
-# ExpCost defines how much player will have to pay in exp to rankup to this rank
-# Votes defines how much player will need to have votes to rankup to this rank
-# Commands is list which will be performed on rankup. Can be additional actions, like message broadcast or anything alse
-# Main section is StatsRequirements and it can have allot of different values in it:
-#   In general format goes like this [mainStat](:optionalSubStat):amount
-#   In example MonsterKills:100 will require from player to have 100 monster kills while MonsterKills:Zombie:100 will require to have 100 zombie kills. Both of them can be used if needed.
-#     List of possible requirement and basic explanations:
-#       Distance in blocks:
-#         Travel - travel in total
-#         Walk - has to walk
-#         Sneak - has to sneak
-#         Sprint - has to sprint
-#         Swim - has to swim
-#         Fall - has to fall
-#         Climb - has to climb
-#         Fly - has to fly
-#         Dive - has to walk under water
-#         MinecartTravel - has to travel with minecart
-#         BoatTravel - has to travel with boat
-#         PigTravel - has to ride pig
-#         HorseTravel - has to ride horse
-#         ElytraTravel - has to fly with elytra
-#       Time in sec:
-#         PlayTime - total play time
-#         FromLastDeath - from last death
-#         SneakTime - sneak time
-#       Amounts:
-#         GameQuit - how many times player left game
-#         Jump - jump count
-#         DamageDealt - total damage made
-#         DamageTaken - total damage taken
-#         Deaths - count of deaths
-#         MobKills - total amount of mobs killed by player
-#         PlayerKills - total amount of players killed. Indirect kills dont count
-#         ItemEnchanted - amount of enchanted items
-#         AnimalsBred - animals bred
-#         FishCaught - fish caught
-#         TalkedToVillager - times talked to villager
-#         TradedWithVillager - traded with willager
-#         CakeSlicesEaten - cake slices eaten
-#         CauldronFilled - cauldron filled
-#         CouldronUsed - couldron used
-#         ArmorCleaned - times armor cleaned (leather armor)
-#         BannerCleaned - times banner cleaned
-#         BrewingstandInteractions - brewingstand interactions
-#         BeaconInteractions - beacon interactions
-#         CraftingTableInteractions - crafting table interactions
-#         FurnaceInteractions - furnace interactions
-#         DispenserInspected - dispenser inspected
-#         DropperInspected - dropper inspected
-#         HopperInspected - hopper inspected
-#         ChestOpen - chest open
-#         TrappedChestTriggered - trapped chest triggered
-#         EnderchestOpened - enderchest opened
-#         NoteblockPlayed - noteblock played
-#         NoteblockTuned - noteblock tuned
-#         FlowerPotted - flower potted
-#         RecordPlayed - record played
-#         SleeptInBed - sleept in bed
-#         ShulkerBoxOpened - shulker box opened
-#         ItemDropped - defines amount of dropped items. If specific item is not defined, then total amount is used
-#         ItemPickups - defines amount of picked up items. If specific item is not defined, then total amount is used
-#         BlocksMined - defines amount of blocks mined. If specific block is not defined, then total amount is used
-#         BlocksPlaced - defines amount of blocks placed. If specific block is not defined, then total amount is used
-#         ItemBreaks - defines amount of broken items. If specific item is not defined, then total amount is used
-#         ItemCrafts - defines amount of crafted items. If specific item is not defined, then total amount is used
-#         ItemsUsed - defines amount of item usage. like mining with pickaxe. If specific item is not defined, then total amount is used
-#         MonsterKills - defines amount of monster kills. If specific monster is not defined, then total amount is used
-#         KilledBy - defines amount of deaths by monster. If specific monster is not defined, then total amount is used
+# 检查spigot.yml中保存统计数据选项处于启用状态(stats->disable-saving: false)
+# 通过设置权限(cmi.rank.[groupName])，玩家会被自动分到默认等级组
+# 未启用的等级会被忽略
+# DisplayName部分是可选的，用于展示各等级游戏内的名字。这不用于决定所需的权限节点，你仍需要每个节点名来设置。
+# DefaultRank部分决定如果玩家不在任意等级中，是否将玩家分配到该等级。可以设定多个默认等级，根据权限排序将玩家分配至第一个等级
+# PermissionRequirement部分时可选的，决定升到该等级时玩家需要的权限。对于每个权限你可以设定相应的名字，用于在/cmi rankinfo中显示。例如cmi.command.fly:Fly
+# McMMORequirement部分决定升到该等级时玩家需要的McMMO技能与等级
+# AureliumRequirement部分决定升到该等级时玩家需要的Aurelium技能与等级
+# AuraSkillsRequirement部分决定升到该等级时玩家需要的Aura技能与等级
+# McMMO and Aurelium部分可以将技能名设为Power以设置技能等级总和
+# JobsRequirement部分决定升到该等级时玩家需要的工作与等级(Jobs and levels)
+# ItemRequirement部分决定升到该等级时玩家需要的物品。所需物品会在成功升级后被移除
+# AutoRankup部分决定是否开启自动升级。如果有多个升级，玩家需要自行确认他想要的升级
+# RankupConfirmation部分决定是否开启二次确认。用于防止意外升级。开启后，即使只有一个可用升级，自动升级也会要求二次确认
+# NextRanks是下一可用的等级列表。每个等级的要求都会列出。如果等级较多，可能会导致玩家眼花缭乱
+# MoneyCost决定玩家升级时消耗的金币
+# ExpCost决定玩家升级时消耗的经验
+# Votes决定玩家需要多少投票才能升级
+# Commands是升级时执行的指令。可以是附加动作，如公告或其他东西
+# StatesRequirements是升到该等级需要的统计数据，可以设置许多不同部分:
+#   一般格式为[数据类型](:可用子数据类型):数量
+#   例如MonsterKills:100会要求玩家击杀100只怪物，而MonsterKills:Zombie:100要求玩家击杀一百只僵尸，并且可以同时使用
+#     以下为可用类型及部分解释:
+#       方块距离:
+#         Travel - 移动距离
+#         Walk - 步行距离
+#         Sneak - 潜行距离
+#         Sprint - 疾跑距离
+#         Swim - 游泳距离
+#         Fall - 摔落距离
+#         Climb - 爬行距离
+#         Fly - 飞行距离
+#         Dive - 水下步行距离
+#         MinecartTravel - 坐矿车移动距离
+#         BoatTravel - 坐船移动距离
+#         PigTravel - 骑猪移动距离
+#         HorseTravel - 骑马移动距离
+#         ElytraTravel - 鞘翅飞行移动距离
+#       时间(以秒计):
+#         PlayTime - 游玩时间
+#         FromLastDeath - 自上次死亡时间
+#         SneakTime - 潜行时间
+#       数量:
+#         GameQuit - 退出游戏的次数
+#         Jump - 跳跃次数
+#         DamageDealt - 总造成伤害
+#         DamageTaken - 总受到伤害
+#         Deaths - 死亡次数
+#         MobKills - 杀死生物总数
+#         PlayerKills - 杀死玩家总数(不含间接击杀)
+#         ItemEnchanted - 附魔物品数目
+#         AnimalsBred - 繁殖动物数
+#         FishCaught - 钓到鱼的数目
+#         TalkedToVillager - 与村民交流次数
+#         TradedWithVillager - 与村民交易次数
+#         CakeSlicesEaten - 吃掉的蛋糕片数目
+#         CauldronFilled - 装满炼药锅的次数
+#         CouldronUsed - 使用炼药锅的次数
+#         ArmorCleaned - 清洗盔甲的次数(皮革甲)
+#         BannerCleaned - 清洗旗帜的次数
+#         BrewingstandInteractions - 酿造台交互次数
+#         BeaconInteractions - 信标交互次数
+#         CraftingTableInteractions - 工作台交互次数
+#         FurnaceInteractions - 熔炉交互次数
+#         DispenserInspected - 发射器打开次数
+#         DropperInspected - 投掷器打开次数
+#         HopperInspected - 漏斗打开次数
+#         ChestOpen - 箱子打开次数
+#         TrappedChestTriggered - 陷阱箱触发次数
+#         EnderchestOpened - 末影箱打开次数
+#         NoteblockPlayed - 音符盒播放次数
+#         NoteblockTuned - 音符盒调音次数
+#         FlowerPotted - 花盆添加盆栽次数
+#         RecordPlayed - 唱片播放数
+#         SleeptInBed - 上床睡觉次数
+#         ShulkerBoxOpened - 潜影盒打开次数
+#         ItemDropped - 丢弃物品数。未设定物品时为丢弃总数
+#         ItemPickups - 拾取物品数。未设定物品时为拾取总数
+#         BlocksMined - 方块挖掘数。未设定方块时为挖掘总数
+#         BlocksPlaced - 方块放置数。未设定方块时为放置总数
+#         ItemBreaks - 物品损坏数。未设定物品时为损坏总数
+#         ItemCrafts - 物品制作数。未设定物品时为制作总数
+#         ItemsUsed - 物品使用次数，如使用镐子挖矿。未设定物品时为使用总次数
+#         MonsterKills - 怪物击杀数。未设定怪物时为击杀总数
+#         KilledBy - 被怪物击杀次数。未设定怪物时为被击杀总数
 
 Newbie:
   Enabled: true
-  DisplayName: '&2Newbie'
+  DisplayName: '&2新手'
   DefaultRank: true
   AutoRankup: true
   NextRanks:
@@ -94,7 +94,7 @@ Newbie:
   - Branch2
 Branch1:
   Enabled: true
-  DisplayName: '&2Branch1'
+  DisplayName: '&2分支1'
   AutoRankup: true
   RankupConfirmation: true
   Votes: 5
@@ -120,7 +120,7 @@ Branch1:
   - Branch1Rank1
   MoneyCost: 100
   Commands:
-  - broadcast! &6[playerDisplayName] &eleveled up to Branch1 rank!
+  - broadcast! &6[playerDisplayName] &e升到了分支1!
   StatsRequirements:
   - PlayTime:3600
   - travel:1000
@@ -130,7 +130,7 @@ Branch1:
   - AccountAge:1209600
 Branch1Rank1:
   Enabled: true
-  DisplayName: '&2Branch1Rank1'
+  DisplayName: '&2分支1等级1'
   DefaultRank: false
   AutoRankup: true
   RankupConfirmation: false
@@ -141,7 +141,7 @@ Branch1Rank1:
   MoneyCost: 300
   ExpCost: 350
   Commands:
-  - broadcast! &6[playerDisplayName] &eleveled up to Branch1Rank1 rank!
+  - broadcast! &6[playerDisplayName] &e升到了分支1等级1!
   StatsRequirements:
   - travel:10000
   - blocksmined:3000
@@ -153,14 +153,14 @@ Branch1Rank1:
   - unarmed:30
 Branch2:
   Enabled: true
-  DisplayName: '&2Branch2'
+  DisplayName: '&2分支2'
   AutoRankup: true
   RankupConfirmation: true
   MoneyCost: 150
   NextRanks:
   - Branch2Rank1
   Commands:
-  - broadcast! &6[playerDisplayName] &eleveled up to Branch2 rank!
+  - broadcast! &6[playerDisplayName] &e升到了分支2!
   PermissionRequirement:
   - cmi.command.tp:Teleport
   StatsRequirements:
@@ -170,7 +170,7 @@ Branch2:
   - MonsterKills:slime:10
 Branch2Rank1:
   Enabled: true
-  DisplayName: '&2Branch2Rank1'
+  DisplayName: '&2分支2等级1'
   AutoRankup: true
   RankupConfirmation: false
   MoneyCost: 100
@@ -178,7 +178,7 @@ Branch2Rank1:
   NextRanks:
   - Branch2Rank2
   Commands:
-  - broadcast! &6[playerDisplayName] &eleveled up to Branch1Rank1 rank!
+  - broadcast! &6[playerDisplayName] &e升到了分支2等级1!
   StatsRequirements:
   - PlayTime:4600
   - Swim:1000
@@ -186,7 +186,7 @@ Branch2Rank1:
   - MonsterKills:100
 Branch2Rank2:
   Enabled: true
-  DisplayName: '&2Branch2Rank2'
+  DisplayName: '&2分支2等级2'
   AutoRankup: true
   RankupConfirmation: false
   MoneyCost: 100
@@ -194,7 +194,7 @@ Branch2Rank2:
   NextRanks:
   - Last
   Commands:
-  - broadcast! &6[playerDisplayName] &eleveled up to Branch2Rank2 rank!
+  - broadcast! &6[playerDisplayName] &e升到了分支2等级2!
   StatsRequirements:
   - walk:15000
   - HorseTravel:1000
@@ -202,7 +202,7 @@ Branch2Rank2:
   - PlayerKills:10
 Last:
   Enabled: true
-  DisplayName: '&2Last'
+  DisplayName: '&2最高'
   AutoRankup: true
   StatsRequirements:
   - PlayTime:21600
@@ -210,6 +210,6 @@ Last:
   - MonsterKills:1000
   - blocksmined:30000
   Commands:
-  - broadcast! &6[playerDisplayName] &eleveled up to Last rank!
+  - broadcast! &6[playerDisplayName] &e升到了最高级!
   - cmi heal [playerName]
   - money give [playerName] 100
