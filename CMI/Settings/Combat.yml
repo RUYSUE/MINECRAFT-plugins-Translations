@@ -1,0 +1,94 @@
+Combat:
+  # 用于特定功能的战斗计时器
+  Timer: 15
+  # 启用后，如果玩家处于PVP状态，那么会允许玩家在安全区受到伤害
+  safeZoneDamage: false
+  # 启用后，受到攻击的玩家即使没有反击，也会进入战斗状态
+  # 禁用后，只有发起攻击者会被标记为PVP状态
+  IncludeVictim: true
+  Player:
+    # 启用后，进入战斗状态的玩家会被关闭飞行模式
+    # 这会导致玩家掉落，并且阻止玩家再次飞行
+    # 如果玩家具有/fly的权限，且被允许在战斗状态使用，则他可以绕过该限制
+    # 也可以通过cmi.pvp.PFlyBypass绕过
+    DisableFlight: false
+    # 启用后，由于进入战斗状态而被关闭飞行模式的玩家会免疫一次摔落伤害
+    DisableFallDamage: false
+    # 启用后，玩家会在bossbar处看到战斗状态的剩余时间
+    # 这只对PVP型战斗状态生效
+    ShowBossBar: false
+    # 启用后，在对其他玩家造成伤害时会通过全息显示伤害值
+    ShowDamageNumbers: true
+    DamageNumbersFormat: '&c⚔[damage]'
+    # 是否阻止上帝模式的玩家对其他玩家造成伤害
+    # 可通过cmi.pvp.godBypass绕过
+    noGodDamage: false
+    # 告知上帝模式的玩家他无法伤害其他玩家
+    noGodDamageInform: false
+    # 启用后玩家只能使用下述命令
+    # 仅对PVP型战斗模式生效
+    BlockCommands: false
+    AllowedCommands:
+    - msg
+    - r
+    - tell
+    # 启用后会会将AllowedCommands变为黑名单
+    MakeBlackList: false
+  Mob:
+    # 启用后，进入战斗模式的玩家会被关闭飞行模式
+    # 可通过cmi.pvp.MFlyBypass绕过
+    DisableFlight: false
+    # 启用后，由于进入战斗状态而被关闭飞行模式的玩家会免疫一次摔落伤害
+    DisableFallDamage: false
+    # 启用后，玩家会在bossbar处看到战斗状态的剩余时间
+    # 仅对PVE型战斗状态生效
+    ShowBossBar: false
+    # 启用后会将环境伤害包含到战斗计时器中
+    # 这包括仙人掌、岩浆块、窒息、燃烧、摔落以及类似的伤害
+    IncludeEnvironment: true
+    # 启用后在伤害怪物时会通过全息显示伤害值
+    ShowDamageNumbers: true
+    DamageNumbersFormat: '&c❤[damage]'
+    # 是否阻止上帝模式的玩家对怪物造成伤害
+    # 可通过cmi.pve.godBypass绕过
+    noGodDamage: false
+    # 告知上帝模式的玩家他无法伤害怪物
+    noGodDamageInform: false
+    # 启用后玩家只能使用下述命令
+    # 仅对PVE型战斗模式生效
+    BlockCommands: false
+    AllowedCommands:
+    - msg
+    - r
+    - tell
+    # 启用后会会将AllowedCommands变为黑名单
+    MakeBlackList: false
+  Heads:
+    Player:
+      Drop: false
+      # 玩家掉落头颅的几率，可以使用小数如0.2
+      # 设为100以保证每次玩家杀死其他玩家时都掉落头颅
+      # 1表示有1%的概率掉落头颅
+      Percentage: 1.0
+      # 每次获得相同玩家的头颅后，再次获取其头颅时几率的下降值
+      # 每次服务器重启都会重置
+      LowerChanceOfterDrop: 50.0
+      # 启用后，使用带有抢夺的工具击杀玩家会有更高几率掉落头颅
+      # 数值单位为%，该加成会提升当前头颅掉落几率
+      # 比如某位玩家具有1%的头颅掉落率，当其被带有抢夺三的工具击杀，若抢夺三的加成为30%，则最终头颅掉落率为1.3%
+      # 仅对玩家头颅有效
+      # 你可以添加任意多的等级，只需要复制并修改为你想要的数值，如
+      # Lvl33: 35.5
+      LootBonus:
+        Enabled: true
+        Lvl1: 5.0
+        Lvl2: 15.0
+        Lvl3: 30.0
+      # 下述世界可以掉落玩家头颅。如果你想让所有世界都可以掉落，保持为空
+      Worlds: []
+    Mob:
+      # 是否启用自定义怪物头颅掉落
+      # 检查CustomHeads.yml来通过entityType进行自定义
+      Drop: false
+      # 下述世界可以掉落怪物头颅。如果你想让所有世界都可以掉落，保持为空
+      Worlds: []
