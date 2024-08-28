@@ -12,7 +12,7 @@ Economy:
   # 如果你安装了CMIInjector，会自动启用该设置
   # 请注意！如果你想让经济与其他插件不发生问题，你需要injector(zrips.net/cmii)或重新编写的Vault(www.zrips.net/cmivault)
   # 你可以在插件页面找到这两种解决方法(www.spigotmc.org/resources/cmi-298-commands-insane-kits-portals-essentials-economy-mysql-sqlite-much-more.3742)
-  Enabled: true
+  Enabled: false
   # 玩家在转账前是否需要二次确认
   Confirmation: false
   # 是否记录玩家间的转账
@@ -598,99 +598,6 @@ ReSpawn:
     - spawn
     - homeLocation
     - worldSpawn
-Afk:
-  # 是否启用自动AFK系统
-  Enabled: false
-  # 启用后，玩家处于AFK状态时会显示标题信息
-  TitleMessage: true
-  # 启用后，随机显示子标题信息
-  SubTitleMessage: true
-  # 防止在一个地方一直跳跃来避免进入AFK状态
-  PreventJumping: true
-  # AFK时防止对他人造成伤害
-  PreventDamage: true
-  # 检查AFK玩家状态的间隔，以秒为单位
-  CheckInterval: 10
-  # 启用后，玩家AFK时停止计算游玩时间
-  # 本质上讲，该系统通过每秒对玩家的游玩时间-1实现
-  StopPlayTime: false
-  # 玩家停止移动多长时间后将其设为AFK状态
-  # 需要cmi.command.afk.auto权限
-  # 设为0以禁用
-  AutoAfkIn: 300
-  # 当玩家进入AFK状态时，自动执行下述指令
-  # 支持特殊指令
-  AutoAfkCmds:
-  - cmi broadcast !&6[playerDisplayName] &e现在处于AFK状态
-  # 玩家通过输入/cmi afk进入AFK状态时自动执行的指令
-  # 支持特殊指令
-  ManualAfkCmds:
-  - cmi broadcast !&6[playerDisplayName] &e暂时离开了
-  # 玩家离开AFK状态时自动执行的指令
-  AfkLeaveCmds:
-  - cmi broadcast !&6[playerDisplayName] &e回来了
-  # 玩家停止移动多久后踢出玩家
-  # 这是在AutoAfkIn之外的一个计时，如果玩家手动进入AFK状态，他会在AutoAfkIn+AutoKickIn的时间后被踢出
-  # 这除了用于踢出挂机玩家，在需要时还可以每x秒重复一次
-  # 保持为-1以禁用自动踢出
-  # 可通过权限cmi.command.afk.kickbypass绕过
-  # 除此之外也可以给予玩家cmi.command.afk.kickOutIn.[seconds]权限更改踢出时间，二者中较大的值会生效
-  AutoKickIn: -1
-  # 两次踢出的间隔
-  RepeatingAutoKickInterval: 300
-  # 启用后，踢出指令会每RepeatingAutoKickInterval秒执行一次
-  RepeatKickCommand: false
-  # 玩家可被踢出时执行的指令
-  # 如果玩家未被踢出(或指令未执行成功？)，则在RepeatingAutoKickInterval秒后再次尝试执行指令
-  AutoKickCmds:
-  - cmi kick [playerName] &e你因挂机超过[time]而被踢出
-  # 在特定世界中玩家不会自动进入AFK状态
-  DisabledWorlds:
-  - oneTestWorld
-  - secondTestWorld
-  # 是否取消玩家在AFK状态下的交互
-  DisableOnInteract: true
-  # 防止玩家通过手持特定物品/在特定方块上按住一个按钮不放而绕过afk检测
-  SmartInteractCheck: true
-  # 防止玩家通过挂机机器移动来避免AFK
-  AntiAfkMachines: true
-  # 防止AFK状态下的玩家被鱼钩钩动
-  PreventHook: true
-  # 防止AFK状态下的玩家被推动(实验性功能)
-  # 但玩家仍能在所处的相同的方块上被推动
-  PreventPushing: false
-  # 玩家操作背包时取消AFK
-  DisableOnInventoryClick: true
-  # 玩家丢弃物品时取消AFK
-  DisableOnitemDrop: true
-  # 使用指令时取消AFK
-  DisableOnCommand: true
-  # 在公屏发言时取消AFK
-  DisableOnPublicChat: true
-  # 私聊时取消AFK
-  DisableOnPrivateChat: true
-  # 移动时取消AFK
-  DisableOnMove: true
-  # 移动视角时取消AFK
-  DisableOnLookAround: false
-  # 钓到鱼时取消AFK
-  DisableOnFishing: false
-  # AFK状态下无法拾取物品
-  DisableItemPickup: false
-  PreventMobSpawning:
-    # 启用后，AFK玩家附近不会生成怪物
-    Enabled: false
-    # 阻止怪物自然生成
-    # 则主要影响服务器侧，因为这会导致服务器不断尝试在AFK玩家附近生成怪物
-    Natural: false
-    # 阻止刷怪笼刷怪
-    Spawners: true
-    # 通常负责生成铁傀儡
-    VillageDefence: true
-  # 是否阻止AFK玩家拾取经验
-  # 注意！由于游戏本身对经验球的处理，将经验球设为0经验并允许拾取是最好的解决方法
-  # 因此启用该设置后，被AFK玩家拾取的经验球无效
-  DisableExpPickup: false
 Holograms:
   # 检查玩家是否进入全息区域的间隔，以毫秒为单位
   # 更大的间隔可以减轻服务器负载
@@ -934,9 +841,10 @@ Spawners:
     # 禁用后，玩家需要基础的cmi.placespawner来放置刷怪笼
     RequiresExactPermission: false
   Interact:
-    # 启用后，玩家需要对应的权限来使用刷怪蛋修改刷怪笼
-    # 比如玩家需要具有cmi.egginteract.pig将刷怪笼类型变为猪；或者cmi.egginteract.zombie将刷怪笼类型变为僵尸
-    EggRequiresPermission: false
+    Spawner:
+      # 启用后，玩家需要对应的权限来使用刷怪蛋修改刷怪笼
+      # 比如玩家需要具有cmi.egginteract.pig将刷怪笼类型变为猪；或者cmi.egginteract.zombie将刷怪笼类型变为僵尸
+      RequiresPermission: false
   # 启用后，被TNT爆炸破坏的刷怪笼有几率掉落
   TnTExplosionDrop:
     use: false
@@ -1053,6 +961,9 @@ DamageControl:
 Totem:
   # 启用后，即使玩家没有手持不死图腾，不死图腾也可以正常生效
   RemoveFromInventory: false
+  # 是否需要权限来允许消耗背包中的不死图腾
+  # RemoveFromInventory应该设为true，启用该选项后玩家需要cmi.totem.frominventory权限
+  RequirePermission: false
   Cooldown:
     # 启用后会为不死图腾增加使用CD
     Use: false
@@ -1212,9 +1123,13 @@ Books:
 # 玩家登录服务器时发送的motd信息，设置为不存在的文件名以禁用
 Motd: welcomeMessage
 Warnings:
+  # 应当始终存在。这会在使用未在categories中定义的原因警告玩家时应用
   Default:
+    # 警告的有效时长（以秒计）
     LifeTime: 86400
+    # 玩家受到警告时积累的点数
     Points: 1
+    # 未设定原因是，默认的警告
     DefaultReason: '&7违反服务器规则'
   Categories:
     Swear:
@@ -1484,100 +1399,6 @@ Cooldowns:
   List:
   - cmi heal:180
   - cmi feed:120
-Combat:
-  # 用于特定功能的战斗计时器
-  Timer: 15
-  # 启用后，如果玩家处于PVP状态，那么会允许玩家在安全区受到伤害
-  safeZoneDamage: false
-  # 启用后，受到攻击的玩家即使没有反击，也会进入战斗状态
-  # 禁用后，只有发起攻击者会被标记为PVP状态
-  IncludeVictim: true
-  Player:
-    # 启用后，进入战斗状态的玩家会被关闭飞行模式
-    # 这会导致玩家掉落，并且阻止玩家再次飞行
-    # 如果玩家具有/fly的权限，且被允许在战斗状态使用，则他可以绕过该限制
-    # 也可以通过cmi.pvp.PFlyBypass绕过
-    DisableFlight: false
-    # 启用后，由于进入战斗状态而被关闭飞行模式的玩家会免疫一次摔落伤害
-    DisableFallDamage: false
-    # 启用后，玩家会在bossbar处看到战斗状态的剩余时间
-    # 这只对PVP型战斗状态生效
-    ShowBossBar: false
-    # 启用后，在对其他玩家造成伤害时会通过全息显示伤害值
-    ShowDamageNumbers: true
-    DamageNumbersFormat: '&c⚔[damage]'
-    # 是否阻止上帝模式的玩家对其他玩家造成伤害
-    # 可通过cmi.pvp.godBypass绕过
-    noGodDamage: false
-    # 告知上帝模式的玩家他无法伤害其他玩家
-    noGodDamageInform: false
-    # 启用后玩家只能使用下述命令
-    # 仅对PVP型战斗模式生效
-    BlockCommands: false
-    AllowedCommands:
-    - msg
-    - r
-    - tell
-    # 启用后会会将AllowedCommands变为黑名单
-    MakeBlackList: false
-  Mob:
-    # 启用后，进入战斗模式的玩家会被关闭飞行模式
-    # 可通过cmi.pvp.MFlyBypass绕过
-    DisableFlight: false
-    # 启用后，由于进入战斗状态而被关闭飞行模式的玩家会免疫一次摔落伤害
-    DisableFallDamage: false
-    # 启用后，玩家会在bossbar处看到战斗状态的剩余时间
-    # 仅对PVE型战斗状态生效
-    ShowBossBar: false
-    # 启用后会将环境伤害包含到战斗计时器中
-    # 这包括仙人掌、岩浆块、窒息、燃烧、摔落以及类似的伤害
-    IncludeEnvironment: true
-    # 启用后在伤害怪物时会通过全息显示伤害值
-    ShowDamageNumbers: true
-    DamageNumbersFormat: '&c❤[damage]'
-    # 是否阻止上帝模式的玩家对怪物造成伤害
-    # 可通过cmi.pve.godBypass绕过
-    noGodDamage: false
-    # 告知上帝模式的玩家他无法伤害怪物
-    noGodDamageInform: false
-    # 启用后玩家只能使用下述命令
-    # 仅对PVE型战斗模式生效
-    BlockCommands: false
-    AllowedCommands:
-    - msg
-    - r
-    - tell
-    # 启用后会会将AllowedCommands变为黑名单
-    MakeBlackList: false
-  Heads:
-    Player:
-      Drop: false
-      # 玩家掉落头颅的几率，可以使用小数如0.2
-      # 设为100以保证每次玩家杀死其他玩家时都掉落头颅
-      # 1表示有1%的概率掉落头颅
-      Percentage: 1.0
-      # 每次获得相同玩家的头颅后，再次获取其头颅时几率的下降值
-      # 每次服务器重启都会重置
-      LowerChanceOfterDrop: 50.0
-      # 启用后，使用带有抢夺的工具击杀玩家会有更高几率掉落头颅
-      # 数值单位为%，该加成会提升当前头颅掉落几率
-      # 比如某位玩家具有1%的头颅掉落率，当其被带有抢夺三的工具击杀，若抢夺三的加成为30%，则最终头颅掉落率为1.3%
-      # 仅对玩家头颅有效
-      # 你可以添加任意多的等级，只需要复制并修改为你想要的数值，如
-      # Lvl33: 35.5
-      LootBonus:
-        Enabled: true
-        Lvl1: 5.0
-        Lvl2: 15.0
-        Lvl3: 30.0
-      # 下述世界可以掉落玩家头颅。如果你想让所有世界都可以掉落，保持为空
-      Worlds: []
-    Mob:
-      # 是否启用自定义怪物头颅掉落
-      # 检查CustomHeads.yml来通过entityType进行自定义
-      Drop: false
-      # 下述世界可以掉落怪物头颅。如果你想让所有世界都可以掉落，保持为空
-      Worlds: []
 ShulkerBoxes:
   # 启用后，玩家无法在战斗中打开潜影盒
   # 战斗计时器可在Combat部分开启
@@ -1878,85 +1699,6 @@ Enchanting:
   # 这不会阻止玩家将附魔设置到小于权限设定的等级
   # 未具有对应权限的玩家默认具有将附魔设置为1级的权限
   PermissionLevelLimit: false
-Scavenge:
-  ItemBreak:
-    # 设定物品拆解时损坏的基础几率
-    # 值从0-100，100代表每次分解，物品都会损坏
-    # 这也允许玩家在拆解附魔时不损坏物品本身
-    # 绕过你想让物品必定损坏，设为100
-    # 损坏的物品会返回部分材料
-    # 没有附魔的物品一定会损坏
-    Base: 8.0
-    # 根据附魔数量增加物品损坏的几率
-    # 比如在默认8%的损坏几率下，将该几率设为2，则具有3个附魔的物品会有8%+(3*2%)=14%的几率损坏
-    ForEachEnchant: 2.0
-    # 根据附魔等级增加物品损坏的几率
-    # 这会将附魔的最高等级与当前等级纳入考量
-    # 当该几率设为7.5时，每个最高等级的附魔会添加7.5%物品损坏的几率
-    # 如果某附魔如锋利等级为2，最高等级为5，那么便只会添加3%物品损坏的几率
-    ForEachEnchantLevel: 2.0
-    # 拆解附魔时物品损坏几率的最大值
-    # 这可将最大几率限制到一个特定值，以防达到100%导致永远损坏物品
-    MaxBreakChance: 100.0
-    # 设定物品耐久度不满时损坏几率增加的数值
-    # 设为50代表根据物品剩余耐久度，拆解附魔时物品损坏几率之多增加50%(加和)
-    # 满耐久的物品不会额外增加损坏几率
-    BreakDurabilityCheck: 50.0
-    # 启用后，返还原料时会将物品耐久度纳入考量
-    # 比如物品满耐久度为100，当前耐久度为50，则只会考虑返还一半原料
-    # 这不意味着玩家一定会得到一半原料，这只代表可能返还原材料的一半会进入IngredientReturn进程
-    DurabilityCheck: true
-    IngredientReturn:
-      # 当拆解附魔失败时，返还物品原料的最大几率
-      # 这会分别应用于物品的每个原料
-      # 物品的配方应存在于数据库，否则不会返还任何物品
-      Base: 25.0
-  EnchantExtractionFail:
-    # 拆解附魔时失败的基础几率
-    # 拆解附魔失败时，玩家不会得到对应的附魔书
-    Base: 10.0
-    # 根据附魔等级增加拆解附魔失败的几率
-    # 则会将附魔的最高等级与当前等级纳入考量
-    # 设置为75表示一个最高等级的附魔会增加75%拆解附魔失败的几率
-    # 如果某附魔如锋利等级为2，最高等级为5，那么便只会添加30%拆解附魔失败的几率
-    # 某些附魔如水下速掘的最高等级为1，则其永远会增加最大值的拆解附魔失败几率
-    ForEachLevel: 10.0
-    # 拆解附魔失败的最大几率
-    # 这可将最大几率限制到一个特定值，以防达到100%导致拆解附魔永远不成功
-    MaxFailChance: 75.0
-    LevelLower:
-      # 当拆解附魔失败时，附魔等级降低的基础几率
-      # 这是拆解附魔失败时执行的，且仅在拆解附魔失败后执行
-      # 如果附魔等级已经为1，那么玩家不会得到对应的附魔书
-      # 如果你想防止在拆解附魔失败时降低附魔等级，将此设为0
-      # 如果你想每次拆解附魔失败时都降低附魔等级，将EnchantExtractionFail.Base设为100，并且将该值设为100
-      Base: 50.0
-      # 根据附魔等级增加降低附魔等级的几率
-      # 这表示拆解附魔时，高等级附魔有更高的几率降低等级
-      ForEachLevel: 5.0
-      # 根据附魔等级增加降低附魔等级的最大纪律
-      MaxChance: 75.0
-  Cost:
-    # 拆解附魔的费用，设为0以免费拆解
-    Base: 100.0
-    # 根据物品的附魔与/cmi setenchantworth设定的附魔价值，添加额外的拆解费用
-    # 该值代表每个附魔价值的折算比
-    # 因此如果你的基础拆解费用是100，额外费用设为5。当你尝试拆解带有价值1000的锋利5附魔的物品，且该物品本身价值100，那么你需要支付(100+1000*5%+100*5%)=155进行拆解
-    Extra: 5.0
-  # 下列物品无法拆解
-  BlackList:
-  - diamond
-  - ironingot
-  - goldingot
-  - coal
-  - IRON_NUGGET
-  - GOLD_NUGGET
-  # 启用后，会将上方黑名单转化为白名单，从而仅能拆解列表中的物品
-  BlackToWhiteList: false
-  # 禁用后，当玩家打开拆解UI时，他们无法捡起物品
-  AllowItemPickups: false
-  # 启用后，一个物品如剑，在拆解后如果没有损坏，那么会重置它的修复费用，从而玩家可以像使用新剑一般，而非更难为其附魔
-  ResetRepairCost: true
 BungeeCord:
   # 如果你遇到了问题，你可以取消对BC服务器的支持
   # 禁用后部分功能如跨端信息、跨端传送与其他功能会停止工作

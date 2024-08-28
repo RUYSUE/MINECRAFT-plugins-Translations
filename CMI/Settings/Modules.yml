@@ -110,7 +110,7 @@ tablist: true
 paintingEditor: true
 #  
 # 隐身模式
-# 适用于1.19.x及以上的服务器
+# 适用于1.21.x及以上的服务器
 vanish: true
 #  
 # 支票
