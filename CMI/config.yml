@@ -12,7 +12,7 @@ Economy:
   # 如果你安装了CMIInjector，会自动启用该设置
   # 请注意！如果你想让经济与其他插件不发生问题，你需要injector(zrips.net/cmii)或重新编写的Vault(www.zrips.net/cmivault)
   # 你可以在插件页面找到这两种解决方法(www.spigotmc.org/resources/cmi-298-commands-insane-kits-portals-essentials-economy-mysql-sqlite-much-more.3742)
-  Enabled: true
+  Enabled: false
   # 玩家在转账前是否需要二次确认
   Confirmation: false
   # 是否记录玩家间的转账
@@ -841,9 +841,10 @@ Spawners:
     # 禁用后，玩家需要基础的cmi.placespawner来放置刷怪笼
     RequiresExactPermission: false
   Interact:
-    # 启用后，玩家需要对应的权限来使用刷怪蛋修改刷怪笼
-    # 比如玩家需要具有cmi.egginteract.pig将刷怪笼类型变为猪；或者cmi.egginteract.zombie将刷怪笼类型变为僵尸
-    EggRequiresPermission: false
+    Spawner:
+      # 启用后，玩家需要对应的权限来使用刷怪蛋修改刷怪笼
+      # 比如玩家需要具有cmi.egginteract.pig将刷怪笼类型变为猪；或者cmi.egginteract.zombie将刷怪笼类型变为僵尸
+      RequiresPermission: false
   # 启用后，被TNT爆炸破坏的刷怪笼有几率掉落
   TnTExplosionDrop:
     use: false
@@ -960,6 +961,9 @@ DamageControl:
 Totem:
   # 启用后，即使玩家没有手持不死图腾，不死图腾也可以正常生效
   RemoveFromInventory: false
+  # 是否需要权限来允许消耗背包中的不死图腾
+  # RemoveFromInventory应该设为true，启用该选项后玩家需要cmi.totem.frominventory权限
+  RequirePermission: false
   Cooldown:
     # 启用后会为不死图腾增加使用CD
     Use: false
@@ -1119,9 +1123,13 @@ Books:
 # 玩家登录服务器时发送的motd信息，设置为不存在的文件名以禁用
 Motd: welcomeMessage
 Warnings:
+  # 应当始终存在。这会在使用未在categories中定义的原因警告玩家时应用
   Default:
+    # 警告的有效时长（以秒计）
     LifeTime: 86400
+    # 玩家受到警告时积累的点数
     Points: 1
+    # 未设定原因是，默认的警告
     DefaultReason: '&7违反服务器规则'
   Categories:
     Swear:
