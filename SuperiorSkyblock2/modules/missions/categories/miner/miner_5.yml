@@ -1,0 +1,92 @@
+######################################################
+##                                                  ##
+##                SuperiorSkyblock 2                ##
+##                Developed by Ome_R                ##
+##                                                  ##
+######################################################
+
+# The mission file to use
+mission-file: BlocksMissions
+
+# Whether the mission should be given when completing all requirements.
+auto-reward: true
+
+# Should block counts of players get reset when completing the mission?
+reset-after-finish: true
+
+# Whether only naturally spawned blocks should be counted towards the mission or not.
+only-natural-blocks: true
+
+# Rewards given when completing the mission.
+rewards:
+  commands:
+    - 'eco give %player% 250000'
+    - 'is admin msg %player% &e&l矿工任务 | &7成功完成矿工任务V!'
+    - 'is admin msg %player% &e&l矿工任务 | &7钻石...钻石...钻石!'
+    - 'is admin msg %player% &e&l矿工任务 | &7&o恭喜你成为了专业矿工!'
+
+# List of required missions that must be completed before completing this one.
+required-missions:
+  - 'miner_1'
+  - 'miner_2'
+  - 'miner_3'
+  - 'miner_4'
+
+# List of all required blocks must be gathered in order to complete the mission.
+required-blocks:
+  '1':
+    types:
+      - 'DIAMOND_ORE'
+    amount: 32
+
+# Icons used in the menus.
+icons:
+  not-completed:
+    type: PAPER
+    name: '&a矿工任务V'
+    lore:
+      - '&7是时候买点更好的东西了.'
+      - '&7挖掘 x32 钻石矿.'
+      - ''
+      - '&6需要挖掘:'
+      - '&8 - &7x32 钻石矿'
+      - ''
+      - '&6奖励:'
+      - '&8 - &7$250,000'
+      - ''
+      - '&6已挖掘钻石矿: &7{1}/32'
+      - '&6进度: &7{0}%'
+      - '&c&l ✘ &7未完成'
+  can-complete:
+    type: PAPER
+    name: '&a矿工任务V'
+    lore:
+      - '&7是时候买点更好的东西了.'
+      - '&7挖掘 x32 钻石矿.'
+      - ''
+      - '&6需要挖掘:'
+      - '&8 - &7x32 钻石矿'
+      - ''
+      - '&6奖励:'
+      - '&8 - &7$250,000'
+      - ''
+      - '&6已挖掘钻石矿: &732/32'
+      - '&6进度: &7100%'
+      - '&a&l ✔ &7点击领取奖励.'
+    enchants:
+      DURABILITY: 1
+    flags:
+      - HIDE_ENCHANTS
+  completed:
+    type: MAP
+    name: '&a矿工任务V'
+    lore:
+      - '&7是时候买点更好的东西了.'
+      - '&7挖掘 x32 钻石矿.'
+      - ''
+      - '&6奖励:'
+      - '&8 - &7$250,000'
+      - ''
+      - '&6已挖掘钻石矿: &732/32'
+      - '&6进度: &7100%'
+      - '&a&l ✔ &7已领取奖励.'

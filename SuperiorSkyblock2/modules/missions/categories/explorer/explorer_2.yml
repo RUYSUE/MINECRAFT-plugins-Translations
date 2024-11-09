@@ -1,0 +1,70 @@
+######################################################
+##                                                  ##
+##                SuperiorSkyblock 2                ##
+##                Developed by Ome_R                ##
+##                                                  ##
+######################################################
+
+# The mission file to use
+mission-file: IslandMissions
+
+# Whether the mission should be given when completing all requirements.
+auto-reward: true
+
+# Should block counts of players get reset when completing the mission?
+reset-after-finish: true
+
+# Rewards given when completing the mission.
+rewards:
+  commands:
+    - 'eco give %player% 150000'
+    - 'is admin msg %player% &e&l探索者任务 | &7成功完成末地探索者任务!'
+    - 'is admin msg %player% &e&l探索者任务 | &7&o你已将服务器每个世界探索完毕!'
+
+# List of events that will trigger the mission.
+events:
+  - IslandSchematicPasteEvent
+
+# Requirement of the event to complete the mission.
+success-check: 'event.getSchematic().endsWith("_the_end")'
+
+# List of required missions that must be completed before completing this one.
+required-missions:
+  - 'explorer_1'
+
+# Icons used in the menus.
+icons:
+  not-completed:
+    type: PAPER
+    name: '&a末地探索者'
+    lore:
+      - '&7前往末地.'
+      - ''
+      - '&6奖励:'
+      - '&8 - &7$150,000'
+      - ''
+      - '&c&l ✘ &7未完成'
+  can-complete:
+    type: PAPER
+    name: '&a末地探索者'
+    lore:
+      - '&7前往末地.'
+      - ''
+      - '&6奖励:'
+      - '&8 - &7$150,000'
+      - ''
+      - '&a&l ✔ &7点击领取奖励.'
+    enchants:
+      DURABILITY: 1
+    flags:
+      - HIDE_ENCHANTS
+  completed:
+    type: MAP
+    name: '&a末地探索者'
+    lore:
+      - '&7前往末地.'
+      - ''
+      - '&6奖励:'
+      - '&8 - &7$150,000'
+      - ''
+      - '&a&l ✔ &7已完成.'

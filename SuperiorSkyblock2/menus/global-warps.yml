@@ -1,0 +1,54 @@
+######################################################
+##                                                  ##
+##                SuperiorSkyblock 2                ##
+##                Developed by Ome_R                ##
+##                                                  ##
+######################################################
+
+title: '&l空岛地标'
+previous-menu: true
+
+pattern:
+  - '@ @ @ @ @ @ @ @ @'
+  - '@ @ @ @ @ @ @ @ @'
+  - '@ @ @ @ @ @ @ @ @'
+  - '@ @ @ @ @ @ @ @ @'
+  - '$ $ $ $ $ $ $ $ $'
+  - '# # % # * # ^ # #'
+
+warps: '@'
+previous-page: '%'
+current-page: '*'
+next-page: '^'
+
+# When enabled, instead of showing warps, the visitor warp locations will be shown.
+# To show the description, use the {1} placeholder.
+visitor-warps: false
+
+items:
+  '@':
+    type: PLAYER_HEAD
+    name: '&e{0}的空岛'
+    lore:
+      - '&7点击查看该空岛的所有地标.'
+      - '&8>> &7该空岛拥有{2}个地标.'
+  '%':
+    type: PAPER
+    name: '{0}上一页'
+  '*':
+    type: SUNFLOWER
+    name: '&a当前页'
+    lore:
+      - '&7第{0}页'
+  '^':
+    type: PAPER
+    name: '{0}下一页'
+  '$':
+    type: BLACK_STAINED_GLASS_PANE
+    name: '&f'
+
+sounds:
+  '@':
+    type: ENTITY_EXPERIENCE_ORB_PICKUP
+    volume: 0.2
+    pitch: 0.2

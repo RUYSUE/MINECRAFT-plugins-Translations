@@ -1,0 +1,108 @@
+######################################################
+##                                                  ##
+##                SuperiorSkyblock 2                ##
+##                Developed by Ome_R                ##
+##                                                  ##
+######################################################
+
+title: '&l创建新空岛...'
+previous-menu: true
+
+pattern:
+  - '~ ~ ~ ~ ~ ~ ~ ~ ~'
+  - '# @ # # ^ # # $ #'
+  - '~ ~ ~ ~ ~ ~ ~ ~ ~'
+
+items:
+  '@':
+    schematic: 'normal'
+    biome: PLAINS
+    spawn-offset: '0, 0, 0'
+    access:
+      type: PLAYER_HEAD
+      skull: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYzk1ZDM3OTkzZTU5NDA4MjY3ODQ3MmJmOWQ4NjgyMzQxM2MyNTBkNDMzMmEyYzdkOGM1MmRlNDk3NmIzNjIifX19'
+      name: '&e普通空岛&a(可用)'
+      lore:
+        - '&7有着树与矿区的普通空岛!'
+        - '&7 '
+        - '&7&o(( &f&o右击&7&o预览空岛. ))'
+    no-access:
+      type: PLAYER_HEAD
+      skull: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYzk1ZDM3OTkzZTU5NDA4MjY3ODQ3MmJmOWQ4NjgyMzQxM2MyNTBkNDMzMmEyYzdkOGM1MmRlNDk3NmIzNjIifX19'
+      name: '&e普通空岛&c(不可用)'
+      lore:
+        - '&7有着树与矿区的普通空岛!'
+        - '&7 '
+        - '&7&o(( &f&o右击&7&o预览空岛. ))'
+  '^':
+    schematic: 'mycel'
+    biome: MUSHROOM_FIELDS
+    spawn-offset: '0, 0, 0'
+    access:
+      type: PLAYER_HEAD
+      skull: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZWE0NWQxYjQxN2NiZGRjMjE3NjdiMDYwNDRlODk5YjI2NmJmNzhhNjZlMjE4NzZiZTNjMDUxNWFiNTVkNzEifX19'
+      name: '&e菌丝空岛 &a(可用)'
+      lore:
+        - '&7拥有大量菌丝的自定义空岛!'
+        - '&7 '
+        - '&7&o(( &f&o右击&7&o预览空岛. ))'
+    no-access:
+      type: PLAYER_HEAD
+      skull: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZWE0NWQxYjQxN2NiZGRjMjE3NjdiMDYwNDRlODk5YjI2NmJmNzhhNjZlMjE4NzZiZTNjMDUxNWFiNTVkNzEifX19'
+      name: '&e菌丝空岛 &a(不可用)'
+      lore:
+        - '&7拥有大量菌丝的自定义空岛!'
+        - '&7 '
+        - '&7&o(( &f&o右击&7&o预览空岛. ))'
+  '$':
+    schematic: 'desert'
+    biome: DESERT
+    spawn-offset: '0, 0, 0'
+    access:
+      type: PLAYER_HEAD
+      skull: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZjVkYjMxMjA2N2JlMWQ1YzRmMTQ3OGFmM2NhMmY2Y2Y4MTA0YWI0Y2NiZmY1NzkxN2M4NTc4ZGFhMTUwMDJjMiJ9fX0='
+      name: '&e沙漠空岛&a(可用)'
+      lore:
+        - '&7拥有大量沙子的自定义空岛!'
+        - '&7 '
+        - '&7&o(( &f&o右击&7&o预览空岛. ))'
+    no-access:
+      type: PLAYER_HEAD
+      skull: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZjVkYjMxMjA2N2JlMWQ1YzRmMTQ3OGFmM2NhMmY2Y2Y4MTA0YWI0Y2NiZmY1NzkxN2M4NTc4ZGFhMTUwMDJjMiJ9fX0='
+      name: '&e沙漠空岛&a(不可用)'
+      lore:
+        - '&7拥有大量沙子的自定义空岛!'
+        - '&7 '
+        - '&7&o(( &f&o右击&7&o预览空岛. ))'
+  '~':
+    type: BLACK_STAINED_GLASS_PANE
+    name: '&f'
+
+sounds:
+  '@':
+    access:
+      type: BLOCK_PORTAL_AMBIENT
+      volume: 1
+      pitch: 0.2
+    no-access:
+      type: BLOCK_ANVIL_PLACE
+      volume: 0.2
+      pitch: 0.2
+  '^':
+    access:
+      type: BLOCK_PORTAL_AMBIENT
+      volume: 1
+      pitch: 0.2
+    no-access:
+      type: BLOCK_ANVIL_PLACE
+      volume: 0.2
+      pitch: 0.2
+  '$':
+    access:
+      type: BLOCK_PORTAL_AMBIENT
+      volume: 1
+      pitch: 0.2
+    no-access:
+      type: BLOCK_ANVIL_PLACE
+      volume: 0.2
+      pitch: 0.2

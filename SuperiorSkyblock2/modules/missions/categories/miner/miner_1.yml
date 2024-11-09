@@ -1,0 +1,95 @@
+######################################################
+##                                                  ##
+##                SuperiorSkyblock 2                ##
+##                Developed by Ome_R                ##
+##                                                  ##
+######################################################
+
+# The mission file to use
+mission-file: BlocksMissions
+
+# Whether the mission should be given when completing all requirements.
+auto-reward: true
+
+# Should block counts of players get reset when completing the mission?
+reset-after-finish: true
+
+# Whether only naturally spawned blocks should be counted towards the mission or not.
+only-natural-blocks: false
+
+# Rewards given when completing the mission.
+rewards:
+  commands:
+    - 'eco give %player% 1000'
+    - 'is admin rankup %player% generator-rates'
+    - 'is admin msg %player% &e&l矿工任务 | &7成功完成矿工任务I!'
+    - 'is admin msg %player% &e&l矿工任务 | &7你已经对刷石机熟悉了, 现在挖点铁.'
+    - 'is admin msg %player% &e&l矿工任务 | &7&o输入/is missions以获取下个任务的信息'
+
+# List of all required blocks must be gathered in order to complete the mission.
+required-blocks:
+  '1':
+    types:
+      - 'STONE'
+    amount: 48
+  '2':
+    types:
+      - 'COAL_ORE'
+    amount: 16
+
+# Icons used in the menus.
+icons:
+  not-completed:
+    type: PAPER
+    name: '&a矿工任务I'
+    lore:
+      - '&7挖掘48个石头与16个煤矿.'
+      - ''
+      - '&6需要挖掘:'
+      - '&8 - &7x48 石头'
+      - '&8 - &7x16 煤矿石'
+      - ''
+      - '&6奖励:'
+      - '&8 - &7$1,000'
+      - '&8 - &7升级刷石机'
+      - ''
+      - '&6已挖掘石头: &7{value_stone}/48'
+      - '&6已挖掘煤矿石: &7{value_coal_ore}/16'
+      - '&6进度: &7{0}%'
+      - '&c&l ✘ &7未完成'
+  can-complete:
+    type: PAPER
+    name: '&a矿工任务I'
+    lore:
+      - '&7挖掘48个石头与16个煤矿.'
+      - ''
+      - '&6需要挖掘:'
+      - '&8 - &7x48 石头'
+      - '&8 - &7x16 煤矿石'
+      - ''
+      - '&6奖励:'
+      - '&8 - &7$1,000'
+      - '&8 - &7升级刷石机'
+      - ''
+      - '&6已挖掘石头: &748/48'
+      - '&6已挖掘煤矿石: &716/16'
+      - '&6进度: &7100%'
+      - '&a&l ✔ &7点击领取奖励.'
+    enchants:
+      DURABILITY: 1
+    flags:
+      - HIDE_ENCHANTS
+  completed:
+    type: MAP
+    name: '&a矿工任务I'
+    lore:
+      - '&7挖掘48个石头与16个煤矿.'
+      - ''
+      - '&6奖励:'
+      - '&8 - &7$1,000'
+      - '&8 - &7升级刷石机'
+      - ''
+      - '&6已挖掘石头: &748/48'
+      - '&6已挖掘煤矿石: &716/16'
+      - '&6进度: &7100%'
+      - '&a&l ✔ &7已领取奖励.'

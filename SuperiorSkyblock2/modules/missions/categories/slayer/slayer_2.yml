@@ -1,0 +1,117 @@
+######################################################
+##                                                  ##
+##                SuperiorSkyblock 2                ##
+##                Developed by Ome_R                ##
+##                                                  ##
+######################################################
+
+# The mission file to use
+mission-file: KillsMissions
+
+# Whether the mission should be given when completing all requirements.
+auto-reward: true
+
+# Should block counts of players get reset when completing the mission?
+reset-after-finish: true
+
+# Rewards given when completing the mission.
+rewards:
+  commands:
+    - 'eco give %player% 15000'
+    - 'is admin unlockworld %player% nether true'
+    - 'is admin msg %player% &e&l猎人任务 | &7成功完成猎人任务II!'
+    - 'is admin msg %player% &e&l猎人任务 | &7探索下界, 带回一些战利品.'
+    - 'is admin msg %player% &e&l猎人任务 | &7&o输入/is missions以获取下个任务的信息'
+
+# List of required missions that must be completed before completing this one.
+required-missions:
+  - 'slayer_1'
+
+# List of all required blocks must be gathered in order to complete the mission.
+required-entities:
+  '1':
+    types:
+      - 'SKELETON'
+    amount: 32
+  '2':
+    types:
+      - 'ZOMBIE'
+    amount: 32
+  '3':
+    types:
+      - 'SPIDER'
+    amount: 32
+  '4':
+    types:
+      - 'CREEPER'
+    amount: 24
+
+# Icons used in the menus.
+icons:
+  not-completed:
+    type: PAPER
+    name: '&a猎人任务II'
+    lore:
+      - '&7是时候建立一座刷怪塔了.'
+      - '&7击杀120只怪物.'
+      - ''
+      - '&6需要击杀:'
+      - '&8 - &7x32 骷髅'
+      - '&8 - &7x32 僵尸'
+      - '&8 - &7x32 蜘蛛'
+      - '&8 - &7x24 苦力怕'
+      - ''
+      - '&6奖励:'
+      - '&8 - &7$15,000'
+      - '&8 - &7解锁下界'
+      - ''
+      - '&6已击杀骷髅: &7{value_skeleton}/32'
+      - '&6已击杀僵尸: &7{value_zombie}/32'
+      - '&6已击杀蜘蛛: &7{value_spider}/32'
+      - '&6已击杀苦力怕: &7{value_creeper}/24'
+      - '&6进度: &7{0}%'
+      - '&c&l ✘ &7未完成'
+  can-complete:
+    type: PAPER
+    name: '&a猎人任务II'
+    lore:
+      - '&7是时候建立一座刷怪塔了.'
+      - '&7击杀120只怪物.'
+      - ''
+      - '&6需要击杀:'
+      - '&8 - &7x32 骷髅'
+      - '&8 - &7x32 僵尸'
+      - '&8 - &7x32 蜘蛛'
+      - '&8 - &7x24 苦力怕'
+      - ''
+      - '&6奖励:'
+      - '&8 - &7$15,000'
+      - '&8 - &7解锁下界'
+      - ''
+      - '&6已击杀骷髅: &732/32'
+      - '&6已击杀僵尸: &732/32'
+      - '&6已击杀蜘蛛: &732/32'
+      - '&6已击杀苦力怕: &724/24'
+      - '&6进度: &7100%'
+      - '&a&l ✔ &7点击领取奖励.'
+    enchants:
+      DURABILITY: 1
+    flags:
+      - HIDE_ENCHANTS
+  completed:
+    type: MAP
+    name: '&a猎人任务II'
+    lore:
+      - '&7是时候建立一座刷怪塔了.'
+      - '&7击杀120只怪物.'
+      - ''
+      - '&6奖励:'
+      - '&8 - &7$15,000'
+      - '&8 - &7解锁下界'
+      - ''
+      - '&6已击杀骷髅: &732/32'
+      - '&6已击杀僵尸: &732/32'
+      - '&6已击杀蜘蛛: &732/32'
+      - '&6已击杀苦力怕: &724/24'
+      - '&6进度: &7100%'
+      - '&a&l ✔ &7已领取奖励.'

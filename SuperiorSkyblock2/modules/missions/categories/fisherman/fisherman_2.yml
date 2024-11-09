@@ -1,0 +1,102 @@
+######################################################
+##                                                  ##
+##                SuperiorSkyblock 2                ##
+##                Developed by Ome_R                ##
+##                                                  ##
+######################################################
+
+# The mission file to use
+mission-file: FishingMissions
+
+# Whether the mission should be given when completing all requirements.
+auto-reward: true
+
+# Should block counts of players get reset when completing the mission?
+reset-after-finish: true
+
+# Rewards given when completing the mission.
+rewards:
+  commands:
+    - 'eco give %player% 15000'
+    - 'is admin msg %player% &e&l渔夫任务 | &7成功完成渔夫任务II!'
+    - 'is admin msg %player% &e&l渔夫任务 | &7要不要测试下运气?'
+    - 'is admin msg %player% &e&l渔夫任务 | &7&o输入/is missions以获取下个任务的信息'
+
+# List of required missions that must be completed before completing this one.
+required-missions:
+  - 'fisherman_1'
+
+# List of all required blocks must be gathered in order to complete the mission.
+required-caughts:
+  '1':
+    types:
+      - 'BOW'
+      - 'ENCHANTED_BOOK'
+      - 'FISHING_ROD'
+      - 'NAME_TAG'
+      - 'SADDLE'
+      - 'NAUTILUS_SHELL'
+      - 'LILY_PAD'
+      - 'BOWL'
+      - 'LEATHER'
+      - 'LEATHER_BOOTS'
+      - 'ROTTEN_FLESH'
+      - 'STICK'
+      - 'STRING'
+      - 'GLASS_BOTTLE'
+      - 'BONE'
+      - 'INK_SAC'
+      - 'TRIPWIRE_HOOK'
+    amount: 5
+
+# Icons used in the menus.
+icons:
+  not-completed:
+    type: PAPER
+    name: '&a渔夫任务II'
+    lore:
+      - '&7清理海洋垃圾可能很脏，但有趣!'
+      - '&7钓上 x5 垃圾.'
+      - ''
+      - '&6需要钓上:'
+      - '&8 - &7x5 垃圾'
+      - ''
+      - '&6奖励:'
+      - '&8 - &7$15,000'
+      - ''
+      - '&6垃圾: &7{1}/5'
+      - '&6进度: &7{0}%'
+      - '&c&l ✘ &7未完成'
+  can-complete:
+    type: PAPER
+    name: '&a渔夫任务II'
+    lore:
+      - '&7清理海洋垃圾可能很脏，但有趣!'
+      - '&7钓上 x5 垃圾.'
+      - ''
+      - '&6需要钓上:'
+      - '&8 - &7x5 垃圾'
+      - ''
+      - '&6奖励:'
+      - '&8 - &7$15,000'
+      - ''
+      - '&6垃圾: &75/5'
+      - '&6进度: &7100%'
+      - '&a&l ✔ &7点击领取奖励.'
+    enchants:
+      DURABILITY: 1
+    flags:
+      - HIDE_ENCHANTS
+  completed:
+    type: MAP
+    name: '&a渔夫任务II'
+    lore:
+      - '&7清理海洋垃圾可能很脏，但有趣!'
+      - '&7钓上 x5 垃圾.'
+      - ''
+      - '&6奖励:'
+      - '&8 - &7$15,000'
+      - ''
+      - '&6垃圾: &75/5'
+      - '&6进度: &7100%'
+      - '&a&l ✔ &7已领取奖励.'

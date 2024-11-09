@@ -1,0 +1,136 @@
+######################################################
+##                                                  ##
+##                SuperiorSkyblock 2                ##
+##                Developed by Ome_R                ##
+##                                                  ##
+######################################################
+
+title: '&l空岛银行'
+previous-menu: true
+
+pattern:
+  - '= - @ @ @ @ @ - ='
+  - '- @ ! @ @ @ % @ -'
+  - '@ # @ @ * @ @ ^ @'
+  - '- @ $ @ @ @ & @ -'
+  - '= - @ @ ~ @ @ - ='
+
+logs: '~'
+
+items:
+  '!':
+    type: LIME_STAINED_GLASS_PANE
+    name: '&a存钱(一半)'
+    lore:
+      - '&7将你的一半资金存入银行.'
+    bank-action:
+      deposit: 50.0
+  '#':
+    type: LIME_STAINED_GLASS_PANE
+    name: '&a存钱'
+    lore:
+      - '&7将你的资金存入银行.'
+    bank-action:
+      deposit: 0.0
+  '$':
+    type: LIME_STAINED_GLASS_PANE
+    name: '&a存钱(全部)'
+    lore:
+      - '&7将你所有资金存入银行.'
+    bank-action:
+      deposit: 100.0
+  '%':
+    type: RED_STAINED_GLASS_PANE
+    name: '&a取钱(一半)'
+    lore:
+      - '&7取出银行的一半资金.'
+    bank-action:
+      withdraw: 50.0
+  '^':
+    type: RED_STAINED_GLASS_PANE
+    name: '&a取钱'
+    lore:
+      - '&7从银行取出资金.'
+    bank-action:
+      withdraw: 0.0
+  '&':
+    type: RED_STAINED_GLASS_PANE
+    name: '&a取钱(所有)'
+    lore:
+      - '&7取出银行所有资金.'
+    bank-action:
+      withdraw: 100.0
+  '*':
+    type: PAPER
+    name: '&6存款'
+    lore:
+      - '&7空岛银行目前存有 $%superior_island_bank_format%'
+  '=':
+    type: EMERALD_BLOCK
+    name: '&f '
+  '-':
+    type: EMERALD
+    name: '&f '
+  '~':
+    type: EXPERIENCE_BOTTLE
+    name: '&6交易记录'
+
+sounds:
+  '!':
+    success-sound:
+      type: ENTITY_EXPERIENCE_ORB_PICKUP
+      volume: 0.2
+      pitch: 0.2
+    fail-sound:
+      type: BLOCK_ANVIL_PLACE
+      volume: 0.2
+      pitch: 0.2
+  '#':
+    success-sound:
+      type: ENTITY_EXPERIENCE_ORB_PICKUP
+      volume: 0.2
+      pitch: 0.2
+    fail-sound:
+      type: BLOCK_ANVIL_PLACE
+      volume: 0.2
+      pitch: 0.2
+  '$':
+    success-sound:
+      type: ENTITY_EXPERIENCE_ORB_PICKUP
+      volume: 0.2
+      pitch: 0.2
+    fail-sound:
+      type: BLOCK_ANVIL_PLACE
+      volume: 0.2
+      pitch: 0.2
+  '%':
+    success-sound:
+      type: ENTITY_EXPERIENCE_ORB_PICKUP
+      volume: 0.2
+      pitch: 0.2
+    fail-sound:
+      type: BLOCK_ANVIL_PLACE
+      volume: 0.2
+      pitch: 0.2
+  '^':
+    success-sound:
+      type: ENTITY_EXPERIENCE_ORB_PICKUP
+      volume: 0.2
+      pitch: 0.2
+    fail-sound:
+      type: BLOCK_ANVIL_PLACE
+      volume: 0.2
+      pitch: 0.2
+  '&':
+    success-sound:
+      type: ENTITY_EXPERIENCE_ORB_PICKUP
+      volume: 0.2
+      pitch: 0.2
+    fail-sound:
+      type: BLOCK_ANVIL_PLACE
+      volume: 0.2
+      pitch: 0.2
+  '~':
+    type: ENTITY_EXPERIENCE_ORB_PICKUP
+    volume: 0.2
+    pitch: 0.2

@@ -1,0 +1,48 @@
+######################################################
+##                                                  ##
+##                SuperiorSkyblock 2                ##
+##                Developed by Ome_R                ##
+##                                                  ##
+######################################################
+
+title: '&l地标目录: {0}'
+previous-menu: true
+
+pattern:
+  - '@ @ @ @ @ @ @ @ @'
+  - '@ ! @ @ ~ @ @ $ @'
+  - '@ @ @ @ @ @ @ @ @'
+
+success-update-sound:
+  type: ENTITY_EXPERIENCE_ORB_PICKUP
+  volume: 0.2
+  pitch: 0.2
+
+category-rename: '!'
+category-icon: '~'
+category-warps: '$'
+
+items:
+  '!':
+    type: BOOK
+    name: '&6重命名目录'
+    lore:
+      - '&f '
+      - '&f '
+      - '&7&o(( &f&o点击&7&o重命名目录. ))'
+  '~':
+    type: STONE
+    lore:
+      - '&7&o你可以使用如下占位符:'
+      - '&7&o{0}代表地标名称.'
+      - '&7&o{1}代表地标坐标.'
+      - '&7&o{2}代表地标状态.'
+      - '&7&o(( &f&o右击&7&o编辑图标. ))'
+      - '&7&o(( &f&o左击&7&o编辑目录位置. ))'
+  '$':
+    type: ENDER_PEARL
+    name: '&6空岛地标'
+    lore:
+      - '&f '
+      - '&f '
+      - '&7&o(( &f&o点击&7&o点击编辑目录中的地标. ))'

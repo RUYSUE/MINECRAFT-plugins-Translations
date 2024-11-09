@@ -1,0 +1,112 @@
+######################################################
+##                                                  ##
+##                SuperiorSkyblock 2                ##
+##                Developed by Ome_R                ##
+##                                                  ##
+######################################################
+
+# The mission file to use
+mission-file: FarmingMissions
+
+# Whether the mission should be given when completing all requirements.
+auto-reward: true
+
+# Should block counts of players get reset when completing the mission?
+reset-after-finish: true
+
+# Rewards given when completing the mission.
+rewards:
+  items:
+    '1':
+      type: SUGAR_CANE
+      amount: 1
+    '2':
+      type: CACTUS
+      amount: 1
+  commands:
+    - 'eco give %player% 5000'
+    - 'is admin msg %player% &e&l农夫任务 | &7已完成农夫任务II!'
+
+# List of required missions that must be completed before completing this one.
+required-missions:
+  - 'farmer_1'
+
+# List of all required blocks must be gathered in order to complete the mission.
+required-plants:
+  '1':
+    types:
+      - 'BEETROOT'
+    amount: 10
+  '2':
+    types:
+      - 'PUMPKIN'
+    amount: 10
+  '3':
+    types:
+      - 'MELON'
+    amount: 10
+
+# Icons used in the menus.
+icons:
+  not-completed:
+    type: PAPER
+    name: '&a农夫任务II'
+    lore:
+      - '&7种植甜菜、南瓜与西瓜来扩大田地.'
+      - ''
+      - '&6需要种植:'
+      - '&8 - &7x10 甜菜根'
+      - '&8 - &7x10 南瓜'
+      - '&8 - &7x10 西瓜'
+      - ''
+      - '&6奖励:'
+      - '&8 - &7x1 甘蔗'
+      - '&8 - &7x1 仙人掌'
+      - '&8 - &7$5,000'
+      - ''
+      - '&6已种植甜菜根: &7{value_beetroot}/10'
+      - '&6已种植南瓜: &7{value_pumpkin}/10'
+      - '&6已种植西瓜: &7{value_melon}/10'
+      - '&6进度: &7{0}%'
+      - '&c&l ✘ &7未完成'
+  can-complete:
+    type: PAPER
+    name: '&a农夫任务II'
+    lore:
+      - '&7种植甜菜、南瓜与西瓜来扩大田地.'
+      - ''
+      - '&6需要种植:'
+      - '&8 - &7x10 甜菜根'
+      - '&8 - &7x10 南瓜'
+      - '&8 - &7x10 西瓜'
+      - ''
+      - '&6奖励:'
+      - '&8 - &7x1 甘蔗'
+      - '&8 - &7x1 仙人掌'
+      - '&8 - &7$5,000'
+      - ''
+      - '&6已种植甜菜根: &710/10'
+      - '&6已种植南瓜: &710/10'
+      - '&6已种植西瓜: &710/10'
+      - '&6进度: &7100%'
+      - '&a&l ✔ &7点击领取奖励.'
+    enchants:
+      DURABILITY: 1
+    flags:
+      - HIDE_ENCHANTS
+  completed:
+    type: MAP
+    name: '&a农夫任务II'
+    lore:
+      - '&7种植甜菜、南瓜与西瓜来扩大田地.'
+      - ''
+      - '&6奖励:'
+      - '&8 - &7x1 甘蔗'
+      - '&8 - &7x1 仙人掌'
+      - '&8 - &7$5,000'
+      - ''
+      - '&6已种植甜菜根: &710/10'
+      - '&6已种植南瓜: &710/10'
+      - '&6已种植西瓜: &710/10'
+      - '&6进度: &7100%'
+      - '&a&l ✔ &7已领取奖励.'

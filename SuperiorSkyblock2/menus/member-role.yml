@@ -1,0 +1,71 @@
+######################################################
+##                                                  ##
+##                SuperiorSkyblock 2                ##
+##                Developed by Ome_R                ##
+##                                                  ##
+######################################################
+
+title: '&8&l{}'
+previous-menu: true
+
+pattern:
+  - '$ $ $ $ $ $ $ $ $'
+  - '$ # # # # # # # $'
+  - '$ @ # % # & # * $'
+  - '$ # # # # # # # $'
+  - '$ $ $ $ $ $ $ $ $'
+
+items:
+  '$':
+    type: BLACK_STAINED_GLASS_PANE
+    name: '&f'
+  '@':
+    role: 成员
+    type: LEATHER_CHESTPLATE
+    name: '&e成员'
+    lore:
+      - '&7点击将玩家职位设为成员.'
+    flags:
+      - HIDE_ATTRIBUTES
+  '%':
+    role: 主持
+    type: GOLDEN_CHESTPLATE
+    name: '&e主持'
+    lore:
+      - '&7点击将玩家职位设为主持.'
+    flags:
+      - HIDE_ATTRIBUTES
+  '&':
+    role: 副手
+    type: IRON_CHESTPLATE
+    name: '&e副手'
+    lore:
+      - '&7点击将玩家职位设为副手.'
+    flags:
+      - HIDE_ATTRIBUTES
+  '*':
+    role: 岛主
+    type: DIAMOND_CHESTPLATE
+    name: '&e岛主'
+    lore:
+      - '&7点击转移空岛所有权.'
+    flags:
+      - HIDE_ATTRIBUTES
+
+sounds:
+  '@':
+    type: ENTITY_EXPERIENCE_ORB_PICKUP
+    volume: 0.2
+    pitch: 0.2
+  '%':
+    type: ENTITY_EXPERIENCE_ORB_PICKUP
+    volume: 0.2
+    pitch: 0.2
+  '&':
+    type: ENTITY_EXPERIENCE_ORB_PICKUP
+    volume: 0.2
+    pitch: 0.2
+  '*':
+    type: ENTITY_EXPERIENCE_ORB_PICKUP
+    volume: 0.2
+    pitch: 0.2

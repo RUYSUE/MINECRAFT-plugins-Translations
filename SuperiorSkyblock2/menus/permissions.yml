@@ -1,0 +1,2324 @@
+######################################################
+##                                                  ##
+##                SuperiorSkyblock 2                ##
+##                Developed by Ome_R                ##
+##                                                  ##
+######################################################
+
+title: '&lPermissions Controller'
+previous-menu: true
+
+pattern:
+  - '$ $ $ $ $ $ $ $ $'
+  - '$ @ @ @ @ @ @ @ $'
+  - '$ @ @ @ @ @ @ @ $'
+  - '$ @ @ @ @ @ @ @ $'
+  - '$ $ % $ * $ ^ $ $'
+
+slots: '@'
+previous-page: '%'
+current-page: '*'
+next-page: '^'
+
+messages:
+  no-role-permission: '&8 - &c{}'
+  exact-role-permission: '&8 - &2{}'
+  higher-role-permission: '&8 - &a{}'
+
+items:
+  '$':
+    type: CYAN_STAINED_GLASS_PANE
+    name: '&f'
+  '%':
+    type: PAPER
+    name: '{0}上一页'
+  '*':
+    type: SUNFLOWER
+    name: '&a当前页'
+    lore:
+      - '&7第 {0} 页'
+  '^':
+    type: PAPER
+    name: '{0}下一页'
+
+permissions:
+  all:
+    display-menu: true
+    permission-enabled:
+      type: BEDROCK
+      name: '&6全部'
+      lore:
+        - '&7岛屿所有功能的权限。'
+        - '&7当前 &a已启用&7。'
+    permission-disabled:
+      type: BEDROCK
+      name: '&6全部'
+      lore:
+        - '&7岛屿所有功能的权限。'
+        - '&7当前 &c已禁用&7。'
+    role-permission:
+      type: BEDROCK
+      name: '&6全部'
+      lore:
+        - '&7岛屿所有功能的权限。'
+        - '&7角色: &e{}&7。'
+        - ''
+        - '{0}'
+    has-access:
+      sound:
+        type: ENTITY_EXPERIENCE_ORB_PICKUP
+        volume: 0.2
+        pitch: 0.2
+    no-access:
+      sound:
+        type: BLOCK_ANVIL_PLACE
+        volume: 0.2
+        pitch: 0.2
+
+  animal_breed:
+    display-menu: true
+    permission-enabled:
+      type: WHEAT
+      name: '&6动物繁殖'
+      lore:
+        - '&7在岛屿内繁殖动物的权限。'
+        - '&7当前 &a已启用&7。'
+    permission-disabled:
+      name: '&6动物繁殖'
+      type: WHEAT
+      lore:
+        - '&7在岛屿内繁殖动物的权限。'
+        - '&7当前 &c已禁用&7。'
+    role-permission:
+      name: '&6动物繁殖'
+      type: WHEAT
+      lore:
+        - '&7在岛屿内繁殖动物的权限。'
+        - '&7角色: &e{}&7。'
+        - ''
+        - '{0}'
+    has-access:
+      sound:
+        type: ENTITY_EXPERIENCE_ORB_PICKUP
+        volume: 0.2
+        pitch: 0.2
+    no-access:
+      sound:
+        type: BLOCK_ANVIL_PLACE
+        volume: 0.2
+        pitch: 0.2
+
+  animal_damage:
+    display-menu: true
+    permission-enabled:
+      type: DIAMOND_SWORD
+      name: '&6动物伤害'
+      lore:
+        - '&7在岛屿内伤害动物的权限。'
+        - '&7当前 &a已启用&7。'
+    permission-disabled:
+      type: DIAMOND_SWORD
+      name: '&6动物伤害'
+      lore:
+        - '&7在岛屿内伤害动物的权限。'
+        - '&7当前 &c已禁用&7。'
+    role-permission:
+      type: DIAMOND_SWORD
+      name: '&6动物伤害'
+      lore:
+        - '&7在岛屿内伤害动物的权限。'
+        - '&7角色: &e{}&7。'
+        - ''
+        - '{0}'
+    has-access:
+      sound:
+        type: ENTITY_EXPERIENCE_ORB_PICKUP
+        volume: 0.2
+        pitch: 0.2
+    no-access:
+      sound:
+        type: BLOCK_ANVIL_PLACE
+        volume: 0.2
+        pitch: 0.2
+
+  animal_shear:
+    display-menu: true
+    permission-enabled:
+      type: SHEARS
+      name: '&6动物剪毛'
+      lore:
+        - '&7在岛屿内剪动物毛的权限。'
+        - '&7当前 &a已启用&7。'
+    permission-disabled:
+      type: SHEARS
+      name: '&6动物剪毛'
+      lore:
+        - '&7在岛屿内剪动物毛的权限。'
+        - '&7当前 &c已禁用&7。'
+    role-permission:
+      type: SHEARS
+      name: '&6动物剪毛'
+      lore:
+        - '&7在岛屿内剪动物毛的权限。'
+        - '&7角色: &e{}&7。'
+        - ''
+        - '{0}'
+    has-access:
+      sound:
+        type: ENTITY_EXPERIENCE_ORB_PICKUP
+        volume: 0.2
+        pitch: 0.2
+    no-access:
+      sound:
+        type: BLOCK_ANVIL_PLACE
+        volume: 0.2
+        pitch: 0.2
+
+  animal_spawn:
+    display-menu: true
+    permission-enabled:
+      type: CHICKEN_SPAWN_EGG
+      name: '&6动物生成'
+      lore:
+        - '&7在岛屿内生成动物的权限。'
+        - '&7当前 &a已启用&7。'
+    permission-disabled:
+      type: CHICKEN_SPAWN_EGG
+      name: '&6动物生成'
+      lore:
+        - '&7在岛屿内生成动物的权限。'
+        - '&7当前 &c已禁用&7。'
+    role-permission:
+      type: CHICKEN_SPAWN_EGG
+      name: '&6动物生成'
+      lore:
+        - '&7在岛屿内生成动物的权限。'
+        - '&7角色: &e{}&7。'
+        - ''
+        - '{0}'
+    has-access:
+      sound:
+        type: ENTITY_EXPERIENCE_ORB_PICKUP
+        volume: 0.2
+        pitch: 0.2
+    no-access:
+      sound:
+        type: BLOCK_ANVIL_PLACE
+        volume: 0.2
+        pitch: 0.2
+
+  ban_member:
+    display-menu: true
+    permission-enabled:
+      type: SKELETON_SKULL
+      name: '&6禁止成员'
+      lore:
+        - '&7禁止成员进入岛屿的权限。'
+        - '&7当前 &a已启用&7。'
+    permission-disabled:
+      type: SKELETON_SKULL
+      name: '&6禁止成员'
+      lore:
+        - '&7禁止成员进入岛屿的权限。'
+        - '&7当前 &c已禁用&7。'
+    role-permission:
+      type: SKELETON_SKULL
+      name: '&6禁止成员'
+      lore:
+        - '&7禁止成员进入岛屿的权限。'
+        - '&7角色: &e{}&7。'
+        - ''
+        - '{0}'
+    has-access:
+      sound:
+        type: ENTITY_EXPERIENCE_ORB_PICKUP
+        volume: 0.2
+        pitch: 0.2
+    no-access:
+      sound:
+        type: BLOCK_ANVIL_PLACE
+        volume: 0.2
+        pitch: 0.2
+
+  break:
+    display-menu: true
+    permission-enabled:
+      type: DIAMOND_PICKAXE
+      name: '&6破坏'
+      lore:
+        - '&7在岛屿内破坏方块的权限。'
+        - '&7当前 &a已启用&7。'
+    permission-disabled:
+      type: DIAMOND_PICKAXE
+      name: '&6破坏'
+      lore:
+        - '&7在岛屿内破坏方块的权限。'
+        - '&7当前 &c已禁用&7。'
+    role-permission:
+      type: DIAMOND_PICKAXE
+      name: '&6破坏'
+      lore:
+        - '&7在岛屿内破坏方块的权限。'
+        - '&7角色: &e{}&7。'
+        - ''
+        - '{0}'
+    has-access:
+      sound:
+        type: ENTITY_EXPERIENCE_ORB_PICKUP
+        volume: 0.2
+        pitch: 0.2
+    no-access:
+      sound:
+        type: BLOCK_ANVIL_PLACE
+        volume: 0.2
+        pitch: 0.2
+
+  brush:
+    display-menu: true
+    permission-enabled:
+      type: BRUSH
+      name: '&6刷子'
+      lore:
+        - '&7在岛屿内刷可疑方块的权限。'
+        - '&7当前 &a已启用&7。'
+    permission-disabled:
+      type: BRUSH
+      name: '&6刷子'
+      lore:
+        - '&7在岛屿内刷可疑方块的权限。'
+        - '&7当前 &c已禁用&7。'
+    role-permission:
+      type: BRUSH
+      name: '&6刷子'
+      lore:
+        - '&7在岛屿内刷可疑方块的权限。'
+        - '&7角色: &e{}&7。'
+        - ''
+        - '{0}'
+    has-access:
+      sound:
+        type: ENTITY_EXPERIENCE_ORB_PICKUP
+        volume: 0.2
+        pitch: 0.2
+    no-access:
+      sound:
+        type: BLOCK_ANVIL_PLACE
+        volume: 0.2
+        pitch: 0.2
+
+  build:
+    display-menu: true
+    permission-enabled:
+      type: COBBLESTONE
+      name: '&6建造'
+      lore:
+        - '&7在岛屿内放置方块的权限。'
+        - '&7当前 &a已启用&7。'
+    permission-disabled:
+      type: COBBLESTONE
+      name: '&6建造'
+      lore:
+        - '&7在岛屿内放置方块的权限。'
+        - '&7当前 &c已禁用&7。'
+    role-permission:
+      type: COBBLESTONE
+      name: '&6建造'
+      lore:
+        - '&7在岛屿内放置方块的权限。'
+        - '&7角色: &e{}&7。'
+        - ''
+        - '{0}'
+    has-access:
+      sound:
+        type: ENTITY_EXPERIENCE_ORB_PICKUP
+        volume: 0.2
+        pitch: 0.2
+    no-access:
+      sound:
+        type: BLOCK_ANVIL_PLACE
+        volume: 0.2
+        pitch: 0.2
+
+  change_name:
+    display-menu: true
+    permission-enabled:
+      type: NAME_TAG
+      name: '&6更改名称'
+      lore:
+        - '&7更改岛屿名称的权限。'
+        - '&7当前 &a已启用&7。'
+    permission-disabled:
+      type: NAME_TAG
+      name: '&6更改名称'
+      lore:
+        - '&7更改岛屿名称的权限。'
+        - '&7当前 &c已禁用&7。'
+    role-permission:
+      type: NAME_TAG
+      name: '&6更改名称'
+      lore:
+        - '&7更改岛屿名称的权限。'
+        - '&7角色: &e{}&7。'
+        - ''
+        - '{0}'
+    has-access:
+      sound:
+        type: ENTITY_EXPERIENCE_ORB_PICKUP
+        volume: 0.2
+        pitch: 0.2
+    no-access:
+      sound:
+        type: BLOCK_ANVIL_PLACE
+        volume: 0.2
+        pitch: 0.2
+
+  chest_access:
+    display-menu: true
+    permission-enabled:
+      type: CHEST
+      name: '&6箱子访问'
+      lore:
+        - '&7在岛屿内打开箱子的权限。'
+        - '&7当前 &a已启用&7。'
+    permission-disabled:
+      type: CHEST
+      name: '&6箱子访问'
+      lore:
+        - '&7在岛屿内打开箱子的权限。'
+        - '&7当前 &c已禁用&7。'
+    role-permission:
+      type: CHEST
+      name: '&6箱子访问'
+      lore:
+        - '&7在岛屿内打开箱子的权限。'
+        - '&7角色: &e{}&7。'
+        - ''
+        - '{0}'
+    has-access:
+      sound:
+        type: ENTITY_EXPERIENCE_ORB_PICKUP
+        volume: 0.2
+        pitch: 0.2
+    no-access:
+      sound:
+        type: BLOCK_ANVIL_PLACE
+        volume: 0.2
+        pitch: 0.2
+
+  chorus_fruit:
+    display-menu: true
+    permission-enabled:
+      type: CHORUS_FRUIT
+      name: '&6紫颂果'
+      lore:
+        - '&7在岛屿内食用紫颂果的权限。'
+        - '&7当前 &a已启用&7。'
+    permission-disabled:
+      type: CHORUS_FRUIT
+      name: '&6紫颂果'
+      lore:
+        - '&7在岛屿内食用紫颂果的权限。'
+        - '&7当前 &c已禁用&7。'
+    role-permission:
+      type: CHORUS_FRUIT
+      name: '&6紫颂果'
+      lore:
+        - '&7在岛屿内食用紫颂果的权限。'
+        - '&7角色: &e{}&7。'
+        - ''
+        - '{0}'
+    has-access:
+      sound:
+        type: ENTITY_EXPERIENCE_ORB_PICKUP
+        volume: 0.2
+        pitch: 0.2
+    no-access:
+      sound:
+        type: BLOCK_ANVIL_PLACE
+        volume: 0.2
+        pitch: 0.2
+
+  close_bypass:
+    display-menu: true
+    permission-enabled:
+      type: TRIPWIRE_HOOK
+      name: '&6锁定绕过'
+      lore:
+        - '&7绕过岛屿锁定的权限。'
+        - '&7当前 &a已启用&7。'
+    permission-disabled:
+      type: TRIPWIRE_HOOK
+      name: '&6锁定绕过'
+      lore:
+        - '&7绕过岛屿锁定的权限。'
+        - '&7当前 &c已禁用&7。'
+    role-permission:
+      type: TRIPWIRE_HOOK
+      name: '&6锁定绕过'
+      lore:
+        - '&7绕过岛屿锁定的权限。'
+        - '&7角色: &e{}&7。'
+        - ''
+        - '{0}'
+    has-access:
+      sound:
+        type: ENTITY_EXPERIENCE_ORB_PICKUP
+        volume: 0.2
+        pitch: 0.2
+    no-access:
+      sound:
+        type: BLOCK_ANVIL_PLACE
+        volume: 0.2
+        pitch: 0.2
+
+  close_island:
+    display-menu: true
+    permission-enabled:
+      type: BARRIER
+      name: '&6锁定岛屿'
+      lore:
+        - '&7将岛屿锁定为私有的权限。'
+        - '&7当前 &a已启用&7。'
+    permission-disabled:
+      type: BARRIER
+      name: '&6锁定岛屿'
+      lore:
+        - '&7将岛屿锁定为私���的权限。'
+        - '&7当前 &c已禁用&7。'
+    role-permission:
+      type: BARRIER
+      name: '&6锁定岛屿'
+      lore:
+        - '&7将岛屿锁定为私有的权限。'
+        - '&7角色: &e{}&7。'
+        - ''
+        - '{0}'
+    has-access:
+      sound:
+        type: ENTITY_EXPERIENCE_ORB_PICKUP
+        volume: 0.2
+        pitch: 0.2
+    no-access:
+      sound:
+        type: BLOCK_ANVIL_PLACE
+        volume: 0.2
+        pitch: 0.2
+
+  coop_member:
+    display-menu: true
+    permission-enabled:
+      type: GOLDEN_APPLE
+      name: '&6合作成员'
+      lore:
+        - '&7添加玩家为合作成员的权限。'
+        - '&7当前 &a已启用&7。'
+    permission-disabled:
+      type: GOLDEN_APPLE
+      name: '&6合作成员'
+      lore:
+        - '&7添加玩家为合作成员的权限。'
+        - '&7当前 &c已禁用&7。'
+    role-permission:
+      type: GOLDEN_APPLE
+      name: '&6合作成员'
+      lore:
+        - '&7添加玩家为合作成员的权限。'
+        - '&7角色: &e{}&7。'
+        - ''
+        - '{0}'
+    has-access:
+      sound:
+        type: ENTITY_EXPERIENCE_ORB_PICKUP
+        volume: 0.2
+        pitch: 0.2
+    no-access:
+      sound:
+        type: BLOCK_ANVIL_PLACE
+        volume: 0.2
+        pitch: 0.2
+
+  delete_warp:
+    display-menu: true
+    permission-enabled:
+      type: ENDER_PEARL
+      name: '&6删除传送点'
+      lore:
+        - '&7删除岛屿传送点的权限。'
+        - '&7当前 &a已启用&7。'
+    permission-disabled:
+      type: ENDER_PEARL
+      name: '&6删除传送点'
+      lore:
+        - '&7删除岛屿传送点的权限。'
+        - '&7当前 &c已禁用&7。'
+    role-permission:
+      type: ENDER_PEARL
+      name: '&6删除传送点'
+      lore:
+        - '&7删除岛屿传送点的权限。'
+        - '&7角色: &e{}&7。'
+        - ''
+        - '{0}'
+    has-access:
+      sound:
+        type: ENTITY_EXPERIENCE_ORB_PICKUP
+        volume: 0.2
+        pitch: 0.2
+    no-access:
+      sound:
+        type: BLOCK_ANVIL_PLACE
+        volume: 0.2
+        pitch: 0.2
+
+  demote_members:
+    display-menu: true
+    permission-enabled:
+      type: IRON_INGOT
+      name: '&6降级成员'
+      lore:
+        - '&7降级岛屿成员的权限。'
+        - '&7当前 &a已启用&7。'
+    permission-disabled:
+      type: IRON_INGOT
+      name: '&6降级成员'
+      lore:
+        - '&7降级岛屿成员的权限。'
+        - '&7当前 &c已禁用&7。'
+    role-permission:
+      type: IRON_INGOT
+      name: '&6降级成员'
+      lore:
+        - '&7降级岛屿成员的权限。'
+        - '&7角色: &e{}&7。'
+        - ''
+        - '{0}'
+    has-access:
+      sound:
+        type: ENTITY_EXPERIENCE_ORB_PICKUP
+        volume: 0.2
+        pitch: 0.2
+    no-access:
+      sound:
+        type: BLOCK_ANVIL_PLACE
+        volume: 0.2
+        pitch: 0.2
+
+  deposit_money:
+    display-menu: true
+    permission-enabled:
+      type: MAP
+      name: '&6存钱'
+      lore:
+        - '&7向岛屿银行存钱的权限。'
+        - '&7当前 &a已启用&7。'
+    permission-disabled:
+      type: MAP
+      name: '&6存钱'
+      lore:
+        - '&7向岛屿银行存钱的权限。'
+        - '&7当前 &c已禁用&7。'
+    role-permission:
+      type: MAP
+      name: '&6存钱'
+      lore:
+        - '&7向岛屿银行存钱的权限。'
+        - '&7角色: &e{}&7。'
+        - ''
+        - '{0}'
+    has-access:
+      sound:
+        type: ENTITY_EXPERIENCE_ORB_PICKUP
+        volume: 0.2
+        pitch: 0.2
+    no-access:
+      sound:
+        type: BLOCK_ANVIL_PLACE
+        volume: 0.2
+        pitch: 0.2
+
+  disband_island:
+    display-menu: true
+    permission-enabled:
+      type: TNT
+      name: '&6解散岛屿'
+      lore:
+        - '&7解散岛屿的权限。'
+        - '&7当前 &a已启用&7。'
+    permission-disabled:
+      type: TNT
+      name: '&6解散岛屿'
+      lore:
+        - '&7解散岛屿的权限。'
+        - '&7当前 &c已禁用&7。'
+    role-permission:
+      type: TNT
+      name: '&6解散岛屿'
+      lore:
+        - '&7解散岛屿的权限。'
+        - '&7角色: &e{}&7。'
+        - ''
+        - '{0}'
+    has-access:
+      sound:
+        type: ENTITY_EXPERIENCE_ORB_PICKUP
+        volume: 0.2
+        pitch: 0.2
+    no-access:
+      sound:
+        type: BLOCK_ANVIL_PLACE
+        volume: 0.2
+        pitch: 0.2
+
+  discord_show:
+    display-menu: true
+    permission-enabled:
+      type: LIGHT_BLUE_TERRACOTTA
+      name: '&6显示 Discord'
+      lore:
+        - '&7查看岛屿关联的 Discord 的权限。'
+        - '&7当前 &a已启用&7。'
+    permission-disabled:
+      type: LIGHT_BLUE_TERRACOTTA
+      name: '&6显示 Discord'
+      lore:
+        - '&7查看岛屿关联的 Discord 的权限。'
+        - '&7当前 &c已禁用&7。'
+    role-permission:
+      type: LIGHT_BLUE_TERRACOTTA
+      name: '&6显示 Discord'
+      lore:
+        - '&7查看岛屿关联的 Discord 的权限。'
+        - '&7角色: &e{}&7。'
+        - ''
+        - '{0}'
+    has-access:
+      sound:
+        type: ENTITY_EXPERIENCE_ORB_PICKUP
+        volume: 0.2
+        pitch: 0.2
+    no-access:
+      sound:
+        type: BLOCK_ANVIL_PLACE
+        volume: 0.2
+        pitch: 0.2
+
+  drop_items:
+    display-menu: true
+    permission-enabled:
+      type: ARROW
+      name: '&6丢弃物品'
+      lore:
+        - '&7在岛屿内丢弃物品的权限。'
+        - '&7当前 &a已启用&7。'
+    permission-disabled:
+      type: ARROW
+      name: '&6丢弃物品'
+      lore:
+        - '&7在岛屿内丢弃物品的权限。'
+        - '&7当前 &c已禁用&7。'
+    role-permission:
+      type: ARROW
+      name: '&6丢弃物品'
+      lore:
+        - '&7在岛屿内丢弃物品的权限。'
+        - '&7角色: &e{}&7。'
+        - ''
+        - '{0}'
+    has-access:
+      sound:
+        type: ENTITY_EXPERIENCE_ORB_PICKUP
+        volume: 0.2
+        pitch: 0.2
+    no-access:
+      sound:
+        type: BLOCK_ANVIL_PLACE
+        volume: 0.2
+        pitch: 0.2
+
+ender_pearl:
+    display-menu: true
+    permission-enabled:
+      type: ENDER_PEARL
+      name: '&6末影珍珠'
+      lore:
+        - '&7末影珍珠的权限。'
+        - '&7当前 &a已启用&7。'
+    permission-disabled:
+      type: ENDER_PEARL
+      name: '&6末影珍珠'
+      lore:
+        - '&7末影珍珠的权限。'
+        - '&7当前 &c已禁用&7。'
+    role-permission:
+      type: ENDER_PEARL
+      name: '&6末影珍珠'
+      lore:
+        - '&7末影珍珠的权限。'
+        - '&7角色: &e{}&7。'
+        - ''
+        - '{0}'
+    has-access:
+      sound:
+        type: ENTITY_EXPERIENCE_ORB_PICKUP
+        volume: 0.2
+        pitch: 0.2
+    no-access:
+      sound:
+        type: BLOCK_ANVIL_PLACE
+        volume: 0.2
+        pitch: 0.2
+
+  expel_bypass:
+    display-menu: true
+    permission-enabled:
+      type: FEATHER
+      name: '&6驱逐绕过'
+      lore:
+        - '&7绕过被驱逐的权限。'
+        - '&7当前 &a已启用&7。'
+    permission-disabled:
+      type: FEATHER
+      name: '&6驱逐绕过'
+      lore:
+        - '&7绕过被驱逐的权限。'
+        - '&7当前 &c已禁用&7。'
+    role-permission:
+      type: FEATHER
+      name: '&6驱逐绕过'
+      lore:
+        - '&7绕过被驱逐的权限。'
+        - '&7角色: &e{}&7。'
+        - ''
+        - '{0}'
+    has-access:
+      sound:
+        type: ENTITY_EXPERIENCE_ORB_PICKUP
+        volume: 0.2
+        pitch: 0.2
+    no-access:
+      sound:
+        type: BLOCK_ANVIL_PLACE
+        volume: 0.2
+        pitch: 0.2
+
+  expel_players:
+    display-menu: true
+    permission-enabled:
+      type: DISPENSER
+      name: '&6驱逐玩家'
+      lore:
+        - '&7驱逐玩家的权限。'
+        - '&7当前 &a已启用&7。'
+    permission-disabled:
+      type: DISPENSER
+      name: '&6驱逐玩家'
+      lore:
+        - '&7驱逐玩家的权限。'
+        - '&7当前 &c已禁用&7。'
+    role-permission:
+      type: DISPENSER
+      name: '&6驱逐玩家'
+      lore:
+        - '&7驱逐玩家的权限。'
+        - '&7角色: &e{}&7。'
+        - ''
+        - '{0}'
+    has-access:
+      sound:
+        type: ENTITY_EXPERIENCE_ORB_PICKUP
+        volume: 0.2
+        pitch: 0.2
+    no-access:
+      sound:
+        type: BLOCK_ANVIL_PLACE
+        volume: 0.2
+        pitch: 0.2
+
+  farm_tramping:
+    display-menu: true
+    permission-enabled:
+      type: FARMLAND
+      name: '&6踩踏农田'
+      lore:
+        - '&7踩踏农田的权限。'
+        - '&7当前 &a已启用&7。'
+    permission-disabled:
+      type: FARMLAND
+      name: '&6踩踏农田'
+      lore:
+        - '&7踩踏农田的权限。'
+        - '&7当前 &c已禁用&7。'
+    role-permission:
+      type: FARMLAND
+      name: '&6踩踏农田'
+      lore:
+        - '&7踩踏农田的权限。'
+        - '&7角色: &e{}&7。'
+        - ''
+        - '{0}'
+    has-access:
+      sound:
+        type: ENTITY_EXPERIENCE_ORB_PICKUP
+        volume: 0.2
+        pitch: 0.2
+    no-access:
+      sound:
+        type: BLOCK_ANVIL_PLACE
+        volume: 0.2
+        pitch: 0.2
+
+  fertilize:
+    display-menu: true
+    permission-enabled:
+      type: BONE_MEAL
+      name: '&6施肥'
+      lore:
+        - '&7施肥的权限。'
+        - '&7当前 &a已启用&7。'
+    permission-disabled:
+      type: BONE_MEAL
+      name: '&6施肥'
+      lore:
+        - '&7施肥的权限。'
+        - '&7当前 &c已禁用&7。'
+    role-permission:
+      type: BONE_MEAL
+      name: '&6施肥'
+      lore:
+        - '&7施肥的权限。'
+        - '&7角色: &e{}&7。'
+        - ''
+        - '{0}'
+    has-access:
+      sound:
+        type: ENTITY_EXPERIENCE_ORB_PICKUP
+        volume: 0.2
+        pitch: 0.2
+    no-access:
+      sound:
+        type: BLOCK_ANVIL_PLACE
+        volume: 0.2
+        pitch: 0.2
+
+  fish:
+    display-menu: true
+    permission-enabled:
+      type: FISHING_ROD
+      name: '&6钓鱼'
+      lore:
+        - '&7钓鱼的权限。'
+        - '&7当前 &a已启用&7。'
+    permission-disabled:
+      type: FISHING_ROD
+      name: '&6钓鱼'
+      lore:
+        - '&7钓鱼的权限。'
+        - '&7��前 &c已禁用&7。'
+    role-permission:
+      type: FISHING_ROD
+      name: '&6钓鱼'
+      lore:
+        - '&7钓鱼的权限。'
+        - '&7角色: &e{}&7。'
+        - ''
+        - '{0}'
+    has-access:
+      sound:
+        type: ENTITY_EXPERIENCE_ORB_PICKUP
+        volume: 0.2
+        pitch: 0.2
+    no-access:
+      sound:
+        type: BLOCK_ANVIL_PLACE
+        volume: 0.2
+        pitch: 0.2
+
+  fly:
+    display-menu: true
+    permission-enabled:
+      type: FEATHER
+      name: '&6飞行'
+      lore:
+        - '&7飞行的权限。'
+        - '&7当前 &a已启用&7。'
+    permission-disabled:
+      type: FEATHER
+      name: '&6飞行'
+      lore:
+        - '&7飞行的权限。'
+        - '&7当前 &c已禁用&7。'
+    role-permission:
+      type: FEATHER
+      name: '&6飞行'
+      lore:
+        - '&7飞行的权限。'
+        - '&7角色: &e{}&7。'
+        - ''
+        - '{0}'
+    has-access:
+      sound:
+        type: ENTITY_EXPERIENCE_ORB_PICKUP
+        volume: 0.2
+        pitch: 0.2
+    no-access:
+      sound:
+        type: BLOCK_ANVIL_PLACE
+        volume: 0.2
+        pitch: 0.2
+
+  horse_interact:
+    display-menu: true
+    permission-enabled:
+      type: HORSE_SPAWN_EGG
+      name: '&6与马互动'
+      lore:
+        - '&7与马互动的权限。'
+        - '&7当前 &a已启用&7。'
+    permission-disabled:
+      type: HORSE_SPAWN_EGG
+      name: '&6与马互动'
+      lore:
+        - '&7与马互动的权限。'
+        - '&7当前 &c已禁用&7。'
+    role-permission:
+      type: HORSE_SPAWN_EGG
+      name: '&6与马互动'
+      lore:
+        - '&7与马互动的权限。'
+        - '&7角色: &e{}&7。'
+        - ''
+        - '{0}'
+    has-access:
+      sound:
+        type: ENTITY_EXPERIENCE_ORB_PICKUP
+        volume: 0.2
+        pitch: 0.2
+    no-access:
+      sound:
+        type: BLOCK_ANVIL_PLACE
+        volume: 0.2
+        pitch: 0.2
+
+  ignite_creeper:
+    display-menu: true
+    permission-enabled:
+      type: CREEPER_SPAWN_EGG
+      name: '&6点燃苦力怕'
+      lore:
+        - '&7点燃苦力怕的权限。'
+        - '&7当前 &a已启用&7。'
+    permission-disabled:
+      type: CREEPER_SPAWN_EGG
+      name: '&6点燃苦力怕'
+      lore:
+        - '&7点燃苦力怕的权限。'
+        - '&7当前 &c已禁用&7。'
+    role-permission:
+      type: CREEPER_SPAWN_EGG
+      name: '&6点燃苦力怕'
+      lore:
+        - '&7点燃苦力怕的权限。'
+        - '&7角色: &e{}&7。'
+        - ''
+        - '{0}'
+    has-access:
+      sound:
+        type: ENTITY_EXPERIENCE_ORB_PICKUP
+        volume: 0.2
+        pitch: 0.2
+    no-access:
+      sound:
+        type: BLOCK_ANVIL_PLACE
+        volume: 0.2
+        pitch: 0.2
+
+  interact:
+    display-menu: true
+    permission-enabled:
+      type: PISTON
+      name: '&6互动'
+      lore:
+        - '&7与方块互动的权限。'
+        - '&7当前 &a已启用&7。'
+    permission-disabled:
+      type: PISTON
+      name: '&6互动'
+      lore:
+        - '&7与方块互动的权限。'
+        - '&7当前 &c已禁用&7。'
+    role-permission:
+      type: PISTON
+      name: '&6互动'
+      lore:
+        - '&7与方块互动的权限。'
+        - '&7角色: &e{}&7。'
+        - ''
+        - '{0}'
+    has-access:
+      sound:
+        type: ENTITY_EXPERIENCE_ORB_PICKUP
+        volume: 0.2
+        pitch: 0.2
+    no-access:
+      sound:
+        type: BLOCK_ANVIL_PLACE
+        volume: 0.2
+        pitch: 0.2
+
+  invite_member:
+    display-menu: true
+    permission-enabled:
+      type: PLAYER_HEAD
+      data: 3
+      name: '&6邀请成员'
+      lore:
+        - '&7邀请新成员的权限。'
+        - '&7当前 &a已启用&7。'
+    permission-disabled:
+      type: PLAYER_HEAD
+      name: '&6邀请成员'
+      lore:
+        - '&7邀请新成员的权限。'
+        - '&7当前 &c已禁用&7。'
+    role-permission:
+      type: PLAYER_HEAD
+      name: '&6邀请成员'
+      lore:
+        - '&7邀请新成员的权限。'
+        - '&7角色: &e{}&7。'
+        - ''
+        - '{0}'
+    has-access:
+      sound:
+        type: ENTITY_EXPERIENCE_ORB_PICKUP
+        volume: 0.2
+        pitch: 0.2
+    no-access:
+      sound:
+        type: BLOCK_ANVIL_PLACE
+        volume: 0.2
+        pitch: 0.2
+
+  island_chest:
+    display-menu: true
+    permission-enabled:
+      type: ENDER_CHEST
+      name: '&6公共箱子'
+      lore:
+        - '&7访问岛屿公共箱子的权限。'
+        - '&7当前 &a已启用&7。'
+    permission-disabled:
+      type: ENDER_CHEST
+      name: '&6公共箱子'
+      lore:
+        - '&7访问岛屿公共箱子的权限。'
+        - '&7当前 &c已禁用&7。'
+    role-permission:
+      type: ENDER_CHEST
+      name: '&6公共箱子'
+      lore:
+        - '&7访问岛屿公共箱子的权限。'
+        - '&7角色: &e{}&7。'
+        - ''
+        - '{0}'
+    has-access:
+      sound:
+        type: ENTITY_EXPERIENCE_ORB_PICKUP
+        volume: 0.2
+        pitch: 0.2
+    no-access:
+      sound:
+        type: BLOCK_ANVIL_PLACE
+        volume: 0.2
+        pitch: 0.2
+
+  item_frame:
+    display-menu: true
+    permission-enabled:
+      type: ITEM_FRAME
+      name: '&6物品展示框'
+      lore:
+        - '&7与物品展示框互动的权限。'
+        - '&7当前 &a已启用&7。'
+    permission-disabled:
+      type: ITEM_FRAME
+      name: '&6物品展示框'
+      lore:
+        - '&7与物品展示框互动的权限。'
+        - '&7当前 &c已禁用&7。'
+    role-permission:
+      type: ITEM_FRAME
+      name: '&6物品展示框'
+      lore:
+        - '&7与物品展示框互动的权限。'
+        - '&7角色: &e{}&7。'
+        - ''
+        - '{0}'
+    has-access:
+      sound:
+        type: ENTITY_EXPERIENCE_ORB_PICKUP
+        volume: 0.2
+        pitch: 0.2
+    no-access:
+      sound:
+        type: BLOCK_ANVIL_PLACE
+        volume: 0.2
+        pitch: 0.2
+
+  kick_member:
+    display-menu: true
+    permission-enabled:
+      type: SKELETON_SKULL
+      name: '&6踢出成员'
+      lore:
+        - '&7踢出成员的权限。'
+        - '&7当前 &a已启用&7。'
+    permission-disabled:
+      type: SKELETON_SKULL
+      name: '&6踢出成员'
+      lore:
+        - '&7踢出成员的权限。'
+        - '&7当前 &c已禁用&7。'
+    role-permission:
+      type: SKELETON_SKULL
+      name: '&6踢出成员'
+      lore:
+        - '&7踢出成员的权限。'
+        - '&7角色: &e{}&7。'
+        - ''
+        - '{0}'
+    has-access:
+      sound:
+        type: ENTITY_EXPERIENCE_ORB_PICKUP
+        volume: 0.2
+        pitch: 0.2
+    no-access:
+      sound:
+        type: BLOCK_ANVIL_PLACE
+        volume: 0.2
+        pitch: 0.2
+
+  leash:
+    display-menu: true
+    permission-enabled:
+      type: LEAD
+      name: '&6拴住生物'
+      lore:
+        - '&7拴住生物的权限。'
+        - '&7当前 &a已启用&7。'
+    permission-disabled:
+      type: LEAD
+      name: '&6拴住生物'
+      lore:
+        - '&7拴住生物的权限。'
+        - '&7当前 &c已禁用&7。'
+    role-permission:
+      type: LEAD
+      name: '&6拴住生物'
+      lore:
+        - '&7拴住生物的权限。'
+        - '&7角色: &e{}&7。'
+        - ''
+        - '{0}'
+    has-access:
+      sound:
+        type: ENTITY_EXPERIENCE_ORB_PICKUP
+        volume: 0.2
+        pitch: 0.2
+    no-access:
+      sound:
+        type: BLOCK_ANVIL_PLACE
+        volume: 0.2
+        pitch: 0.2
+
+  monster_damage:
+    display-menu: true
+    permission-enabled:
+      type: ZOMBIE_HEAD
+      name: '&6伤害怪物'
+      lore:
+        - '&7伤害怪物的权限。'
+        - '&7当前 &a已启用&7。'
+    permission-disabled:
+      type: ZOMBIE_HEAD
+      name: '&6伤害怪物'
+      lore:
+        - '&7伤害怪物的权限。'
+        - '&7当前 &c已禁用&7。'
+    role-permission:
+      type: ZOMBIE_HEAD
+      name: '&6伤害怪物'
+      lore:
+        - '&7伤害怪物的权限。'
+        - '&7角色: &e{}&7。'
+        - ''
+        - '{0}'
+    has-access:
+      sound:
+        type: ENTITY_EXPERIENCE_ORB_PICKUP
+        volume: 0.2
+        pitch: 0.2
+    no-access:
+      sound:
+        type: BLOCK_ANVIL_PLACE
+        volume: 0.2
+        pitch: 0.2
+
+  minecart_damage:
+    display-menu: true
+    permission-enabled:
+      type: TNT_MINECART
+      name: '&6破坏矿车'
+      lore:
+        - '&7破坏矿车的权限。'
+        - '&7当前 &a已启用&7。'
+    permission-disabled:
+      type: TNT_MINECART
+      name: '&6破坏矿车'
+      lore:
+        - '&7破坏矿车的权限。'
+        - '&7当前 &c已禁用&7。'
+    role-permission:
+      type: TNT_MINECART
+      name: '&6破坏矿车'
+      lore:
+        - '&7破坏矿车的权限。'
+        - '&7角色: &e{}&7。'
+        - ''
+        - '{0}'
+    has-access:
+      sound:
+        type: ENTITY_EXPERIENCE_ORB_PICKUP
+        volume: 0.2
+        pitch: 0.2
+    no-access:
+      sound:
+        type: BLOCK_ANVIL_PLACE
+        volume: 0.2
+        pitch: 0.2
+
+  minecart_enter:
+    display-menu: true
+    permission-enabled:
+      type: HOPPER_MINECART
+      name: '&6进入矿车'
+      lore:
+        - '&7进入矿车的权限。'
+        - '&7当前 &a已启用&7。'
+    permission-disabled:
+      type: HOPPER_MINECART
+      name: '&6进入矿车'
+      lore:
+        - '&7进入矿车的权限。'
+        - '&7当前 &c已禁用&7。'
+    role-permission:
+      type: HOPPER_MINECART
+      name: '&6进入矿车'
+      lore:
+        - '&7进入矿车的权限。'
+        - '&7角色: &e{}&7。'
+        - ''
+        - '{0}'
+    has-access:
+      sound:
+        type: ENTITY_EXPERIENCE_ORB_PICKUP
+        volume: 0.2
+        pitch: 0.2
+    no-access:
+      sound:
+        type: BLOCK_ANVIL_PLACE
+        volume: 0.2
+        pitch: 0.2
+
+  minecart_open:
+    display-menu: true
+    permission-enabled:
+      type: CHEST_MINECART
+      name: '&6打开矿车'
+      lore:
+        - '&7打开矿车的权限。'
+        - '&7当前 &a已启用&7。'
+    permission-disabled:
+      type: CHEST_MINECART
+      name: '&6打开矿车'
+      lore:
+        - '&7打开矿车的权限。'
+        - '&7当前 &c已禁用&7。'
+    role-permission:
+      type: CHEST_MINECART
+      name: '&6打开矿车'
+      lore:
+        - '&7打开矿车的权限。'
+        - '&7角色: &e{}&7。'
+        - ''
+        - '{0}'
+    has-access:
+      sound:
+        type: ENTITY_EXPERIENCE_ORB_PICKUP
+        volume: 0.2
+        pitch: 0.2
+    no-access:
+      sound:
+        type: BLOCK_ANVIL_PLACE
+        volume: 0.2
+        pitch: 0.2
+
+  minecart_place:
+    display-menu: true
+    permission-enabled:
+      type: MINECART
+      name: '&6放置矿车'
+      lore:
+        - '&7放置矿车的权限。'
+        - '&7当前 &a已启用&7。'
+    permission-disabled:
+      type: MINECART
+      name: '&6放置矿车'
+      lore:
+        - '&7放置矿车的权限。'
+        - '&7当前 &c已禁用&7。'
+    role-permission:
+      type: MINECART
+      name: '&6放置矿车'
+      lore:
+        - '&7放置矿车的权限。'
+        - '&7角色: &e{}&7。'
+        - ''
+        - '{0}'
+    has-access:
+      sound:
+        type: ENTITY_EXPERIENCE_ORB_PICKUP
+        volume: 0.2
+        pitch: 0.2
+    no-access:
+      sound:
+        type: BLOCK_ANVIL_PLACE
+        volume: 0.2
+        pitch: 0.2
+
+  monster_spawn:
+    display-menu: true
+    permission-enabled:
+      type: CAVE_SPIDER_SPAWN_EGG
+      name: '&6生成怪物'
+      lore:
+        - '&7生成怪物的权限。'
+        - '&7当前 &a已启用&7。'
+    permission-disabled:
+      type: CAVE_SPIDER_SPAWN_EGG
+      name: '&6生成怪物'
+      lore:
+        - '&7生成怪物的权限。'
+        - '&7当前 &c已禁用&7。'
+    role-permission:
+      type: CAVE_SPIDER_SPAWN_EGG
+      name: '&6生成怪物'
+      lore:
+        - '&7生成怪物的权限。'
+        - '&7角色: &e{}&7。'
+        - ''
+        - '{0}'
+    has-access:
+      sound:
+        type: ENTITY_EXPERIENCE_ORB_PICKUP
+        volume: 0.2
+        pitch: 0.2
+    no-access:
+      sound:
+        type: BLOCK_ANVIL_PLACE
+        volume: 0.2
+        pitch: 0.2
+
+  name_entity:
+    display-menu: true
+    permission-enabled:
+      type: NAME_TAG
+      name: '&6命名实体'
+      lore:
+        - '&7命名实体的权限。'
+        - '&7当前 &a已启用&7。'
+    permission-disabled:
+      type: NAME_TAG
+      name: '&6命名实体'
+      lore:
+        - '&7命名实体的权限。'
+        - '&7当前 &c已禁用&7。'
+    role-permission:
+      type: NAME_TAG
+      name: '&6命名实体'
+      lore:
+        - '&7命名实体的权限。'
+        - '&7角色: &e{}&7。'
+        - ''
+        - '{0}'
+    has-access:
+      sound:
+        type: ENTITY_EXPERIENCE_ORB_PICKUP
+        volume: 0.2
+        pitch: 0.2
+    no-access:
+      sound:
+        type: BLOCK_ANVIL_PLACE
+        volume: 0.2
+        pitch: 0.2
+
+open_island:
+    display-menu: true
+    permission-enabled:
+      type: REDSTONE_TORCH
+      name: '&6开放岛屿'
+      lore:
+        - '&7开放岛屿的权限。'
+        - '&7当前 &a已启用&7。'
+    permission-disabled:
+      type: REDSTONE_TORCH
+      name: '&6开放岛屿'
+      lore:
+        - '&7开放岛屿的权限。'
+        - '&7当前 &c已禁用&7。'
+    role-permission:
+      type: REDSTONE_TORCH
+      name: '&6开放岛屿'
+      lore:
+        - '&7开放岛屿的权限。'
+        - '&7角色: &e{}&7。'
+        - ''
+        - '{0}'
+    has-access:
+      sound:
+        type: ENTITY_EXPERIENCE_ORB_PICKUP
+        volume: 0.2
+        pitch: 0.2
+    no-access:
+      sound:
+        type: BLOCK_ANVIL_PLACE
+        volume: 0.2
+        pitch: 0.2
+
+  painting:
+    display-menu: true
+    permission-enabled:
+      type: PAINTING
+      name: '&6绘画'
+      lore:
+        - '&7与岛屿内的画互动的权限。'
+        - '&7当前 &a已启用&7。'
+    permission-disabled:
+      type: PAINTING
+      name: '&6绘画'
+      lore:
+        - '&7与岛屿内的画互动的权限。'
+        - '&7当前 &c已禁用&7。'
+    role-permission:
+      type: PAINTING
+      name: '&6绘画'
+      lore:
+        - '&7与岛屿内的画互动的权限。'
+        - '&7角色: &e{}&7。'
+        - ''
+        - '{0}'
+    has-access:
+      sound:
+        type: ENTITY_EXPERIENCE_ORB_PICKUP
+        volume: 0.2
+        pitch: 0.2
+    no-access:
+      sound:
+        type: BLOCK_ANVIL_PLACE
+        volume: 0.2
+        pitch: 0.2
+
+  paypal_show:
+    display-menu: true
+    permission-enabled:
+      type: BLUE_WOOL
+      name: '&6显示Paypal'
+      lore:
+        - '&7查看岛屿关联的Paypal的权限。'
+        - '&7当前 &a已启用&7。'
+    permission-disabled:
+      type: BLUE_WOOL
+      name: '&6显示Paypal'
+      lore:
+        - '&7查看岛屿关联的Paypal的权限。'
+        - '&7当前 &c已禁用&7。'
+    role-permission:
+      type: BLUE_WOOL
+      name: '&6显示Paypal'
+      lore:
+        - '&7查看岛屿关联的Paypal的权限。'
+        - '&7角色: &e{}&7。'
+        - ''
+        - '{0}'
+    has-access:
+      sound:
+        type: ENTITY_EXPERIENCE_ORB_PICKUP
+        volume: 0.2
+        pitch: 0.2
+    no-access:
+      sound:
+        type: BLOCK_ANVIL_PLACE
+        volume: 0.2
+        pitch: 0.2
+
+  pickup_axolotl:
+    display-menu: true
+    permission-enabled:
+      type: AXOLOTL_SPAWN_EGG
+      name: '&6拾取美西螈'
+      lore:
+        - '&7使用水桶拾取岛屿内的美西螈的权限。'
+        - '&7当前 &a已启用&7。'
+    permission-disabled:
+      type: AXOLOTL_SPAWN_EGG
+      name: '&6拾取美西螈'
+      lore:
+        - '&7使用水桶拾取岛屿内的美西螈的权限。'
+        - '&7当前 &c已禁用&7。'
+    role-permission:
+      type: AXOLOTL_SPAWN_EGG
+      name: '&6拾取美西螈'
+      lore:
+        - '&7使用水桶拾取岛屿内的美西螈的权限。'
+        - '&7角色: &e{}&7。'
+        - ''
+        - '{0}'
+    has-access:
+      sound:
+        type: ENTITY_EXPERIENCE_ORB_PICKUP
+        volume: 0.2
+        pitch: 0.2
+    no-access:
+      sound:
+        type: BLOCK_ANVIL_PLACE
+        volume: 0.2
+        pitch: 0.2
+
+  pickup_drops:
+    display-menu: true
+    permission-enabled:
+      type: HOPPER
+      name: '&6拾取掉落物'
+      lore:
+        - '&7拾取岛屿内物品的权限。'
+        - '&7当前 &a已启用&7。'
+    permission-disabled:
+      type: HOPPER
+      name: '&6拾取掉落物'
+      lore:
+        - '&7拾取岛屿内物品的权限。'
+        - '&7当前 &c已禁用&7。'
+    role-permission:
+      type: HOPPER
+      name: '&6拾取掉落物'
+      lore:
+        - '&7拾取岛屿内物品的权限��'
+        - '&7角色: &e{}&7。'
+        - ''
+        - '{0}'
+    has-access:
+      sound:
+        type: ENTITY_EXPERIENCE_ORB_PICKUP
+        volume: 0.2
+        pitch: 0.2
+    no-access:
+      sound:
+        type: BLOCK_ANVIL_PLACE
+        volume: 0.2
+        pitch: 0.2
+
+  pickup_fish:
+    display-menu: true
+    permission-enabled:
+      type: COD
+      name: '&6拾取鱼'
+      lore:
+        - '&7使用水桶拾取岛屿内的鱼的权限。'
+        - '&7当前 &a已启用&7。'
+    permission-disabled:
+      type: COD
+      name: '&6拾取鱼'
+      lore:
+        - '&7使用水桶拾取岛屿内的鱼的权限。'
+        - '&7当前 &c已禁用&7。'
+    role-permission:
+      type: COD
+      name: '&6拾取鱼'
+      lore:
+        - '&7使用水桶拾取岛屿内的鱼的权限。'
+        - '&7角色: &e{}&7。'
+        - ''
+        - '{0}'
+    has-access:
+      sound:
+        type: ENTITY_EXPERIENCE_ORB_PICKUP
+        volume: 0.2
+        pitch: 0.2
+    no-access:
+      sound:
+        type: BLOCK_ANVIL_PLACE
+        volume: 0.2
+        pitch: 0.2
+
+  pickup_lectern_book:
+    display-menu: true
+    permission-enabled:
+      type: LECTERN
+      name: '&6拾取讲台书籍'
+      lore:
+        - '&7拾取岛屿内讲台上的书籍的权限。'
+        - '&7当前 &a已启用&7。'
+    permission-disabled:
+      type: LECTERN
+      name: '&6拾取讲台书籍'
+      lore:
+        - '&7拾取岛屿内讲台上的书籍的权限。'
+        - '&7当前 &c已禁用&7。'
+    role-permission:
+      type: LECTERN
+      name: '&6拾取讲台书籍'
+      lore:
+        - '&7拾取岛屿内讲台上的书籍的权限。'
+        - '&7角色: &e{}&7。'
+        - ''
+        - '{0}'
+    has-access:
+      sound:
+        type: ENTITY_EXPERIENCE_ORB_PICKUP
+        volume: 0.2
+        pitch: 0.2
+    no-access:
+      sound:
+        type: BLOCK_ANVIL_PLACE
+        volume: 0.2
+        pitch: 0.2
+
+  promote_members:
+    display-menu: true
+    permission-enabled:
+      type: DIAMOND
+      name: '&6提升成员'
+      lore:
+        - '&7提升岛屿内成员的权限。'
+        - '&7当前 &a已启用&7。'
+    permission-disabled:
+      type: DIAMOND
+      name: '&6提升成员'
+      lore:
+        - '&7提升岛屿内成员的权限。'
+        - '&7当前 &c已禁用&7。'
+    role-permission:
+      type: DIAMOND
+      name: '&6提升成员'
+      lore:
+        - '&7提升岛屿内成员的权限。'
+        - '&7角色: &e{}&7。'
+        - ''
+        - '{0}'
+    has-access:
+      sound:
+        type: ENTITY_EXPERIENCE_ORB_PICKUP
+        volume: 0.2
+        pitch: 0.2
+    no-access:
+      sound:
+        type: BLOCK_ANVIL_PLACE
+        volume: 0.2
+        pitch: 0.2
+
+  rankup:
+    display-menu: true
+    permission-enabled:
+      type: GOLD_INGOT
+      name: '&6升级等级'
+      lore:
+        - '&7升级岛屿等级的权限。'
+        - '&7当前 &a已启用&7。'
+    permission-disabled:
+      type: GOLD_INGOT
+      name: '&6升级等级'
+      lore:
+        - '&7升级岛屿等级的权限。'
+        - '&7当前 &c已禁用&7。'
+    role-permission:
+      type: GOLD_INGOT
+      name: '&6升级等级'
+      lore:
+        - '&7升级岛屿等级的权限。'
+        - '&7角色: &e{}&7。'
+        - ''
+        - '{0}'
+    has-access:
+      sound:
+        type: ENTITY_EXPERIENCE_ORB_PICKUP
+        volume: 0.2
+        pitch: 0.2
+    no-access:
+      sound:
+        type: BLOCK_ANVIL_PLACE
+        volume: 0.2
+        pitch: 0.2
+
+  ratings_show:
+    display-menu: true
+    permission-enabled:
+      type: NETHER_STAR
+      name: '&6显示评分'
+      lore:
+        - '&7查看岛屿所有评分的权限。'
+        - '&7当前 &a已启用&7。'
+    permission-disabled:
+      type: NETHER_STAR
+      name: '&6显示评分'
+      lore:
+        - '&7查看岛屿所有评分的权限。'
+        - '&7当前 &c已禁用&7。'
+    role-permission:
+      type: NETHER_STAR
+      name: '&6显示评分'
+      lore:
+        - '&7查看岛屿所有评分的权限。'
+        - '&7角色: &e{}&7。'
+        - ''
+        - '{0}'
+    has-access:
+      sound:
+        type: ENTITY_EXPERIENCE_ORB_PICKUP
+        volume: 0.2
+        pitch: 0.2
+    no-access:
+      sound:
+        type: BLOCK_ANVIL_PLACE
+        volume: 0.2
+        pitch: 0.2
+
+  set_biome:
+    display-menu: true
+    permission-enabled:
+      type: GRASS_BLOCK
+      name: '&6设置生物群系'
+      lore:
+        - '&7更改岛屿生物群系的权限。'
+        - '&7当前 &a已启用&7。'
+    permission-disabled:
+      type: GRASS_BLOCK
+      name: '&6设置生物群系'
+      lore:
+        - '&7更改岛屿生物群系的权限。'
+        - '&7当前 &c已禁用&7。'
+    role-permission:
+      type: GRASS_BLOCK
+      name: '&6设置生物群系'
+      lore:
+        - '&7更改岛屿生物群系的权限。'
+        - '&7角色: &e{}&7。'
+        - ''
+        - '{0}'
+    has-access:
+      sound:
+        type: ENTITY_EXPERIENCE_ORB_PICKUP
+        volume: 0.2
+        pitch: 0.2
+    no-access:
+      sound:
+        type: BLOCK_ANVIL_PLACE
+        volume: 0.2
+        pitch: 0.2
+
+  set_discord:
+    display-menu: true
+    permission-enabled:
+      type: LIGHT_BLUE_TERRACOTTA
+      name: '&6设置Discord'
+      lore:
+        - '&7更改岛屿关联的Discord的权限。'
+        - '&7当前 &a已启用&7。'
+    permission-disabled:
+      type: LIGHT_BLUE_TERRACOTTA
+      name: '&6设置Discord'
+      lore:
+        - '&7更改岛屿关联的Discord的权限。'
+        - '&7当前 &c已禁用&7。'
+    role-permission:
+      type: LIGHT_BLUE_TERRACOTTA
+      name: '&6设置Discord'
+      lore:
+        - '&7更改岛屿关联的Discord的权限。'
+        - '&7角色: &e{}&7。'
+        - ''
+        - '{0}'
+    has-access:
+      sound:
+        type: ENTITY_EXPERIENCE_ORB_PICKUP
+        volume: 0.2
+        pitch: 0.2
+    no-access:
+      sound:
+        type: BLOCK_ANVIL_PLACE
+        volume: 0.2
+        pitch: 0.2
+
+  set_home:
+    display-menu: true
+    permission-enabled:
+      type: RED_BED
+      name: '&6设置家'
+      lore:
+        - '&7更改岛屿家位置的权限。'
+        - '&7当前 &a已启用&7。'
+    permission-disabled:
+      type: RED_BED
+      name: '&6设置家'
+      lore:
+        - '&7更改岛屿家位置的权限。'
+        - '&7当前 &c已禁用&7。'
+    role-permission:
+      type: RED_BED
+      name: '&6设置家'
+      lore:
+        - '&7更改岛屿家位置的权限。'
+        - '&7角色: &e{}&7。'
+        - ''
+        - '{0}'
+    has-access:
+      sound:
+        type: ENTITY_EXPERIENCE_ORB_PICKUP
+        volume: 0.2
+        pitch: 0.2
+    no-access:
+      sound:
+        type: BLOCK_ANVIL_PLACE
+        volume: 0.2
+        pitch: 0.2
+
+  set_paypal:
+    display-menu: true
+    permission-enabled:
+      type: BLUE_WOOL
+      name: '&6设置Paypal'
+      lore:
+        - '&7更改岛屿关联的Paypal的权限。'
+        - '&7当前 &a已启用&7。'
+    permission-disabled:
+      type: BLUE_WOOL
+      name: '&6设置Paypal'
+      lore:
+        - '&7更改岛屿关联的Paypal的权限。'
+        - '&7当前 &c已禁用&7。'
+    role-permission:
+      type: BLUE_WOOL
+      name: '&6设置Paypal'
+      lore:
+        - '&7更改岛屿关联的Paypal的权限。'
+        - '&7角色: &e{}&7。'
+        - ''
+        - '{0}'
+    has-access:
+      sound:
+        type: ENTITY_EXPERIENCE_ORB_PICKUP
+        volume: 0.2
+        pitch: 0.2
+    no-access:
+      sound:
+        type: BLOCK_ANVIL_PLACE
+        volume: 0.2
+        pitch: 0.2
+
+  set_permission:
+    display-menu: true
+    permission-enabled:
+      type: REPEATER
+      name: '&6设置权限'
+      lore:
+        - '&7更改岛屿成员权限的权限。'
+        - '&7当前 &a已启用&7。'
+    permission-disabled:
+      type: REPEATER
+      name: '&6设置权限'
+      lore:
+        - '&7更改岛屿成员权限的权限。'
+        - '&7当前 &c已禁用&7。'
+    role-permission:
+      type: REPEATER
+      name: '&6设置权限'
+      lore:
+        - '&7更改岛屿成员权限的权限。'
+        - '&7角色: &e{}&7。'
+        - ''
+        - '{0}'
+    has-access:
+      sound:
+        type: ENTITY_EXPERIENCE_ORB_PICKUP
+        volume: 0.2
+        pitch: 0.2
+    no-access:
+      sound:
+        type: BLOCK_ANVIL_PLACE
+        volume: 0.2
+        pitch: 0.2
+
+  set_role:
+    display-menu: true
+    permission-enabled:
+      type: DIAMOND_CHESTPLATE
+      name: '&6设置角色'
+      lore:
+        - '&7更改岛屿成员角色的权限。'
+        - '&7当前 &a已启用&7。'
+    permission-disabled:
+      type: DIAMOND_CHESTPLATE
+      name: '&6设置角色'
+      lore:
+        - '&7更改岛屿成员角色的权限。'
+        - '&7当前 &c已禁用&7。'
+    role-permission:
+      type: DIAMOND_CHESTPLATE
+      name: '&6设置角色'
+      lore:
+        - '&7更改岛屿成员角色的权限。'
+        - '&7角色: &e{}&7。'
+        - ''
+        - '{0}'
+    has-access:
+      sound:
+        type: ENTITY_EXPERIENCE_ORB_PICKUP
+        volume: 0.2
+        pitch: 0.2
+    no-access:
+      sound:
+        type: BLOCK_ANVIL_PLACE
+        volume: 0.2
+        pitch: 0.2
+
+  set_settings:
+    display-menu: true
+    permission-enabled:
+      type: LEVER
+      name: '&6设置设置'
+      lore:
+        - '&7更改岛屿设置的权限。'
+        - '&7当前 &a已启用&7。'
+    permission-disabled:
+      type: LEVER
+      name: '&6设置设置'
+      lore:
+        - '&7更改岛屿设置的权限。'
+        - '&7当前 &c已禁用&7。'
+    role-permission:
+      type: LEVER
+      name: '&6设置设置'
+      lore:
+        - '&7更改岛屿设置的权限。'
+        - '&7角色: &e{}&7。'
+        - ''
+        - '{0}'
+    has-access:
+      sound:
+        type: ENTITY_EXPERIENCE_ORB_PICKUP
+        volume: 0.2
+        pitch: 0.2
+    no-access:
+      sound:
+        type: BLOCK_ANVIL_PLACE
+        volume: 0.2
+        pitch: 0.2
+
+  set_warp:
+    display-menu: true
+    permission-enabled:
+      type: ENDER_EYE
+      name: '&6设置传送点'
+      lore:
+        - '&7设置岛屿新传送点的权限。'
+        - '&7当前 &a已启用&7。'
+    permission-disabled:
+      type: ENDER_EYE
+      name: '&6设置传送点'
+      lore:
+        - '&7设置岛屿新传送点的权限。'
+        - '&7当前 &c已禁用&7。'
+    role-permission:
+      type: ENDER_EYE
+      name: '&6设置传送点'
+      lore:
+        - '&7设置岛屿新传送点的权限。'
+        - '&7角色: &e{}&7。'
+        - ''
+        - '{0}'
+    has-access:
+      sound:
+        type: ENTITY_EXPERIENCE_ORB_PICKUP
+        volume: 0.2
+        pitch: 0.2
+    no-access:
+      sound:
+        type: BLOCK_ANVIL_PLACE
+        volume: 0.2
+        pitch: 0.2
+
+  uncoop_member:
+    display-menu: true
+    permission-enabled:
+      type: GOLDEN_APPLE
+      name: '&6取消合作成员'
+      lore:
+        - '&7移除岛屿合作成员的权限。'
+        - '&7当前 &a已启用&7。'
+    permission-disabled:
+      type: GOLDEN_APPLE
+      name: '&6取消合作成员'
+      lore:
+        - '&7移除岛屿合作成员的权限。'
+        - '&7当前 &c已禁用&7。'
+    role-permission:
+      type: GOLDEN_APPLE
+      name: '&6取消合作成员'
+      lore:
+        - '&7移除岛屿合作成员的权限。'
+        - '&7角色: &e{}&7。'
+        - ''
+        - '{0}'
+    has-access:
+      sound:
+        type: ENTITY_EXPERIENCE_ORB_PICKUP
+        volume: 0.2
+        pitch: 0.2
+    no-access:
+      sound:
+        type: BLOCK_ANVIL_PLACE
+        volume: 0.2
+        pitch: 0.2
+
+  sign_interact:
+    display-menu: true
+    permission-enabled:
+      type: OAK_SIGN
+      name: '&6标志互动'
+      lore:
+        - '&7与岛屿内标志互动的权限。'
+        - '&7当前 &a已启用&7。'
+    permission-disabled:
+      type: OAK_SIGN
+      name: '&6标志互动'
+      lore:
+        - '&7与岛屿内标志互动的权限。'
+        - '&7当前 &c已禁用&7。'
+    role-permission:
+      type: OAK_SIGN
+      name: '&6标志互动'
+      lore:
+        - '&7与岛屿内标志互动的权限。'
+        - '&7角色: &e{}&7。'
+        - ''
+        - '{0}'
+    has-access:
+      sound:
+        type: ENTITY_EXPERIENCE_ORB_PICKUP
+        volume: 0.2
+        pitch: 0.2
+    no-access:
+      sound:
+        type: BLOCK_ANVIL_PLACE
+        volume: 0.2
+        pitch: 0.2
+
+spawner_break:
+    display-menu: true
+    permission-enabled:
+      type: SPAWNER
+      name: '&6刷怪笼破坏'
+      lore:
+        - '&7破坏岛屿内刷怪笼的权限。'
+        - '&7当前 &a已启用&7。'
+    permission-disabled:
+      type: SPAWNER
+      name: '&6刷怪笼破坏'
+      lore:
+        - '&7破坏岛屿内刷怪笼的权限。'
+        - '&7当前 &c已禁用&7。'
+    role-permission:
+      type: SPAWNER
+      name: '&6刷怪笼破坏'
+      lore:
+        - '&7破坏岛屿内刷怪笼的权限。'
+        - '&7角色: &e{}&7。'
+        - ''
+        - '{0}'
+    has-access:
+      sound:
+        type: ENTITY_EXPERIENCE_ORB_PICKUP
+        volume: 0.2
+        pitch: 0.2
+    no-access:
+      sound:
+        type: BLOCK_ANVIL_PLACE
+        volume: 0.2
+        pitch: 0.2
+
+  turtle_egg_tramping:
+    display-menu: true
+    permission-enabled:
+      type: TURTLE_EGG
+      name: '&6践踏海龟蛋'
+      lore:
+        - '&7践踏岛屿内海龟蛋的权限。'
+        - '&7当前 &a已启用&7。'
+    permission-disabled:
+      type: TURTLE_EGG
+      name: '&6践踏海龟蛋'
+      lore:
+        - '&7践踏岛屿内海龟蛋的权限。'
+        - '&7当前 &c已禁用&7。'
+    role-permission:
+      type: TURTLE_EGG
+      name: '&6践踏海龟蛋'
+      lore:
+        - '&7践踏岛屿内海龟蛋的权限。'
+        - '&7角色: &e{}&7。'
+        - ''
+        - '{0}'
+    has-access:
+      sound:
+        type: ENTITY_EXPERIENCE_ORB_PICKUP
+        volume: 0.2
+        pitch: 0.2
+    no-access:
+      sound:
+        type: BLOCK_ANVIL_PLACE
+        volume: 0.2
+        pitch: 0.2
+
+  use:
+    display-menu: true
+    permission-enabled:
+      type: STONE_BUTTON
+      name: '&6使用'
+      lore:
+        - '&7使用岛屿内不同方块的权限。'
+        - '&7当前 &a已启用&7。'
+    permission-disabled:
+      type: STONE_BUTTON
+      name: '&6使用'
+      lore:
+        - '&7使用岛屿内不同方块的权限。'
+        - '&7当前 &c已禁用&7。'
+    role-permission:
+      type: STONE_BUTTON
+      name: '&6使用'
+      lore:
+        - '&7使用岛屿内不同方块的权限。'
+        - '&7角色: &e{}&7。'
+        - ''
+        - '{0}'
+    has-access:
+      sound:
+        type: ENTITY_EXPERIENCE_ORB_PICKUP
+        volume: 0.2
+        pitch: 0.2
+    no-access:
+      sound:
+        type: BLOCK_ANVIL_PLACE
+        volume: 0.2
+        pitch: 0.2
+
+  valuable_break:
+    display-menu: true
+    permission-enabled:
+      type: GOLD_INGOT
+      name: '&6贵重方块破坏'
+      lore:
+        - '&7破坏岛屿内贵重方块的权限。'
+        - '&7当前 &a已启用&7。'
+    permission-disabled:
+      type: GOLD_INGOT
+      name: '&6贵重方块破坏'
+      lore:
+        - '&7破坏岛屿内贵重方块的权限。'
+        - '&7当前 &c已禁用&7。'
+    role-permission:
+      type: GOLD_INGOT
+      name: '&6贵重方块破坏'
+      lore:
+        - '&7破坏岛屿内贵重方块的权限。'
+        - '&7角色: &e{}&7。'
+        - ''
+        - '{0}'
+    has-access:
+      sound:
+        type: ENTITY_EXPERIENCE_ORB_PICKUP
+        volume: 0.2
+        pitch: 0.2
+    no-access:
+      sound:
+        type: BLOCK_ANVIL_PLACE
+        volume: 0.2
+        pitch: 0.2
+
+  villager_trading:
+    display-menu: true
+    permission-enabled:
+      type: PLAYER_HEAD
+      skull: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDFiODMwZWI0MDgyYWNlYzgzNmJjODM1ZTQwYTExMjgyYmI1MTE5MzMxNWY5MTE4NDMzN2U4ZDM1NTU1ODMifX19'
+      name: '&6村民交易'
+      lore:
+        - '&7与岛屿内村民交易的权限。'
+        - '&7当前 &a已启用&7。'
+    permission-disabled:
+      type: PLAYER_HEAD
+      skull: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDFiODMwZWI0MDgyYWNlYzgzNmJjODM1ZTQwYTExMjgyYmI1MTE5MzMxNWY5MTE4NDMzN2U4ZDM1NTU1ODMifX19'
+      name: '&6村民交易'
+      lore:
+        - '&7与岛屿内村民交易的权限。'
+        - '&7当前 &c已禁用&7。'
+    role-permission:
+      type: PLAYER_HEAD
+      skull: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDFiODMwZWI0MDgyYWNlYzgzNmJjODM1ZTQwYTExMjgyYmI1MTE5MzMxNWY5MTE4NDMzN2U4ZDM1NTU1ODMifX19'
+      name: '&6村民交易'
+      lore:
+        - '&7与岛屿内村民交易的权限。'
+        - '&7角色: &e{}&7。'
+        - ''
+        - '{0}'
+    has-access:
+      sound:
+        type: ENTITY_EXPERIENCE_ORB_PICKUP
+        volume: 0.2
+        pitch: 0.2
+    no-access:
+      sound:
+        type: BLOCK_ANVIL_PLACE
+        volume: 0.2
+        pitch: 0.2
+
+  withdraw_money:
+    display-menu: true
+    permission-enabled:
+      type: EMERALD
+      name: '&6提取金钱'
+      lore:
+        - '&7从岛屿银行提取金钱的权限。'
+        - '&7当前 &a已启用&7。'
+    permission-disabled:
+      type: EMERALD
+      name: '&6提取金钱'
+      lore:
+        - '&7从岛屿银行提取金钱的权限。'
+        - '&7当前 &c已禁用&7。'
+    role-permission:
+      type: EMERALD
+      name: '&6提取金钱'
+      lore:
+        - '&7从岛屿银行提取金钱的权限。'
+        - '&7角色: &e{}&7。'
+        - ''
+        - '{0}'
+    has-access:
+      sound:
+        type: ENTITY_EXPERIENCE_ORB_PICKUP
+        volume: 0.2
+        pitch: 0.2
+    no-access:
+      sound:
+        type: BLOCK_ANVIL_PLACE
+        volume: 0.2
+        pitch: 0.2

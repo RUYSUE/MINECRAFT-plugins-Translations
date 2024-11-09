@@ -1,0 +1,60 @@
+######################################################
+##                                                  ##
+##                SuperiorSkyblock 2                ##
+##                Developed by Ome_R                ##
+##                                                  ##
+######################################################
+
+title: '&l地标目录: {0}'
+previous-menu: true
+
+pattern:
+  - '@ @ @ @ @ @ @ @ @'
+  - '@ ! @ @ @ @ @ ~ @'
+  - '@ @ @ @ ^ @ @ @ @'
+  - '@ $ @ @ @ @ @ % @'
+  - '@ @ @ @ @ @ @ @ @'
+
+icon-type: '!'
+icon-rename: '~'
+icon-relore: '$'
+icon-confirm: '%'
+icon-slots: '^'
+
+items:
+  '!':
+    type: DIAMOND
+    name: '&6设置物品种类'
+    lore:
+      - '&f '
+      - '&f '
+      - '&7&o(( &f&o点击&7&o编辑物品种类. ))'
+  '~':
+    type: ANVIL
+    name: '&6设置名称'
+    lore:
+      - '&f '
+      - '&f '
+      - '&7&o(( &f&o点击&7&o编辑名称. ))'
+  '$':
+    type: PAPER
+    name: '&6设置描述'
+    lore:
+      - '&f '
+      - '&f '
+      - '&7&o(( &f&o点击&7&o编辑描述. ))'
+  '%':
+    type: EMERALD
+    name: '&6确认更改'
+    lore:
+      - '&f '
+      - '&f '
+      - '&7&o(( &f&o点击&7&o保存更改. ))'
+  '^':
+    type: STONE
+
+sounds:
+  '%':
+    type: ENTITY_EXPERIENCE_ORB_PICKUP
+    volume: 0.2
+    pitch: 0.2

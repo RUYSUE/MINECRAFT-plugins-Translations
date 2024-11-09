@@ -1,0 +1,92 @@
+######################################################
+##                                                  ##
+##                SuperiorSkyblock 2                ##
+##                Developed by Ome_R                ##
+##                                                  ##
+######################################################
+
+# The mission file to use
+mission-file: FishingMissions
+
+# Whether the mission should be given when completing all requirements.
+auto-reward: true
+
+# Should block counts of players get reset when completing the mission?
+reset-after-finish: true
+
+# Rewards given when completing the mission.
+rewards:
+  commands:
+    - 'eco give %player% 50000'
+    - 'is admin msg %player% &e&l渔夫任务 | &7成功完成渔夫任务III!'
+    - 'is admin msg %player% &e&l渔夫任务 | &7现在你知道钓鱼是怎么一回事了!'
+    - 'is admin msg %player% &e&l渔夫任务 | &7&o恭喜你成为了专业渔夫!'
+
+# List of required missions that must be completed before completing this one.
+required-missions:
+  - 'fisherman_1'
+  - 'fisherman_2'
+
+# List of all required blocks must be gathered in order to complete the mission.
+required-caughts:
+  '1':
+    types:
+      - 'BOW'
+      - 'ENCHANTED_BOOK'
+      - 'FISHING_ROD'
+      - 'NAME_TAG'
+      - 'SADDLE'
+      - 'NAUTILUS_SHELL'
+    amount: 3
+
+# Icons used in the menus.
+icons:
+  not-completed:
+    type: PAPER
+    name: '&a渔夫任务III'
+    lore:
+      - '&7钓到海洋宝藏也并非不可能.'
+      - '&7钓上来 x3 宝藏.'
+      - ''
+      - '&6需要钓上:'
+      - '&8 - &7x3 宝藏'
+      - ''
+      - '&6奖励:'
+      - '&8 - &7$50,000'
+      - ''
+      - '&6宝藏: &7{1}/3'
+      - '&6进度: &7{0}%'
+      - '&c&l ✘ &7未完成'
+  can-complete:
+    type: PAPER
+    name: '&a渔夫任务III'
+    lore:
+      - '&7钓到海洋宝藏也并非不可能.'
+      - '&7钓上来 x3 宝藏.'
+      - ''
+      - '&6需要钓上:'
+      - '&8 - &7x3 宝藏'
+      - ''
+      - '&6奖励:'
+      - '&8 - &7$50,000'
+      - ''
+      - '&6宝藏: &73/3'
+      - '&6进度: &7100%'
+      - '&a&l ✔ &7点击领取奖励.'
+    enchants:
+      DURABILITY: 1
+    flags:
+      - HIDE_ENCHANTS
+  completed:
+    type: MAP
+    name: '&a渔夫任务III'
+    lore:
+      - '&7钓到海洋宝藏也并非不可能.'
+      - '&7钓上来 x3 宝藏.'
+      - ''
+      - '&6奖励:'
+      - '&8 - &7$50,000'
+      - ''
+      - '&6宝藏: &73/3'
+      - '&6进度: &7100%'
+      - '&a&l ✔ &7已完成.'
